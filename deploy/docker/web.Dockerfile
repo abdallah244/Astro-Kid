@@ -10,7 +10,7 @@ COPY game/ ./
 RUN npm run build \
  && if [ -n "$SITE_URL" ]; then \
       find dist -maxdepth 1 \( -name '*.html' -o -name 'sitemap.xml' -o -name 'robots.txt' \) \
-        -exec sed -i "s#https://example.com#${SITE_URL}#g; s#\[Website URL\]#${SITE_URL}#g" {} + ; \
+        -exec sed -i "s#https://example.com#${SITE_URL}#g; s#https://astrokid.site#${SITE_URL}#g; s#\[Website URL\]#${SITE_URL}#g" {} + ; \
     fi
 
 FROM nginx:1.27-alpine
