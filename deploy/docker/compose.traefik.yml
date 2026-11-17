@@ -10,10 +10,14 @@ services:
     labels:
       traefik.enable: "true"
       traefik.docker.network: astro-kid_internal
-      traefik.http.routers.astrokid.rule: Host(`${DOMAIN:?set DOMAIN in .env}`)
+      traefik.http.routers.astrokid.rule: Host(`${DOMAIN:?set DOMAIN in .env}`) || Host(`www.${DOMAIN}`)
       traefik.http.routers.astrokid.entrypoints: websecure
       traefik.http.routers.astrokid.tls.certresolver: ${TRAEFIK_CERT_RESOLVER:-letsencrypt}
-      traefik.http.routers.astrokid.middlewares: astrokid-hsts
+      traefik.http.routers.astrokid.middlewares: astrokid-www,astrokid-hsts
+      # www.<domain> -> <domain> (permanent redirect)
+      traefik.http.middlewares.astrokid-www.redirectregex.regex: "^https://www\\.(.+)"
+      traefik.http.middlewares.astrokid-www.redirectregex.replacement: "https://$${1}"
+      traefik.http.middlewares.astrokid-www.redirectregex.permanent: "true"
       traefik.http.middlewares.astrokid-hsts.headers.stsSeconds: "31536000"
       traefik.http.middlewares.astrokid-hsts.headers.stsIncludeSubdomains: "true"
       traefik.http.services.astrokid.loadbalancer.server.port: "8080"
