@@ -41,3 +41,9 @@ desktop.ini
 *.swp
 *~
 ~$*
+
+# Docker deployment (VPS): real secrets, installers and database dumps stay on the server
+!.env.docker.example
+/releases/*
+!/releases/.gitkeep
+/backups/

@@ -1,0 +1,84 @@
+# Astro Kid on one VPS, fully isolated: own Docker network, own volumes, one port on localhost only.
+# Start:   docker compose up -d --build        (see deploy/DOCKER.md)
+name: astro-kid
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: astrokid
+      POSTGRES_USER: astrokid
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U astrokid -d astrokid"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [internal]
+
+  api:
+    build:
+      context: .
+      dockerfile: deploy/docker/api.Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://astrokid:${POSTGRES_PASSWORD}@db:5432/astrokid
+      SITE_ORIGIN: ${SITE_URL:?set SITE_URL in .env}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:?set GOOGLE_CLIENT_ID in .env}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:?set GOOGLE_CLIENT_SECRET in .env}
+      GOOGLE_REDIRECT_URI: ${SITE_URL}/api/auth/google/callback
+      COOKIE_SECRET: ${COOKIE_SECRET:?set COOKIE_SECRET in .env}
+      SESSION_DAYS: ${SESSION_DAYS:-30}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+    volumes:
+      - ./releases:/releases:ro
+    networks: [internal]
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/docker/web.Dockerfile
+      args:
+        SITE_URL: ${SITE_URL}
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8090}:8080"
+    volumes:
+      - ./releases:/releases:ro
+    networks: [internal]
+
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGHOST: db
+      PGUSER: astrokid
+      PGDATABASE: astrokid
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      RETENTION_DAYS: 30
+      BACKUP_HOUR: 3
+    volumes:
+      - ./backups:/backups
+      - ./deploy/docker/backup.sh:/backup.sh:ro
+    entrypoint: ["/bin/sh", "/backup.sh"]
+    networks: [internal]
+
+volumes:
+  db-data:
+
+networks:
+  internal:

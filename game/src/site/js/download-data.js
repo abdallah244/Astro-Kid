@@ -42,7 +42,7 @@ export const DOWNLOAD_FAQS = [
     id: 'faq-google',
     question: 'Why do I need to sign in with Google?',
     answer:
-      'You sign in with Google and enter your three-part name to unlock the full installer, linking your download to your quick sign-in account under our Terms of Use.',
+      'Signing in connects the download to your account so we can keep you updated. We only keep what the Privacy Policy lists.',
     defaultOpen: false,
   },
   {

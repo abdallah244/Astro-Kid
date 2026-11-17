@@ -303,7 +303,8 @@ The game is made for a computer with a keyboard and a mouse. Touch screens are n
 | Windows desktop app (offline) | Built and tested |
 | Installer | The standard NSIS installer works. A custom pixel-art installer is an experiment. |
 | Code signing | Not done, so Windows SmartScreen shows a warning for new installers |
-| Quick sign-in inside the game | Described in the privacy policy, **not built yet** |
+| Game account | Not needed: the game runs offline. The Google account is only for the download |
+| Sign-up overview | `npm run signups` on the server, plus an optional Telegram ping per sign-up |
 | Mobile and touch support | Not supported yet |
 | Mars version | Planned |
 
@@ -319,7 +320,7 @@ The game is made for a computer with a keyboard and a mouse. Touch screens are n
 | API | Node.js 20+, [Fastify](https://fastify.dev) 5, Zod, `google-auth-library` |
 | Database | PostgreSQL |
 | Desktop | [Electron](https://www.electronjs.org) 33, electron-builder 25 |
-| Hosting | One Linux VPS: nginx, a systemd service, Certbot, a nightly `pg_dump` |
+| Hosting | One Linux VPS with Docker Compose: PostgreSQL, the API, nginx and a nightly backup, each in its own container |
 
 ```mermaid
 flowchart LR
@@ -346,7 +347,8 @@ Astro-Kid/
 ├── server/          Fastify API, PostgreSQL migrations and tests
 ├── desktop/         Electron app (main.js, preload.js, scripts, tests)
 │   └── installer/   experimental custom installer
-├── deploy/          nginx config, systemd unit, backup script, DEPLOY.md
+├── deploy/          Docker files and guides (DOCKER.md, DEPLOY.md)
+├── docker-compose.yml
 ├── docs/
 │   ├── specs/       the game specs (missions, systems, maps)
 │   ├── design/      the HTML design files for every screen
@@ -418,8 +420,17 @@ npm run build            # game/dist, ready to serve with nginx
 <a id="deploy"></a>
 <h2 align="center"><img src="docs/readme/h-deploy.png" alt="Deploy it" width="640"></h2>
 
-The full, copy-paste guide for an Ubuntu VPS (packages, database role, systemd service, nginx with HTTPS, nightly backups,
-publishing a release and exporting the mailing list) is in **[`deploy/DEPLOY.md`](deploy/DEPLOY.md)**.
+The recommended way is Docker Compose: one command starts the database, the API, the web server and a nightly backup, isolated
+from anything else on the VPS. The full guide (secrets, Google sign-in, HTTPS, seeing who signed up, publishing the installer,
+backups) is in **[`deploy/DOCKER.md`](deploy/DOCKER.md)**.
+
+```bash
+cp .env.docker.example .env      # fill in the values
+docker compose up -d --build
+docker compose exec api npm run signups
+```
+
+A manual setup without Docker (systemd and host nginx) is described in [`deploy/DEPLOY.md`](deploy/DEPLOY.md).
 
 <br>
 

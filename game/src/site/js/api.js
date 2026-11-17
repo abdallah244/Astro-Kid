@@ -1,7 +1,7 @@
 import { validateFullName } from './validateName.js';
 
 export const IS_MOCK_AUTH = import.meta.env.VITE_MOCK_AUTH === 'true';
-export const POLICY_VERSION = (import.meta.env.VITE_POLICY_VERSION || '2026-11-16').trim();
+export const POLICY_VERSION = (import.meta.env.VITE_POLICY_VERSION || '2026-11-17').trim();
 
 const MOCK_USER_KEY = 'ak_mock_user_v1';
 const MOCK_PROFILE_KEY = 'ak_mock_profile_v1';

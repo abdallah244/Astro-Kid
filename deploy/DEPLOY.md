@@ -1,5 +1,7 @@
 # Astro Kid — VPS Deployment Guide (Ubuntu 22.04 / 24.04)
 
+> **Docker is the recommended setup: see [DOCKER.md](DOCKER.md).** This file describes the manual alternative.
+>
 > **Note:** Hosting runs directly on the owner's Linux VPS using **nginx + Node.js (Fastify) + PostgreSQL**. No third-party backend service is used.
 
 ---

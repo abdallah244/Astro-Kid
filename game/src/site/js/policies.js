@@ -1,4 +1,5 @@
-export const SITE_URL_PLACEHOLDER = '[Website URL]';
+// Set at build time (VITE_SITE_URL, e.g. https://astrokid.example); the placeholder stays until a domain exists.
+export const SITE_URL_PLACEHOLDER = (import.meta.env.VITE_SITE_URL || '[Website URL]').trim();
 
 function highlightHashTarget() {
   const hash = window.location.hash.replace(/^#/, '');

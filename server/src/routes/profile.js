@@ -13,7 +13,7 @@ const profileBodySchema = z.object({
   source: z.string().max(120).optional().nullable(),
 });
 
-export function registerProfileRoute(fastify, { db, config }) {
+export function registerProfileRoute(fastify, { db, config, notifier }) {
   const csrf = verifyCsrf(config.SITE_ORIGIN);
 
   fastify.post(
@@ -83,6 +83,12 @@ export function registerProfileRoute(fastify, { db, config }) {
         );
 
         const row = inserted.rows[0];
+
+        if (notifier?.enabled) {
+          db.query(`select count(*)::int as n from profiles`)
+            .then((r) => notifier.signup({ total: r.rows[0]?.n }))
+            .catch(() => notifier.signup({}));
+        }
         return reply.code(201).send({
           profile: {
             fullName: row.full_name,

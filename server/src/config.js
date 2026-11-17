@@ -18,6 +18,9 @@ const envSchema = z.object({
   RELEASES_DIR: z.string().min(1).default('./releases'),
   SESSION_DAYS: z.coerce.number().int().min(1).max(365).default(30),
   COOKIE_SECRET: z.string().optional(),
+  HOST: z.string().min(1).default('127.0.0.1'),
+  TELEGRAM_BOT_TOKEN: z.string().optional(),
+  TELEGRAM_CHAT_ID: z.string().optional(),
 });
 
 export function loadConfig(rawEnv = process.env) {

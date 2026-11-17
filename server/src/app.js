@@ -9,8 +9,9 @@ import { registerDownloadRoute } from './routes/download.js';
 import { registerReleaseRoute } from './routes/release.js';
 import { registerLogoutRoute } from './routes/logout.js';
 import { registerAccountRoute } from './routes/account.js';
+import { createSignupNotifier } from './lib/notify.js';
 
-export async function buildApp({ db, config, oauthClient, logger, marketing } = {}) {
+export async function buildApp({ db, config, oauthClient, logger, marketing, notifier } = {}) {
   const fastify = Fastify({
     trustProxy: true,
     logger:
@@ -41,7 +42,14 @@ export async function buildApp({ db, config, oauthClient, logger, marketing } = 
 
   registerGoogleAuthRoutes(fastify, { db, config, oauthClient });
   registerMeRoute(fastify, { db });
-  registerProfileRoute(fastify, { db, config });
+  const signupNotifier =
+    notifier ??
+    createSignupNotifier({
+      token: config.TELEGRAM_BOT_TOKEN,
+      chatId: config.TELEGRAM_CHAT_ID,
+      log: fastify.log,
+    });
+  registerProfileRoute(fastify, { db, config, notifier: signupNotifier });
   registerDownloadRoute(fastify, { db, config });
   registerReleaseRoute(fastify, { config });
   registerLogoutRoute(fastify, { db, config });

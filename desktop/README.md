@@ -43,9 +43,6 @@ Signing is disabled by default so unsigned local builds succeed out of the box. 
 
 ## Open questions for the owner
 
-1. **Quick sign-in inside the game.** The Privacy Policy says that after downloading, the player can sign in quickly in the game with the Google account details and the name entered on the website. **This is not built and not designed.** `window.astroKidDesktop` is ready for it; before building it later, decide:
-   - OAuth flow for desktop: localhost loopback redirect (`http://127.0.0.1:<port>`) vs. OAuth Device Authorization Grant / custom protocol callback.
-   - What the game itself uses the website profile name for (e.g., Commander display badge vs. save slot metadata) once retrieved.
-   - Offline behaviour when launched without internet after signing in (cached session token / read-only display name vs. skipping account prompt silently).
+1. **No game account.** The desktop game runs fully offline and does not use the website account; the Google sign-in is only for downloading the installer.
 2. **Code signing certificate (SmartScreen).** Without an EV or trusted OV Authenticode certificate, Windows SmartScreen will display an unrecognized-publisher warning on downloaded builds.
 3. **Auto-update.** A custom installer (Prompt 11) does not provide background auto-updates on its own; choose between instructing players to re-download new installers from the website vs. adding an explicit opt-in version check that opens the website download page.

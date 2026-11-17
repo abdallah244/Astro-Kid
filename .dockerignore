@@ -1,0 +1,11 @@
+.git
+**/node_modules
+**/dist
+**/game-dist
+desktop
+docs
+backups
+releases
+.env
+.env.*
+*.log
