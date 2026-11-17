@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Astro Kid Setup</title>
+    <link rel="stylesheet" href="../assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./installer.css" />
+  </head>
+  <body>
+    <div class="inst-shell" role="application" aria-label="Astro Kid Setup">
+      <header class="inst-titlebar">
+        <div class="inst-titlebar__brand">
+          <img src="../assets/favicon-48.png" alt="" width="24" height="24" />
+          <span>ASTRO KID SETUP</span>
+        </div>
+        <div class="inst-titlebar__controls">
+          <button
+            id="btn-min"
+            class="inst-winbtn notch"
+            type="button"
+            aria-label="Minimize window"
+          >
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 7 7" shape-rendering="crispEdges">
+              <path fill="#eef1ff" d="M0 5h7v2H0z" />
+            </svg>
+          </button>
+          <button
+            id="btn-close"
+            class="inst-winbtn notch"
+            type="button"
+            aria-label="Close setup"
+          >
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 5 5" shape-rendering="crispEdges">
+              <path
+                fill="#eef1ff"
+                d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3zM0 4h1v1H0zM4 4h1v1H4z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <aside class="inst-scene" aria-hidden="true">
+        <img class="inst-scene__bg" src="../assets/inst_scene.png" alt="" width="300" height="548" />
+        <div class="inst-crate-shadow"></div>
+        <div id="inst-crate" class="inst-crate drop">
+          <svg width="176" height="200" viewBox="0 0 44 50" shape-rendering="crispEdges">
+            <rect x="14" y="0" width="16" height="1" fill="#1a1a2e" />
+            <rect x="11" y="1" width="3" height="1" fill="#1a1a2e" />
+            <rect x="14" y="1" width="1" height="1" fill="#aab4e0" />
+            <rect x="15" y="1" width="6" height="1" fill="#ff5a3c" />
+            <rect x="21" y="1" width="6" height="1" fill="#ffffff" />
+            <rect x="27" y="1" width="3" height="1" fill="#d83a30" />
+            <rect x="30" y="1" width="3" height="1" fill="#1a1a2e" />
+            <rect x="7" y="4" width="30" height="11" fill="#ff5a3c" />
+            <rect x="14" y="4" width="14" height="11" fill="#ffffff" />
+            <rect x="2" y="10" width="5" height="5" fill="#c2410c" />
+            <rect x="34" y="10" width="7" height="5" fill="#dfe4ff" />
+            <path
+              stroke="#c9d0f5"
+              stroke-width="1"
+              fill="none"
+              d="M4 17 L14 32 M13 17 L18 32 M31 17 L26 32 M40 17 L30 32"
+            />
+            <rect x="13" y="33" width="18" height="15" fill="#1a1a2e" />
+            <rect x="14" y="34" width="16" height="13" fill="#c9d0f5" />
+            <rect x="14" y="34" width="16" height="2" fill="#e8ecff" />
+            <rect x="14" y="45" width="16" height="2" fill="#5a6490" />
+            <rect x="15" y="38" width="14" height="2" fill="#ffd23f" />
+            <rect x="19" y="41" width="6" height="4" fill="#ff7a2a" />
+          </svg>
+        </div>
+        <svg class="inst-star inst-star--a tw" width="16" height="16" viewBox="0 0 7 7" shape-rendering="crispEdges">
+          <path fill="#fff3b0" d="M3 0h1v7H3zM0 3h7v1H0z" />
+          <path fill="#ffd23f" d="M2 2h3v3H2z" />
+        </svg>
+        <svg class="inst-star inst-star--b tw" width="14" height="14" viewBox="0 0 7 7" shape-rendering="crispEdges">
+          <path fill="#fff3b0" d="M3 0h1v7H3zM0 3h7v1H0z" />
+          <path fill="#ffd23f" d="M2 2h3v3H2z" />
+        </svg>
+        <div id="alt-badge" class="pn inst-alt" hidden>
+          <span class="inst-alt__lbl">ALTITUDE</span>
+          <span id="alt-value" class="inst-alt__val">1,500 M</span>
+        </div>
+      </aside>
+
+      <main class="inst-main">
+        <!-- STEP 0 VIEW 1: WELCOME -->
+        <section id="view-welcome" aria-labelledby="welcome-title">
+          <div class="eyebrow notch"><i></i>STEP 1 · WELCOME</div>
+          <h1 id="welcome-title" class="inst-h1">WELCOME,<br />COMMANDER</h1>
+          <p class="tx inst-lead-sm">
+            Step 0 Spike: tests real offline 7z extraction of the desktop build into a temporary folder with live progress.
+          </p>
+          <div class="pn inst-specs">
+            <div class="inst-spec-row">
+              <span class="lbl">VERSION</span>
+              <span id="spec-version" class="inst-spec-val">Reading…</span>
+            </div>
+            <div class="inst-spec-row inst-spec-row--alt">
+              <span class="lbl">REQUIRES</span>
+              <span id="spec-platform" class="inst-spec-val">Windows 10 / 11 · 64-bit</span>
+            </div>
+            <div class="inst-spec-row">
+              <span class="lbl">NEEDS</span>
+              <span id="spec-size" class="inst-spec-val">Checking…</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- STEP 0 VIEW 2: INSTALLING -->
+        <section id="view-installing" aria-labelledby="installing-title" hidden>
+          <div class="eyebrow notch"><i></i>STEP 4 · INSTALLING</div>
+          <h1 id="installing-title" class="inst-h1">LANDING YOUR<br />GEAR</h1>
+          <p id="installing-copy" class="tx inst-lead-sm">
+            Please wait while Astro Kid is extracted into a temporary folder.
+          </p>
+
+          <div
+            id="prog-track"
+            class="inst-progbar"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+          >
+            <div id="prog-fill" class="inst-progbar__fill"></div>
+            <div class="inst-progbar__slats" aria-hidden="true"></div>
+          </div>
+
+          <div class="inst-progmeta">
+            <span id="prog-status" class="inst-progmeta__label">Preparing archive…</span>
+            <span id="prog-pct" class="inst-progmeta__pct">0%</span>
+          </div>
+
+          <div class="pn inst-nova">
+            <img src="../assets/nova.png" alt="" width="48" height="63" />
+            <div>
+              <div class="lbl inst-nova__lbl">NOVA SAYS</div>
+              <div id="nova-tip" class="inst-nova__tip">Keep an eye on your oxygen.</div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="inst-footer">
+        <div class="inst-steps" aria-hidden="true">
+          <i id="step-1" class="is-current"></i>
+          <i class="dash"></i>
+          <i id="step-2"></i>
+          <i class="dash"></i>
+          <i id="step-3"></i>
+          <i class="dash"></i>
+          <i id="step-4"></i>
+          <i class="dash"></i>
+          <i id="step-5"></i>
+        </div>
+        <div class="inst-actions">
+          <div id="btn-cancel-wrap" class="btn-wrap">
+            <div class="btn-shadow notch" aria-hidden="true"></div>
+            <button id="btn-cancel" class="btn btn--secondary notch" type="button">CANCEL</button>
+          </div>
+          <div id="btn-primary-wrap" class="btn-wrap">
+            <div class="btn-shadow notch" aria-hidden="true"></div>
+            <button id="btn-primary" class="btn btn--primary notch" type="button">
+              <span id="btn-primary-label">EXTRACT TEST</span>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 7 7" shape-rendering="crispEdges">
+                <path fill="#1a1a2e" d="M0 3h5v1H0zM4 2h1v3H4zM5 1h1v5H5zM6 2h1v3H6z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </footer>
+
+      <div class="inst-border" aria-hidden="true"></div>
+    </div>
+
+    <div id="sr-status" class="sr-only" aria-live="polite"></div>
+    <script src="./installer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,481 @@
+/* About Page Section 4: The World Map (AboutPage-World-Desktop / Mobile) */
+
+.about-world {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: var(--ak-space);
+}
+
+.about-world__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-world__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-world__title {
+  margin-top: 22px;
+  font-size: 30px;
+  line-height: 1.45;
+}
+
+.about-world__lead {
+  margin: 20px 0 0;
+  max-width: 700px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ak-muted);
+}
+
+.about-world__lead--sub {
+  margin-top: 16px;
+}
+
+.about-world__sub-title {
+  margin: 110px 0 0;
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--ak-white);
+  text-shadow: 3px 3px 0 var(--ak-blue);
+}
+
+/* Framed world map with 9 percentage-positioned markers (1120x630 baseline) */
+.about-world__frame {
+  position: relative;
+  width: 100%;
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    0 -4px 0 0 var(--ak-border),
+    0 4px 0 0 var(--ak-border),
+    -4px 0 0 0 var(--ak-border),
+    4px 0 0 0 var(--ak-border),
+    12px 12px 0 0 var(--ak-shadow-color);
+}
+
+.about-world__map-frame {
+  margin-top: 48px;
+  aspect-ratio: 1120 / 630;
+}
+
+.about-world__map-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-world__mk {
+  position: absolute;
+  width: clamp(24px, 3vw, 36px);
+  height: clamp(24px, 3vw, 36px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-px);
+  font-size: clamp(9px, 1.05vw, 13px);
+}
+
+.about-world__mk--open {
+  background-color: var(--ak-green);
+  color: var(--ak-green-ink);
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -3px -3px 0 0 var(--ak-green-dark),
+    inset 3px 3px 0 0 var(--ak-green-light);
+}
+
+.about-world__mk--fog {
+  background-color: #4a8cff;
+  color: #06122e;
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -3px -3px 0 0 #2a5cc0,
+    inset 3px 3px 0 0 #a9c8ff;
+}
+
+.about-world__mk--locked {
+  background-color: var(--ak-label-muted);
+  color: var(--ak-ink);
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -3px -3px 0 0 #5a6490,
+    inset 3px 3px 0 0 var(--ak-body);
+}
+
+.about-world__mk--cave {
+  background-color: var(--ak-cyan);
+  color: #06223a;
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -3px -3px 0 0 #2a8fb8,
+    inset 3px 3px 0 0 #d6f4ff;
+}
+
+/* Exact marker positions converted from 1120x630 design canvas */
+.about-world__mk--1 { left: 47.6786%; top: 55.5556%; }
+.about-world__mk--2 { left: 66.4286%; top: 61.7460%; }
+.about-world__mk--3 { left: 21.1607%; top: 54.1270%; }
+.about-world__mk--4 { left: 57.0536%; top: 79.0476%; }
+.about-world__mk--5 { left: 29.7321%; top: 26.3492%; }
+.about-world__mk--6 { left: 72.6786%; top: 39.5238%; }
+.about-world__mk--7 { left: 85.0893%; top: 29.6825%; }
+.about-world__mk--a { left: 62.7679%; top: 50.1587%; }
+.about-world__mk--b { left: 75.3571%; top: 71.1111%; }
+
+/* Map legend row */
+.about-world__legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 34px;
+  margin-top: 34px;
+}
+
+.about-world__key {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--ak-body);
+}
+
+.about-world__key i {
+  width: 12px;
+  height: 12px;
+}
+
+.about-world__key--open i { background-color: var(--ak-green); }
+.about-world__key--fog i { background-color: #4a8cff; }
+.about-world__key--locked i { background-color: var(--ak-label-muted); }
+.about-world__key--cave i { background-color: var(--ak-cyan); }
+
+/* 3x3 places grid & 3-col subsections */
+.about-world__grid3 {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.about-world__grid3--sub {
+  margin-top: 36px;
+}
+
+.about-world__card {
+  padding: 20px 22px;
+  background-color: var(--ak-panel);
+  box-shadow:
+    0 -4px 0 0 var(--ak-border),
+    0 4px 0 0 var(--ak-border),
+    -4px 0 0 0 var(--ak-border),
+    4px 0 0 0 var(--ak-border),
+    8px 8px 0 0 rgba(0, 0, 0, 0.45);
+}
+
+.about-world__card--tall {
+  padding-bottom: 26px;
+}
+
+.about-world__card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-world__bd {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-px);
+  font-size: 12px;
+}
+
+.about-world__nm {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.25;
+  color: var(--ak-white);
+}
+
+.about-world__st {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.about-world__tone--open { background-color: var(--ak-green); color: var(--ak-green-ink); }
+.about-world__tone--fog { background-color: #4a8cff; color: #06122e; }
+.about-world__tone--locked { background-color: var(--ak-label-muted); color: var(--ak-ink); }
+.about-world__tone--cave { background-color: var(--ak-cyan); color: #06223a; }
+
+.about-world__card-title {
+  margin: 16px 0 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: var(--ak-white);
+}
+
+.about-world__card-copy {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ak-body-soft);
+}
+
+.about-world__tag {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.about-world__tag--panel {
+  background-color: var(--ak-panel);
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-panel-dark),
+    inset 3px 3px 0 0 var(--ak-border);
+}
+
+.about-world__tag--fog { color: #4a8cff; }
+.about-world__tag--open { color: var(--ak-green); }
+.about-world__tag--yellow { color: var(--ak-yellow); }
+
+/* Before / After Fog pair */
+.about-world__pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  margin-top: 56px;
+}
+
+.about-world__pair-item {
+  width: 500px;
+  max-width: 100%;
+  text-align: left;
+}
+
+.about-world__pair-frame {
+  margin-top: 16px;
+  aspect-ratio: 500 / 282;
+}
+
+.about-world__pair-arrow {
+  flex: none;
+  display: block;
+}
+
+.about-world__map-key-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--ak-body-soft);
+}
+
+.about-world__map-key-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.about-world__map-key-list svg {
+  flex: none;
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .about-world__grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-world__pair {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .about-world__pair-item {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .about-world__pair-arrow {
+    margin: 22px 0;
+    transform: rotate(90deg);
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-world {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .about-world__title {
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .about-world__lead {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .about-world__sub-title {
+    margin-top: 80px;
+    font-size: 16px;
+    text-shadow: 2px 2px 0 var(--ak-blue);
+  }
+
+  .about-world__map-frame {
+    margin-top: 36px;
+  }
+
+  .about-world__mk {
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
+  }
+
+  .about-world__mk--open,
+  .about-world__mk--fog,
+  .about-world__mk--locked,
+  .about-world__mk--cave {
+    box-shadow:
+      0 0 0 3px var(--ak-space),
+      inset -3px -3px 0 0 rgba(0, 0, 0, 0.25),
+      inset 3px 3px 0 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .about-world__mk--open {
+    box-shadow:
+      0 0 0 3px var(--ak-space),
+      inset -3px -3px 0 0 var(--ak-green-dark),
+      inset 3px 3px 0 0 var(--ak-green-light);
+  }
+
+  .about-world__mk--fog {
+    box-shadow:
+      0 0 0 3px var(--ak-space),
+      inset -3px -3px 0 0 #2a5cc0,
+      inset 3px 3px 0 0 #a9c8ff;
+  }
+
+  .about-world__mk--locked {
+    box-shadow:
+      0 0 0 3px var(--ak-space),
+      inset -3px -3px 0 0 #5a6490,
+      inset 3px 3px 0 0 var(--ak-body);
+  }
+
+  .about-world__mk--cave {
+    box-shadow:
+      0 0 0 3px var(--ak-space),
+      inset -3px -3px 0 0 #2a8fb8,
+      inset 3px 3px 0 0 #d6f4ff;
+  }
+
+  .about-world__legend {
+    gap: 12px 22px;
+    margin-top: 28px;
+  }
+
+  .about-world__key {
+    font-size: 11px;
+  }
+
+  .about-world__grid3 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+  }
+
+  .about-world__card {
+    padding: 18px 20px;
+    box-shadow:
+      0 -4px 0 0 var(--ak-border),
+      0 4px 0 0 var(--ak-border),
+      -4px 0 0 0 var(--ak-border),
+      4px 0 0 0 var(--ak-border),
+      6px 6px 0 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .about-world__bd {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .about-world__nm {
+    font-size: 15px;
+  }
+
+  .about-world__card-copy,
+  .about-world__map-key-list {
+    font-size: 15px;
+  }
+
+  .about-world__card-copy {
+    margin-top: 10px;
+  }
+
+  .about-world__card-title {
+    font-size: 16px;
+    margin-top: 14px;
+  }
+
+  .about-world__tag {
+    font-size: 11px;
+  }
+
+  .about-world__frame {
+    box-shadow:
+      0 -4px 0 0 var(--ak-border),
+      0 4px 0 0 var(--ak-border),
+      -4px 0 0 0 var(--ak-border),
+      4px 0 0 0 var(--ak-border),
+      8px 8px 0 0 rgba(0, 0, 0, 0.5);
+  }
+}

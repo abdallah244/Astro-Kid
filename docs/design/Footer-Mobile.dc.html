@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Footer Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+a.flink{color:#a4aed9}
+a.flink:hover{color:#ffd23f}
+a:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+</style>
+</helmet>
+<div style="position:relative;width:390px;height:560px;overflow:hidden;background:#060920;border-top:4px solid #3a4a94;box-shadow:inset 0 8px 0 0 #172052;box-sizing:border-box;font-family:'Silkscreen',monospace">
+
+  <footer style="position:absolute;left:20px;top:48px;width:350px">
+
+    <a href="#top" aria-label="Astro Kid, home" style="display:inline-flex;align-items:center;gap:12px;text-decoration:none">
+      <img src="/favicon-48.png" alt="" width="40" height="40" style="width:40px;height:40px;image-rendering:pixelated;display:block">
+      <span style="font-family:'Press Start 2P',monospace;font-size:14px;line-height:1;color:#ffffff;text-shadow:2px 2px 0 #243372;white-space:nowrap">ASTRO <span style="color:#ffd23f;text-shadow:2px 2px 0 #c2410c">KID</span></span>
+    </a>
+    <p style="margin:16px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:16px;line-height:1.55;color:#a4aed9">A pixel-art space survival game that teaches kids how real missions work.</p>
+
+    <nav aria-label="Footer" style="display:flex;flex-wrap:wrap;gap:20px 48px;margin-top:32px">
+      <div>
+        <div style="font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#ffd23f">EXPLORE</div>
+        <ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px">
+          <li><a class="flink" href="#learn" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">WHAT YOU LEARN</a></li>
+          <li><a class="flink" href="#about" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">ABOUT</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#3fbf5f">PLAY</div>
+        <ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px">
+          <li><a class="flink" href="#demo" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">FREE DEMO</a></li>
+          <li><a class="flink" href="#download-page" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">GET THE GAME</a></li>
+        </ul>
+      </div>
+        <div>
+          <div style="font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#5ad1ff">LEGAL</div>
+          <ul style="list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:2px">
+            <li><a class="flink" href="#privacy" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">PRIVACY POLICY</a></li>
+            <li><a class="flink" href="#terms" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">TERMS OF USE</a></li>
+            <li><a class="flink" href="#deletion" style="display:inline-block;padding:10px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:1px;text-decoration:none">ACCOUNT DELETION</a></li>
+          </ul>
+        </div>
+    </nav>
+
+    <div aria-hidden="true" style="height:4px;margin-top:28px;background:repeating-linear-gradient(90deg,#243372 0 8px,transparent 8px 16px)"></div>
+
+    <p style="margin:24px 0 0;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:1px;line-height:1.6;color:#a4aed9">&copy; 2026 ASTRO KID.<br>ALL RIGHTS RESERVED.</p>
+    <p style="margin:16px 0 0;display:flex;align-items:center;gap:10px;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:1px;color:#a4aed9">
+      MADE BY <span style="color:#ffffff">ABDALLAH HANY</span>
+    </p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

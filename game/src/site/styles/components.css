@@ -1,0 +1,674 @@
+/* Reusable pixel-art primitives (strictly no border-radius, no soft blur shadows, no smooth gradients) */
+
+/* Stepped corner clipping */
+.notch {
+  clip-path: var(--notch-clip);
+}
+
+/* Hard-stop dashed pixel divider */
+.divider-pixel {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ak-blue) 0 8px,
+    transparent 8px 16px
+  );
+}
+
+/* Pixel Title Typography */
+.px-title {
+  margin: 0;
+  font-family: var(--font-px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ak-white);
+  text-shadow: 3px 3px 0 var(--ak-blue);
+}
+
+.px-title--hero {
+  font-size: clamp(44px, 7vw, 84px);
+  line-height: 1.18;
+  text-shadow:
+    4px 4px 0 var(--ak-blue),
+    8px 8px 0 var(--ak-border-dark);
+}
+
+.px-title--lg {
+  font-size: clamp(22px, 4.5vw, 42px);
+  text-shadow: 4px 4px 0 var(--ak-blue);
+}
+
+.px-title--md {
+  font-size: clamp(18px, 3vw, 32px);
+}
+
+.px-title__accent {
+  color: var(--ak-yellow);
+  text-shadow: 3px 3px 0 var(--ak-yellow-shadow);
+}
+
+.px-title--hero .px-title__accent {
+  text-shadow:
+    4px 4px 0 var(--ak-yellow-shadow),
+    8px 8px 0 var(--ak-yellow-shadow-deep);
+}
+
+.px-title--lg .px-title__accent {
+  text-shadow: 4px 4px 0 var(--ak-yellow-shadow);
+}
+
+/* ---------------- Pixel Buttons ---------------- */
+/* Sizes: --sm (44px), default (56px), --nav (48px), --lg (64px), --xl (72px) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 44px;
+  height: 56px;
+  padding: 0 26px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1;
+  white-space: nowrap;
+  clip-path: var(--notch-clip);
+  color: var(--ak-ink);
+  background-color: var(--ak-yellow);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-yellow-dark),
+    inset 4px 4px 0 0 var(--ak-yellow-light);
+}
+
+.btn svg {
+  flex: none;
+  display: block;
+}
+
+.btn:hover:not([disabled]):not([aria-disabled='true']) {
+  filter: brightness(1.12);
+}
+
+.btn:active:not([disabled]):not([aria-disabled='true']) {
+  transform: translateY(3px);
+}
+
+.btn:visited {
+  color: inherit;
+}
+
+/* Variants */
+.btn--yellow {
+  color: var(--ak-ink);
+  background-color: var(--ak-yellow);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-yellow-dark),
+    inset 4px 4px 0 0 var(--ak-yellow-light);
+}
+
+.btn--yellow:visited {
+  color: var(--ak-ink);
+}
+
+.btn--green {
+  color: var(--ak-green-ink);
+  background-color: var(--ak-green);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-green-dark),
+    inset 4px 4px 0 0 var(--ak-green-light);
+}
+
+.btn--green:visited {
+  color: var(--ak-green-ink);
+}
+
+.btn--blue {
+  color: var(--ak-white);
+  background-color: var(--ak-blue);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-border-dark),
+    inset 4px 4px 0 0 var(--ak-border);
+}
+
+.btn--blue:visited {
+  color: var(--ak-white);
+}
+
+.btn--danger {
+  color: var(--ak-ink);
+  background-color: var(--ak-danger);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-danger-dark),
+    inset 4px 4px 0 0 var(--ak-danger-light);
+}
+
+.btn--danger:visited {
+  color: var(--ak-ink);
+}
+
+.btn--white,
+.btn--white-google {
+  color: var(--ak-ink);
+  background-color: var(--ak-white);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-white-bevel-dark),
+    inset 4px 4px 0 0 var(--ak-white);
+}
+
+.btn--white:visited,
+.btn--white-google:visited {
+  color: var(--ak-ink);
+}
+
+.btn--white:hover:not([disabled]):not([aria-disabled='true']),
+.btn--white-google:hover:not([disabled]):not([aria-disabled='true']) {
+  filter: brightness(0.95);
+}
+
+/* Button Sizes */
+.btn--sm {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 14px;
+  gap: 10px;
+}
+
+.btn--nav {
+  height: 48px;
+  padding: 0 22px;
+  font-size: 15px;
+  gap: 10px;
+}
+
+.btn--lg {
+  height: 64px;
+  padding: 0 32px;
+  font-size: 18px;
+  gap: 14px;
+}
+
+.btn--xl {
+  height: 72px;
+  padding: 0 40px;
+  font-size: 21px;
+  gap: 18px;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Disabled Button State (matches design modals) */
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  cursor: not-allowed;
+  background-color: var(--ak-border);
+  color: var(--ak-muted);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-blue),
+    inset 4px 4px 0 0 var(--ak-border-disabled);
+  filter: none;
+  transform: none;
+}
+
+.btn--white-google:disabled .google-glyph,
+.btn--white-google[aria-disabled='true'] .google-glyph,
+.btn--white:disabled .google-glyph,
+.btn--white[aria-disabled='true'] .google-glyph {
+  opacity: 0.55;
+}
+
+/* Optional hard drop shadow wrapper for Hero / About / CTA main buttons */
+.btn-shadow-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-shadow-wrap--block {
+  display: block;
+  width: 100%;
+}
+
+.btn-shadow-wrap::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ak-shadow-color);
+  clip-path: var(--notch-clip);
+  pointer-events: none;
+}
+
+.btn-shadow-wrap > .btn {
+  position: relative;
+}
+
+/* ---------------- Panels ---------------- */
+.panel {
+  background-color: var(--ak-panel);
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow:
+    0 -4px 0 0 var(--ak-border),
+    0 4px 0 0 var(--ak-border),
+    -4px 0 0 0 var(--ak-border),
+    4px 0 0 0 var(--ak-border),
+    12px 12px 0 0 var(--ak-shadow-color);
+}
+
+.panel--modal {
+  box-shadow:
+    0 -4px 0 0 var(--ak-border),
+    0 4px 0 0 var(--ak-border),
+    -4px 0 0 0 var(--ak-border),
+    4px 0 0 0 var(--ak-border),
+    14px 14px 0 0 var(--ak-shadow-modal);
+}
+
+.panel--dark {
+  background-color: var(--ak-panel-dark);
+  padding: 16px;
+  box-shadow:
+    inset 3px 3px 0 0 var(--ak-space),
+    inset -3px -3px 0 0 var(--ak-bevel-light);
+}
+
+.panel--alt {
+  background-color: var(--ak-panel-alt);
+  padding: 22px 20px;
+  clip-path: var(--notch-clip);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-space),
+    inset 4px 4px 0 0 var(--ak-bevel-light);
+}
+
+/* ---------------- Chips ---------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 16px;
+  clip-path: var(--notch-clip);
+  background-color: var(--ak-panel);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-panel-dark),
+    inset 4px 4px 0 0 var(--ak-border);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--ak-yellow);
+  text-transform: uppercase;
+}
+
+.chip__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background-color: currentColor;
+}
+
+.chip--green {
+  color: var(--ak-green);
+}
+
+.chip--cyan {
+  color: var(--ak-cyan);
+}
+
+.chip--spec {
+  background-color: var(--ak-panel);
+  color: var(--ak-text);
+  font-size: 12px;
+  letter-spacing: 1px;
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-panel-dark),
+    inset 4px 4px 0 0 var(--ak-bevel-light);
+}
+
+.chip--spec .chip__dot {
+  background-color: var(--ak-green);
+}
+
+.chip--step {
+  height: 30px;
+  padding: 0 12px;
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-space),
+    inset 3px 3px 0 0 var(--ak-bevel-light);
+  font-size: 11px;
+  color: var(--ak-yellow);
+}
+
+/* ---------------- Badges (numbered square markers) ---------------- */
+.badge {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-yellow);
+  color: var(--ak-ink);
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1;
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-yellow-dark),
+    inset 4px 4px 0 0 var(--ak-yellow-light);
+}
+
+.badge--sm {
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-yellow-dark),
+    inset 3px 3px 0 0 var(--ak-yellow-light);
+}
+
+.badge--lg {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-yellow-dark),
+    inset 3px 3px 0 0 var(--ak-yellow-light);
+}
+
+/* ---------------- Tags (small inline labels) ---------------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  background-color: var(--ak-orange);
+  color: var(--ak-ink);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tag--green {
+  background-color: var(--ak-green);
+  color: var(--ak-green-ink);
+}
+
+.tag--cyan {
+  background-color: var(--ak-cyan);
+  color: var(--ak-ink);
+}
+
+.tag--blue {
+  background-color: var(--ak-blue);
+  color: var(--ak-text);
+}
+
+/* ---------------- Form Fields & Locked Read-only Rows ---------------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.field__label {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--ak-yellow);
+}
+
+.field__label--muted {
+  font-size: 11px;
+  color: var(--ak-label-muted);
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border: 0;
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    0 0 0 3px var(--ak-border),
+    inset 3px 3px 0 0 var(--ak-space);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--ak-white);
+}
+
+.field__input::placeholder {
+  color: var(--ak-placeholder);
+}
+
+.field__input:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 3px var(--ak-yellow),
+    inset 3px 3px 0 0 var(--ak-space);
+}
+
+.field__input[aria-invalid='true'],
+.field--error .field__input {
+  box-shadow:
+    0 0 0 3px var(--ak-danger),
+    inset 3px 3px 0 0 var(--ak-space);
+}
+
+.field__locked {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 14px;
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    inset 3px 3px 0 0 var(--ak-space),
+    inset -3px -3px 0 0 var(--ak-bevel-light);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ak-white);
+  overflow-wrap: anywhere;
+}
+
+.field__locked-icon {
+  flex: none;
+  color: var(--ak-muted);
+}
+
+.field__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.field__pips {
+  display: flex;
+  gap: 6px;
+}
+
+.pip {
+  width: 24px;
+  height: 12px;
+  background-color: var(--ak-blue);
+}
+
+.pip--ok {
+  background-color: var(--ak-green);
+}
+
+.field__status {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--ak-muted);
+}
+
+.field__status--ok {
+  color: var(--ak-green);
+}
+
+.field__status--error {
+  color: var(--ak-danger);
+}
+
+/* ---------------- Pixel Checkbox ---------------- */
+.check {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 44px;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.check__input {
+  position: absolute;
+  left: -10px;
+  top: -6px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.check__box {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    inset 3px 3px 0 0 var(--ak-space),
+    inset -3px -3px 0 0 var(--ak-bevel-light),
+    0 0 0 3px var(--ak-border);
+}
+
+.check__tick {
+  display: none;
+}
+
+.check__input:checked + .check__box .check__tick {
+  display: block;
+}
+
+.check__input:focus-visible + .check__box {
+  outline: 4px solid var(--ak-yellow);
+  outline-offset: 4px;
+}
+
+.check__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ak-body);
+}
+
+/* ---------------- Mock Dev Badge ---------------- */
+.mock-badge {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: var(--z-toast);
+  padding: 6px 10px;
+  background-color: var(--ak-orange);
+  color: var(--ak-ink);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 0 var(--ak-shadow-color);
+}
+
+/* ---------------- Stub / Shell Page Layout (used in Step 01 + stub pages) ---------------- */
+.shell-main {
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+
+.shell-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.shell-card__body {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--ak-body);
+  font-size: 18px;
+}
+
+.shell-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* Dev-only component catalog preview styles */
+.dev-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dev-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dev-group__title {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--ak-cyan);
+  text-transform: uppercase;
+}
+
+.dev-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.dev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}

@@ -1,0 +1,75 @@
+{
+  "name": "astro-kid-desktop",
+  "productName": "Astro Kid",
+  "version": "0.1.0",
+  "description": "Astro Kid offline Windows desktop game (Electron)",
+  "author": "Abdallah Hany",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prepare:game": "node scripts/prepare-game.mjs",
+    "make:icons": "node scripts/make-icons.mjs",
+    "start": "npm run prepare:game && electron .",
+    "dev": "npm run prepare:game && electron . --dev",
+    "test": "node --test test/*.test.js",
+    "smoke": "node scripts/smoke.mjs",
+    "dist:dir": "npm run prepare:game && npm run make:icons && electron-builder --win dir",
+    "dist:nsis": "npm run prepare:game && npm run make:icons && electron-builder --win nsis",
+    "installer:prepare": "npm --prefix installer run prepare",
+    "installer:dev": "npm --prefix installer run dev",
+    "installer:build": "npm --prefix installer run build"
+  },
+  "devDependencies": {
+    "@fontsource/chakra-petch": "^5.2.8",
+    "@fontsource/press-start-2p": "^5.2.8",
+    "@fontsource/silkscreen": "^5.2.6",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "sharp": "^0.34.5"
+  },
+  "build": {
+    "appId": "com.abdallahhany.astrokid",
+    "productName": "Astro Kid",
+    "asar": true,
+    "compression": "maximum",
+    "electronLanguages": [
+      "en-US"
+    ],
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "game-dist/**/*",
+      "build/icon.png",
+      "package.json",
+      "!test/**",
+      "!scripts/**"
+    ],
+    "win": {
+      "target": [
+        "dir"
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "Astro Kid",
+      "legalTrademarks": "Astro Kid",
+      "signtoolOptions": {
+        "publisherName": "Abdallah Hany"
+      }
+    },
+    "nsis": {
+      "artifactName": "AstroKid-Setup.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerSidebar": "build/installerSidebar.bmp",
+      "installerHeader": "build/installerHeader.bmp",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Astro Kid"
+    }
+  }
+}

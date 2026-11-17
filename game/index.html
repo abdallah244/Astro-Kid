@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro Kid — Learn Space Science by Playing</title>
+    <meta
+      name="description"
+      content="Survive on the Moon. Manage oxygen, power and time. Learn the real trade-offs behind every space mission, without opening a textbook."
+    />
+    <!-- TODO: replace example.com with your real domain once purchased -->
+    <link rel="canonical" href="https://example.com/" />
+    <meta property="og:title" content="Astro Kid — Learn Space Science by Playing" />
+    <meta
+      property="og:description"
+      content="Survive on the Moon. Manage oxygen, power and time. Learn the real trade-offs behind every space mission, without opening a textbook."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Astro Kid — Learn Space Science by Playing" />
+    <meta
+      name="twitter:description"
+      content="Play the free demo in your browser, or get the full game for your desktop."
+    />
+    <meta name="twitter:image" content="https://example.com/og-cover.png" />
+    <meta name="theme-color" content="#060920" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon-180.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/backgrounds/lunar_base_expanded.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- first-visit intro gate: tiny classic script, runs before first paint -->
+    <script src="/intro-gate.js"></script>
+    <script type="module" src="./src/site/js/site.js"></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- 1. NAVBAR -->
+    <!-- @include header:index -->
+
+    <main id="main">
+      <!-- 2. HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <picture class="hero__bg" aria-hidden="true">
+          <source
+            srcset="./assets/backgrounds/lunar_base_expanded.webp"
+            type="image/webp"
+          />
+          <img
+            class="hero__bg-img pixelated"
+            src="./assets/backgrounds/lunar_base_expanded.png"
+            alt=""
+            width="1774"
+            height="887"
+            fetchpriority="high"
+          />
+        </picture>
+        <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="hero__shade" aria-hidden="true">
+          <div class="hero__shade-band hero__shade-band--1"></div>
+          <div class="hero__shade-band hero__shade-band--2"></div>
+          <div class="hero__shade-band hero__shade-band--3"></div>
+          <div class="hero__shade-band hero__shade-band--4"></div>
+          <div class="hero__shade-band hero__shade-band--5"></div>
+          <div class="hero__shade-band hero__shade-band--6"></div>
+        </div>
+        <div class="hero__fade-bottom" aria-hidden="true">
+          <div class="hero__fade-band hero__fade-band--1"></div>
+          <div class="hero__fade-band hero__fade-band--2"></div>
+          <div class="hero__fade-band hero__fade-band--3"></div>
+          <div class="hero__fade-band hero__fade-band--4"></div>
+          <div class="hero__fade-band hero__fade-band--5"></div>
+          <div class="hero__fade-band hero__fade-band--6"></div>
+        </div>
+
+        <div class="wrap hero__content">
+          <div class="hero__copy">
+            <div class="chip hero__chip">
+              <span class="chip__dot" aria-hidden="true"></span>
+              LEARN SPACE SCIENCE BY PLAYING
+            </div>
+
+            <h1 id="hero-title" class="px-title px-title--hero hero__title">
+              ASTRO<br /><span class="px-title__accent">KID</span>
+            </h1>
+
+            <p class="hero__lead">
+              Survive on the Moon. Manage oxygen, power and time. Learn the real
+              trade-offs behind every space mission, without opening a textbook.
+            </p>
+
+            <div class="hero__cta">
+              <a
+                class="btn btn--lg btn--green"
+                href="./play.html"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 6 6"
+                  shape-rendering="crispEdges"
+                >
+                  <path
+                    fill="#0d2a14"
+                    d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"
+                  />
+                </svg>
+                PLAY FREE DEMO
+              </a>
+              <button
+                class="btn btn--lg btn--yellow"
+                type="button"
+                data-auth-trigger="download"
+              >
+                GET THE GAME
+              </button>
+            </div>
+
+            <ul class="hero__facts">
+              <li>
+                <span class="hero__fact-dot" aria-hidden="true"></span>AGES 7-12
+              </li>
+              <li>
+                <span class="hero__fact-dot" aria-hidden="true"></span>RUNS IN
+                BROWSER
+              </li>
+              <li>
+                <span class="hero__fact-dot" aria-hidden="true"></span>NO SIGN-UP
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero__stage">
+            <div class="hero__astro-shadow" aria-hidden="true">
+              <div class="hero__astro-shadow-top"></div>
+              <div class="hero__astro-shadow-bot"></div>
+            </div>
+            <div
+              class="hero__astro"
+              role="img"
+              aria-label="Astro Kid, the young astronaut"
+            ></div>
+          </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          SCROLL
+          <svg
+            class="hero__scroll-chevron"
+            width="20"
+            height="12"
+            viewBox="0 0 5 3"
+            shape-rendering="crispEdges"
+          >
+            <path
+              fill="#ffd23f"
+              d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2z"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- 3. WHAT YOU LEARN -->
+      <section id="learn" class="learn" aria-labelledby="learn-title">
+        <div class="stars" aria-hidden="true">
+          <div class="star star--1"></div>
+          <div class="star star--lg star--muted star--2"></div>
+          <div class="star star--gold star--3"></div>
+          <div class="star star--4"></div>
+          <div class="star star--lg star--muted star--5"></div>
+          <div class="star star--6"></div>
+          <div class="star star--muted star--7"></div>
+          <div class="star star--gold star--8"></div>
+        </div>
+
+        <div class="wrap learn__inner">
+          <div class="chip">
+            <span class="chip__dot" aria-hidden="true"></span>
+            HOW IT WORKS
+          </div>
+
+          <h2 id="learn-title" class="px-title px-title--md learn__title">
+            EVERY CHOICE COSTS SOMETHING
+          </h2>
+
+          <p class="learn__sub">
+            Astro Kid turns real engineering constraints into gameplay. One
+            mission, one real idea a kid walks away with.
+          </p>
+
+          <div class="learn__map">
+            <img
+              class="learn__map-img"
+              src="./assets/ui/map/lunar_map_discovered.webp"
+              alt="The Astro Kid lunar map: a base in the centre with solar panels, a satellite dish, a mine, ice crystals and ore fields connected by paths"
+              width="1672"
+              height="941"
+              loading="lazy"
+            />
+            <div class="learn__pin learn__pin--1" aria-hidden="true">1</div>
+            <div class="learn__pin learn__pin--2" aria-hidden="true">2</div>
+            <div class="learn__pin learn__pin--3" aria-hidden="true">3</div>
+            <div class="learn__pin learn__pin--4" aria-hidden="true">4</div>
+            <div class="learn__pin learn__pin--5" aria-hidden="true">5</div>
+            <div class="learn__pin learn__pin--6" aria-hidden="true">6</div>
+          </div>
+
+          <div class="nova-row">
+            <img
+              class="nova-row__portrait pixelated"
+              src="./assets/level01/interior/nova_portrait.png"
+              alt="NOVA, the floating robot guide"
+              width="80"
+              height="80"
+              loading="lazy"
+            />
+            <div class="nova-row__bubble">
+              <svg
+                class="nova-row__tail"
+                aria-hidden="true"
+                width="12"
+                height="20"
+                viewBox="0 0 3 5"
+                shape-rendering="crispEdges"
+              >
+                <path
+                  fill="#3a4a94"
+                  d="M2 0h1v1H2zM1 1h2v1H1zM0 2h3v1H0zM1 3h2v1H1zM2 4h1v1H2z"
+                />
+              </svg>
+              <div class="nova-row__speaker">NOVA SAYS</div>
+              <p class="nova-row__quote">
+                Every spot on this map is a decision. Each one costs oxygen,
+                power, time or tool durability.
+              </p>
+            </div>
+          </div>
+
+          <ul class="learn__grid">
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/n_o2.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">1</span>LIFE
+                  SUPPORT
+                </h3>
+                <p class="learn__card-text">
+                  Oxygen is limited. Make it, save it, or ship it from Earth.
+                </p>
+              </div>
+            </li>
+
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/n_battery.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">2</span>POWER
+                  BUDGET
+                </h3>
+                <p class="learn__card-text">
+                  Solar panels sleep at night, so batteries and storage decide
+                  who survives.
+                </p>
+              </div>
+            </li>
+
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/n_plant.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">3</span
+                  >GROWING FOOD
+                </h3>
+                <p class="learn__card-text">
+                  You cannot depend on Earth for every meal. Grow your own.
+                </p>
+              </div>
+            </li>
+
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/res_ice.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">4</span>WATER
+                  &amp; ICE
+                </h3>
+                <p class="learn__card-text">
+                  Ice hides in shadowed polar regions and has to be found and
+                  recycled.
+                </p>
+              </div>
+            </li>
+
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/n_dish.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">5</span>RADIO
+                  DELAY
+                </h3>
+                <p class="learn__card-text">
+                  Earth cannot answer instantly, so the crew must decide for
+                  itself.
+                </p>
+              </div>
+            </li>
+
+            <li class="panel--alt notch learn__card">
+              <img
+                class="learn__card-icon pixelated"
+                src="./assets/level01/tree_ui/n_cubes.png"
+                alt=""
+                width="72"
+                height="75"
+                loading="lazy"
+              />
+              <div class="learn__card-body">
+                <h3 class="learn__card-title">
+                  <span class="badge badge--sm" aria-hidden="true">6</span
+                  >RESOURCES
+                </h3>
+                <p class="learn__card-text">
+                  Rocks hold minerals, not pure metals. Learn where iron,
+                  titanium and silicon really come from.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. ABOUT TEASER -->
+      <section id="about" class="about-teaser" aria-labelledby="about-title">
+        <img
+          class="about-teaser__bg pixelated"
+          src="./assets/backgrounds/moon_background.webp"
+          alt=""
+          width="1280"
+          height="600"
+          loading="lazy"
+        />
+        <div class="about-teaser__scrim" aria-hidden="true"></div>
+        <div
+          class="about-teaser__fade about-teaser__fade--top"
+          aria-hidden="true"
+        >
+          <div class="about-teaser__band about-teaser__band--1"></div>
+          <div class="about-teaser__band about-teaser__band--2"></div>
+          <div class="about-teaser__band about-teaser__band--3"></div>
+          <div class="about-teaser__band about-teaser__band--4"></div>
+          <div class="about-teaser__band about-teaser__band--5"></div>
+          <div class="about-teaser__band about-teaser__band--6"></div>
+        </div>
+        <div
+          class="about-teaser__fade about-teaser__fade--bottom"
+          aria-hidden="true"
+        >
+          <div class="about-teaser__band about-teaser__band--1"></div>
+          <div class="about-teaser__band about-teaser__band--2"></div>
+          <div class="about-teaser__band about-teaser__band--3"></div>
+          <div class="about-teaser__band about-teaser__band--4"></div>
+          <div class="about-teaser__band about-teaser__band--5"></div>
+          <div class="about-teaser__band about-teaser__band--6"></div>
+        </div>
+
+        <div class="wrap about-teaser__inner">
+          <div class="chip">
+            <span class="chip__dot" aria-hidden="true"></span>
+            ABOUT THE GAME
+          </div>
+
+          <h2 id="about-title" class="px-title about-teaser__title">
+            A KID. A FRAGILE OUTPOST.<br /><span class="px-title__accent"
+              >THE MOON.</span
+            >
+          </h2>
+
+          <p class="about-teaser__copy">
+            You are the young Commander of a two-person mission, arriving at a
+            half-built outpost inspired by the Moon's south pole. Supplies are
+            limited, the air is temporary and the power is not guaranteed.
+            Explore, research, build and keep the crew alive.
+          </p>
+
+          <ul class="about-teaser__specs">
+            <li class="chip chip--spec">
+              <span class="chip__dot" aria-hidden="true"></span>AGES 7-12
+            </li>
+            <li class="chip chip--spec">
+              <span class="chip__dot" aria-hidden="true"></span>6 LINKED MISSIONS
+            </li>
+            <li class="chip chip--spec">
+              <span class="chip__dot" aria-hidden="true"></span>TOP-DOWN 2D
+              PIXEL
+            </li>
+          </ul>
+
+          <div class="about-teaser__action">
+            <div class="btn-shadow-wrap">
+              <a class="btn btn--lg btn--yellow" href="./about.html">
+                MEET THE CREW
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 7 7"
+                  shape-rendering="crispEdges"
+                >
+                  <path
+                    fill="#1a1a2e"
+                    d="M0 3h5v1H0zM4 2h1v3H4zM5 1h1v5H5zM6 2h1v3H6z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DOWNLOAD CTA -->
+      <section id="get" class="cta-section" aria-labelledby="cta-title">
+        <div class="stars" aria-hidden="true">
+          <div class="star star--1"></div>
+          <div class="star star--lg star--muted star--2"></div>
+          <div class="star star--gold star--3"></div>
+          <div class="star star--4"></div>
+          <div class="star star--lg star--muted star--5"></div>
+          <div class="star star--6"></div>
+          <div class="star star--gold star--7"></div>
+          <div class="star star--8"></div>
+        </div>
+
+        <div class="wrap cta-section__grid">
+          <div class="cta-section__copy">
+            <div class="chip chip--green">
+              <span class="chip__dot" aria-hidden="true"></span>
+              FREE TO TRY
+            </div>
+
+            <h2 id="cta-title" class="px-title cta-section__title">
+              READY TO LAND<br /><span class="px-title__accent"
+                >ON THE MOON?</span
+              >
+            </h2>
+
+            <p class="cta-section__lead">
+              Play the free demo in your browser, or get the full game for your
+              desktop.
+            </p>
+
+            <div class="cta-section__primary">
+              <div class="btn-shadow-wrap">
+                <button
+                  class="btn btn--xl btn--yellow"
+                  type="button"
+                  data-auth-trigger="download"
+                >
+                  GET THE GAME
+                  <svg
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 7 7"
+                    shape-rendering="crispEdges"
+                  >
+                    <path
+                      fill="#1a1a2e"
+                      d="M0 3h5v1H0zM4 2h1v3H4zM5 1h1v5H5zM6 2h1v3H6z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <a
+              class="cta-section__demo-link"
+              href="./play.html"
+            >
+              <span class="cta-section__demo-dot" aria-hidden="true"></span>
+              OR PLAY THE FREE DEMO
+            </a>
+          </div>
+
+          <div
+            class="orbit-scene"
+            role="img"
+            aria-label="Planet Earth with a small Moon above-left of it. The robot NOVA orbits around the Earth."
+          >
+            <svg
+              class="orbit-scene__svg"
+              width="560"
+              height="460"
+              viewBox="0 0 560 460"
+              aria-hidden="true"
+            >
+              <g transform="rotate(-18 300 280)">
+                <ellipse
+                  cx="300"
+                  cy="280"
+                  rx="240"
+                  ry="70"
+                  fill="none"
+                  stroke="#3a4a94"
+                  stroke-width="4"
+                  stroke-dasharray="4 12"
+                  shape-rendering="crispEdges"
+                />
+              </g>
+            </svg>
+            <img
+              class="orbit-scene__earth pixelated"
+              src="./assets/landing/earth.png"
+              alt=""
+              width="320"
+              height="320"
+              loading="lazy"
+            />
+            <svg
+              class="orbit-scene__svg"
+              width="560"
+              height="460"
+              viewBox="0 0 560 460"
+              aria-hidden="true"
+            >
+              <g transform="rotate(-18 300 280)">
+                <path
+                  d="M 60 280 A 240 70 0 0 0 540 280"
+                  fill="none"
+                  stroke="#b6c3ff"
+                  stroke-width="4"
+                  stroke-dasharray="4 12"
+                  shape-rendering="crispEdges"
+                />
+              </g>
+            </svg>
+            <img
+              class="orbit-scene__moon pixelated"
+              src="./assets/landing/moon.png"
+              alt=""
+              width="128"
+              height="128"
+              loading="lazy"
+            />
+            <img
+              class="orbit-scene__nova pixelated"
+              src="./assets/landing/nova.png"
+              alt=""
+              width="66"
+              height="86"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 6. FOOTER -->
+    <!-- @include footer:index -->
+  </body>
+</html>

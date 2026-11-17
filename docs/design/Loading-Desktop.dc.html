@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Loading Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.walk{width:250px;height:338px;background:url(/assets/sprites/astro_walk.png) 0 0/1000px 338px no-repeat;image-rendering:pixelated;animation:walk 0.4s steps(4) infinite}
+@keyframes walk{from{background-position:0 0}to{background-position:-1000px 0}}
+@media (prefers-reduced-motion:reduce){.walk{animation:none}}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <img src="/assets/backgrounds/moon_background.webp" alt="" width="1280" height="720" style="position:absolute;left:0;top:0;width:1280px;height:720px;object-fit:cover;image-rendering:pixelated">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(6,9,32,0.22)"></div>
+
+  <div role="status" aria-live="polite" style="position:absolute;inset:0">
+
+    <h1 style="position:absolute;left:0;top:52px;width:1280px;margin:0;text-align:center;font-family:'Press Start 2P',monospace;font-weight:400;font-size:72px;line-height:1.2;color:#ffffff;text-shadow:5px 5px 0 #243372,10px 10px 0 #172052">ASTRO <span style="color:#ffd23f;text-shadow:5px 5px 0 #c2410c,10px 10px 0 #7a2a0a">KID</span></h1>
+
+    <!-- the astronaut walks along the bar as it fills -->
+    <div class="walk" role="img" aria-label="Astro Kid walking" style="position:absolute;top:226px;left:{{astroLeft}}px"></div>
+
+    <!-- progress bar -->
+    <div style="position:absolute;left:240px;top:560px;width:800px;height:44px;box-sizing:border-box;padding:4px;background:#0d1236;box-shadow:0 0 0 4px #3a4a94,10px 10px 0 4px rgba(0,0,0,0.5)">
+      <div style="width:{{pct}}%;height:100%;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0"></div>
+    </div>
+
+    <div style="position:absolute;left:0;top:630px;width:1280px;text-align:center;font-family:'Silkscreen',monospace;font-weight:700;font-size:22px;letter-spacing:2px;color:#ffffff;text-shadow:3px 3px 0 #060920">{{label}}</div>
+    <div style="position:absolute;left:0;top:676px;width:1280px;text-align:center;font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:2px;color:#c9d0f5;text-shadow:2px 2px 0 #060920">{{tipLine}}</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  state = { p: 0, tip: 0 };
+  componentDidMount() {
+    this.i = 0;
+    this.hold = 0;
+    this.timer = setInterval(() => this.tick(), 90);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+  tick() {
+    const steps = [3, 2, 5, 2, 4, 3, 6, 2];
+    let p = this.state.p;
+    if (p >= 100) {
+      this.hold += 1;
+      if (this.hold > 9) {
+        this.hold = 0;
+        this.setState({ p: 0, tip: (this.state.tip + 1) % 3 });
+      }
+      return;
+    }
+    p = Math.min(100, p + steps[this.i % steps.length]);
+    this.i += 1;
+    this.setState({ p });
+  }
+  renderVals() {
+    const tips = [
+      'KEEP AN EYE ON YOUR OXYGEN.',
+      'SOLAR PANELS SLEEP AT NIGHT.',
+      'EARTH CANNOT ANSWER INSTANTLY.',
+    ];
+    const p = this.state.p;
+    return {
+      pct: p,
+      astroLeft: Math.round(240 + (p / 100) * 800 - 125),
+      label: 'LOADING... ' + p + '%',
+      tipLine: 'TIP: ' + tips[this.state.tip],
+    };
+  }
+}
+</script>
+</body>
+</html>

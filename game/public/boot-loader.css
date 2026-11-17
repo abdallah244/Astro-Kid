@@ -1,0 +1,160 @@
+/* Pre-loader for /play.html: covers the time the game bundle is downloading and the fonts are loading,
+   then hands over to the game's own loading scene (same look: walking astronaut + bar).
+   Design: docs/design/Loading-Desktop.dc.html. Pure CSS animation on transform/opacity. */
+
+#boot-loader {
+  --w: min(800px, 80vw);
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #060920;
+  font-family: 'Silkscreen', monospace;
+  text-align: center;
+  transition: opacity 0.35s steps(4);
+}
+
+#boot-loader.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#boot-loader .bl-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  box-shadow:
+    6vw 12vh #fff, 14vw 34vh 0 2px #a4aed9, 24vw 18vh #ffd23f, 33vw 52vh #fff,
+    47vw 8vh 0 2px #a4aed9, 61vw 44vh #fff, 72vw 20vh #ffd23f, 83vw 38vh 0 2px #a4aed9,
+    92vw 10vh #fff, 95vw 56vh #fff, 41vw 26vh #a4aed9, 78vw 6vh #ffd23f,
+    10vw 46vh #fff, 56vw 30vh #a4aed9, 88vw 48vh #fff;
+}
+
+#boot-loader .bl-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9vh;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(26px, 6vw, 72px);
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 4px 4px 0 #243372, 8px 8px 0 #172052;
+}
+
+#boot-loader .bl-title span {
+  color: #ffd23f;
+  text-shadow: 4px 4px 0 #c2410c, 8px 8px 0 #7a2a0a;
+}
+
+/* track + astronaut share the same width so they stay in sync */
+#boot-loader .bl-run {
+  position: absolute;
+  left: 50%;
+  bottom: 30vh;
+  width: var(--w);
+  margin-left: calc(var(--w) / -2);
+}
+
+#boot-loader .bl-astro {
+  position: absolute;
+  left: 0;
+  bottom: 22px;
+  width: 125px;
+  height: 169px;
+  background: url('/assets/sprites/astro_walk.png') 0 0 / 500px 169px no-repeat;
+  image-rendering: pixelated;
+  transform: translateX(-62px);
+  animation:
+    bl-frames 0.4s steps(4) infinite,
+    bl-walk 9s steps(40) forwards;
+}
+
+@keyframes bl-frames {
+  to {
+    background-position-x: -500px;
+  }
+}
+
+@keyframes bl-walk {
+  to {
+    transform: translateX(calc(var(--w) * 0.92 - 62px));
+  }
+}
+
+#boot-loader .bl-bar {
+  position: relative;
+  height: 40px;
+  padding: 4px;
+  overflow: hidden;
+  background: #0d1236;
+  box-shadow: 0 0 0 4px #3a4a94, 8px 8px 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#boot-loader .bl-fill {
+  height: 100%;
+  background: #ffd23f;
+  box-shadow: inset -4px -4px 0 #f5a524, inset 4px 4px 0 #fff3b0;
+}
+
+/* an opaque cover slides away to reveal the fill left to right */
+#boot-loader .bl-cover {
+  position: absolute;
+  inset: 4px;
+  background: #0d1236;
+  animation: bl-reveal 9s steps(40) forwards;
+}
+
+@keyframes bl-reveal {
+  to {
+    transform: translateX(92%);
+  }
+}
+
+#boot-loader.is-done .bl-cover {
+  animation: none;
+  transform: translateX(100%);
+}
+
+#boot-loader .bl-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 21vh;
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(14px, 1.6vw, 22px);
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 3px 3px 0 #060920;
+}
+
+#boot-loader .bl-tip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14vh;
+  margin: 0;
+  padding: 0 24px;
+  font-weight: 700;
+  font-size: clamp(11px, 1.1vw, 14px);
+  letter-spacing: 2px;
+  color: #c9d0f5;
+  text-shadow: 2px 2px 0 #060920;
+}
+
+@media (max-width: 720px) {
+  #boot-loader .bl-astro {
+    width: 125px;
+    height: 169px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #boot-loader .bl-astro,
+  #boot-loader .bl-cover {
+    animation: none;
+  }
+}

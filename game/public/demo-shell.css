@@ -1,0 +1,300 @@
+/* Astro Kid Browser Demo Shell — Pre-play Notice, Persistent Badge & Failure Gates */
+/* Classic stylesheet loaded only by /play.html (zero inline CSS / border-radius / smooth gradients) */
+
+.ds-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(6, 9, 32, 0.86);
+  box-sizing: border-box;
+}
+
+.ds-card {
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: #141c4d;
+  border: 3px solid #3a4a94;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -4px 0 #0d1236,
+    0 10px 0 rgba(0, 0, 0, 0.6);
+  padding: 24px 24px 22px;
+  color: #eef1ff;
+  font-family: 'Chakra Petch', sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.ds-card--error {
+  border-color: #ff5a6e;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 154, 166, 0.25),
+    inset 0 -4px 0 #3a0b15,
+    0 10px 0 rgba(0, 0, 0, 0.65);
+}
+
+.ds-eyebrow {
+  margin: 0 0 8px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: #ffd23f;
+  text-transform: uppercase;
+}
+
+.ds-card--error .ds-eyebrow {
+  color: #ff5a6e;
+}
+
+.ds-title {
+  margin: 0 0 14px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #eef1ff;
+  text-shadow: 2px 2px 0 #060920;
+  text-transform: uppercase;
+}
+
+.ds-copy {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #c9d0f5;
+}
+
+.ds-list {
+  margin: 0 0 16px;
+  padding: 12px 14px 12px 28px;
+  background: #0d1236;
+  border: 2px solid #172052;
+  color: #eef1ff;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ds-list li + li {
+  margin-top: 6px;
+}
+
+.ds-error-detail {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  background: #060920;
+  border: 2px solid #c2253d;
+  color: #ff9aa6;
+  font-family: 'Silkscreen', monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.ds-fine {
+  margin: 0 0 18px;
+  font-family: 'Silkscreen', monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #a4aed9;
+}
+
+.ds-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 3px solid #1a1a2e;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.ds-btn--primary {
+  background: #3fbf5f;
+  border-color: #0d2a14;
+  color: #0d2a14;
+  box-shadow:
+    inset 0 2px 0 #8be8a2,
+    inset 0 -3px 0 #1d7a36,
+    0 4px 0 #060920;
+}
+
+.ds-btn--primary:hover {
+  background: #4fd270;
+}
+
+.ds-btn--secondary {
+  background: #243372;
+  border-color: #172052;
+  color: #eef1ff;
+  box-shadow:
+    inset 0 2px 0 #3a4a94,
+    inset 0 -3px 0 #0d1236,
+    0 4px 0 #060920;
+}
+
+.ds-btn--secondary:hover {
+  background: #2e408e;
+}
+
+.ds-btn--danger-link {
+  margin-left: auto;
+  padding: 8px 6px;
+  min-height: 36px;
+  background: transparent;
+  border: 2px solid transparent;
+  color: #ffd23f;
+  font-family: 'Silkscreen', monospace;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.ds-btn:focus-visible,
+.ds-pill:focus-visible {
+  outline: 3px solid #ffd23f;
+  outline-offset: 2px;
+}
+
+.ds-btn:active {
+  transform: translateY(2px);
+}
+
+/* Persistent Corner HUD Badge — bottom-right safe pocket above Backpack & Hotbar */
+#demo-badge {
+  position: fixed;
+  right: 14px;
+  bottom: clamp(146px, 21vh, 224px);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  pointer-events: none;
+  opacity: 0.88;
+  font-family: 'Silkscreen', monospace;
+}
+
+#demo-badge:hover,
+#demo-badge:focus-within {
+  opacity: 1;
+}
+
+.ds-badge__row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  pointer-events: none;
+}
+
+.ds-badge__tag {
+  padding: 4px 8px;
+  background: rgba(6, 9, 32, 0.9);
+  border: 2px solid #3a4a94;
+  color: #ffd23f;
+  font-size: 11px;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ds-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 3px 8px;
+  background: rgba(20, 28, 77, 0.94);
+  border: 2px solid #3a4a94;
+  box-shadow: 0 2px 0 #060920;
+  color: #eef1ff;
+  font-family: 'Silkscreen', monospace;
+  font-size: 11px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+  box-sizing: border-box;
+}
+
+.ds-pill:hover {
+  background: #243372;
+  border-color: #ffd23f;
+}
+
+.ds-pill--icon {
+  min-width: 26px;
+  padding: 3px 6px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #ffd23f;
+}
+
+.ds-pill--cta {
+  background: #3fbf5f;
+  border-color: #0d2a14;
+  color: #0d2a14;
+  font-weight: 700;
+}
+
+.ds-pill--cta:hover {
+  background: #4fd270;
+  border-color: #0d2a14;
+}
+
+@media (max-width: 600px) {
+  .ds-card {
+    padding: 18px 16px 16px;
+  }
+  .ds-title {
+    font-size: 13px;
+  }
+  .ds-btn {
+    width: 100%;
+  }
+  .ds-btn--danger-link {
+    margin-left: 0;
+  }
+}
+
+@media (max-height: 600px) {
+  #demo-badge {
+    bottom: 118px;
+  }
+}
+
+/* controls strip inside the early-version notice */
+.ds-controls {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  background: #0a0f33;
+  box-shadow: inset 0 0 0 3px #172052;
+  font-family: 'Silkscreen', monospace;
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: #a4aed9;
+}

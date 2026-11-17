@@ -1,0 +1,21 @@
+[Unit]
+Description=Astro Kid API Server (Fastify + PostgreSQL)
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=astrokid
+Group=astrokid
+WorkingDirectory=/var/www/astro-kid/repo/server
+EnvironmentFile=/var/www/astro-kid/repo/server/.env
+ExecStart=/usr/bin/node /var/www/astro-kid/repo/server/src/server.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/www/astro-kid/releases
+
+[Install]
+WantedBy=multi-user.target

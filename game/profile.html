@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile — Astro Kid</title>
+    <meta
+      name="description"
+      content="View your Astro Kid account details and account deletion options."
+    />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="theme-color" content="#060920" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon-180.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/intro-gate.js"></script>
+    <script type="module" src="./src/site/js/site.js"></script>
+  </head>
+  <body id="top" data-requires-auth="true">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- @include header:profile -->
+
+    <main id="main" class="pf-main" data-profile-page>
+      <svg
+        class="pf-stars"
+        aria-hidden="true"
+        viewBox="0 0 1280 300"
+        preserveAspectRatio="xMidYMin slice"
+        shape-rendering="crispEdges"
+      >
+        <rect x="67" y="31" width="2" height="2" fill="#a4aed9" />
+        <rect x="105" y="92" width="2" height="2" fill="#a4aed9" />
+        <rect x="195" y="204" width="2" height="2" fill="#ffd23f" />
+        <rect x="288" y="22" width="2" height="2" fill="#ffffff" />
+        <rect x="332" y="77" width="4" height="4" fill="#ffffff" />
+        <rect x="376" y="283" width="4" height="4" fill="#5ad1ff" />
+        <rect x="430" y="111" width="4" height="4" fill="#ffffff" />
+        <rect x="486" y="5" width="2" height="2" fill="#5ad1ff" />
+        <rect x="539" y="172" width="2" height="2" fill="#ffd23f" />
+        <rect x="631" y="239" width="2" height="2" fill="#a4aed9" />
+        <rect x="677" y="112" width="4" height="4" fill="#ffffff" />
+        <rect x="825" y="174" width="2" height="2" fill="#a4aed9" />
+        <rect x="994" y="70" width="4" height="4" fill="#ffffff" />
+        <rect x="1020" y="262" width="2" height="2" fill="#ffd23f" />
+        <rect x="1096" y="118" width="2" height="2" fill="#a4aed9" />
+        <rect x="1150" y="60" width="2" height="2" fill="#ffffff" />
+        <rect x="1193" y="144" width="4" height="4" fill="#a4aed9" />
+        <rect x="1257" y="105" width="2" height="2" fill="#ffd23f" />
+      </svg>
+      <div class="pf-grid-bg" aria-hidden="true"></div>
+
+      <div class="wrap pf-wrap">
+        <!-- STATE A: LOADING SKELETON (>250ms while /api/me runs) -->
+        <section
+          class="pf-view pf-loading"
+          data-profile-view="loading"
+          aria-label="Checking your account"
+          aria-busy="true"
+          hidden
+        >
+          <div class="pf-loading__top">
+            <div class="pf-loading__avatar skeleton"></div>
+            <div class="pf-loading__meta">
+              <div class="pf-loading__bar-md skeleton"></div>
+              <div class="pf-loading__bar-sm skeleton"></div>
+            </div>
+          </div>
+          <div class="pf-loading__row">
+            <div class="pf-loading__lbl skeleton"></div>
+            <div class="pf-loading__val skeleton"></div>
+          </div>
+          <div class="pf-loading__row">
+            <div class="pf-loading__lbl skeleton"></div>
+            <div class="pf-loading__val skeleton"></div>
+          </div>
+          <div class="pf-loading__row">
+            <div class="pf-loading__lbl skeleton"></div>
+            <div class="pf-loading__val skeleton"></div>
+          </div>
+          <div class="pf-loading__status">
+            <div class="pf-spinner" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <span>CHECKING YOUR ACCOUNT</span>
+          </div>
+        </section>
+
+        <!-- STATE B: COULD NOT LOAD -->
+        <section
+          class="pf-view pf-error"
+          data-profile-view="error"
+          role="alert"
+          aria-labelledby="pf-err-title"
+          hidden
+        >
+          <div class="pf-error__head">
+            <span class="pf-error__badge notch" aria-hidden="true">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 5 5"
+                shape-rendering="crispEdges"
+              >
+                <path
+                  fill="#1a1a2e"
+                  d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3zM0 4h1v1H0zM4 4h1v1H4z"
+                />
+              </svg>
+            </span>
+            <div>
+              <h1 id="pf-err-title" class="pf-error__title">
+                WE COULD NOT<br />LOAD YOUR PROFILE
+              </h1>
+              <p class="pf-error__copy">
+                Something went wrong while talking to the server. Your account
+                is safe. Please try again.
+              </p>
+            </div>
+          </div>
+          <div class="pf-error__actions">
+            <div class="btn-shadow-wrap btn-shadow-wrap--block">
+              <button
+                type="button"
+                class="btn btn--yellow btn--block"
+                data-pf-retry
+              >
+                TRY AGAIN
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 7 7"
+                  shape-rendering="crispEdges"
+                >
+                  <path
+                    fill="#1a1a2e"
+                    d="M0 3h5v1H0zM4 2h1v3H4zM5 1h1v5H5zM6 2h1v3H6z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="btn-shadow-wrap btn-shadow-wrap--block">
+              <a class="btn btn--blue btn--block" href="./">BACK TO HOME</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- READY STATE -->
+        <div class="pf-view" data-profile-view="ready" hidden>
+          <header class="pf-intro" aria-labelledby="pf-title">
+            <div class="chip chip--cyan">
+              <span class="chip__dot" aria-hidden="true"></span>
+              YOUR ACCOUNT
+            </div>
+            <h1 id="pf-title" class="px-title pf-title">
+              YOUR <span class="px-title__accent">PROFILE</span>
+            </h1>
+            <p class="pf-lead">
+              These are the details linked to your Astro Kid account. You can
+              read them here, but they are locked and cannot be changed.
+            </p>
+          </header>
+
+          <div class="pf-columns">
+            <!-- LEFT: MISSION ID -->
+            <section class="pf-card pf-id-card" aria-label="Mission ID">
+              <div class="pf-id-card__bar">
+                <span class="pf-id-card__bar-lbl">ASTRO KID · MISSION ID</span>
+                <span class="pf-id-card__slot" aria-hidden="true"></span>
+                <img
+                  class="pixelated"
+                  src="./favicon-48.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </div>
+
+              <div class="pf-id-card__body">
+                <div class="pf-id-card__who">
+                  <div class="pf-id-card__avatar-frame">
+                    <img
+                      class="pf-id-card__avatar pixelated"
+                      data-pf-avatar
+                      src="./assets/ui/avatar_face.png"
+                      alt="Your Astro Kid avatar"
+                      width="116"
+                      height="116"
+                    />
+                  </div>
+                  <div class="pf-id-card__identity">
+                    <span class="pf-rank notch">COMMANDER</span>
+                    <div class="pf-firstname" data-pf-firstname></div>
+                  </div>
+                </div>
+
+                <ul class="pf-fields">
+                  <li class="pf-field-row">
+                    <div class="pf-field-main">
+                      <div class="pf-field-lbl">FULL NAME</div>
+                      <div class="pf-field-val">
+                        <span data-pf-fullname></span>
+                        <span class="sr-only">, locked, cannot be edited</span>
+                      </div>
+                    </div>
+                    <span class="pf-lock notch" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 8 8"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#8e9ad0"
+                          d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v5H0z"
+                        />
+                        <path fill="#060920" d="M3 5h2v2H3z" />
+                      </svg>
+                    </span>
+                  </li>
+                  <li class="pf-divider" aria-hidden="true"></li>
+                  <li class="pf-field-row">
+                    <div class="pf-field-main">
+                      <div class="pf-field-lbl">GOOGLE EMAIL</div>
+                      <div class="pf-field-val">
+                        <span data-pf-email></span>
+                        <span class="sr-only">, locked, cannot be edited</span>
+                      </div>
+                    </div>
+                    <span class="pf-lock notch" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 8 8"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#8e9ad0"
+                          d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v5H0z"
+                        />
+                        <path fill="#060920" d="M3 5h2v2H3z" />
+                      </svg>
+                    </span>
+                  </li>
+                  <li class="pf-divider" aria-hidden="true"></li>
+                  <li class="pf-field-row">
+                    <div class="pf-field-main">
+                      <div class="pf-field-lbl">SIGNED IN WITH</div>
+                      <div class="pf-field-val">
+                        <svg
+                          aria-hidden="true"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"
+                            fill="#4285F4"
+                          />
+                          <path
+                            d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"
+                            fill="#34A853"
+                          />
+                          <path
+                            d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"
+                            fill="#FBBC05"
+                          />
+                          <path
+                            d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"
+                            fill="#EA4335"
+                          />
+                        </svg>
+                        <span>Google</span>
+                        <span class="sr-only">, locked, cannot be edited</span>
+                      </div>
+                    </div>
+                    <span class="pf-lock notch" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 8 8"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#8e9ad0"
+                          d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v5H0z"
+                        />
+                        <path fill="#060920" d="M3 5h2v2H3z" />
+                      </svg>
+                    </span>
+                  </li>
+                  <li class="pf-divider" aria-hidden="true"></li>
+                  <li class="pf-field-row">
+                    <div class="pf-field-main">
+                      <div class="pf-field-lbl">MEMBER SINCE</div>
+                      <div class="pf-field-val">
+                        <span data-pf-since></span>
+                        <span class="sr-only">, locked, cannot be edited</span>
+                      </div>
+                    </div>
+                    <span class="pf-lock notch" aria-hidden="true">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 8 8"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#8e9ad0"
+                          d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v5H0z"
+                        />
+                        <path fill="#060920" d="M3 5h2v2H3z" />
+                      </svg>
+                    </span>
+                  </li>
+                </ul>
+
+                <div class="pf-barcode">
+                  <svg
+                    aria-hidden="true"
+                    width="120"
+                    height="28"
+                    viewBox="0 0 120 28"
+                    shape-rendering="crispEdges"
+                  >
+                    <rect x="0" y="0" width="2" height="28" fill="#8e9ad0" />
+                    <rect x="6" y="0" width="6" height="28" fill="#8e9ad0" />
+                    <rect x="14" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="22" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="30" y="0" width="6" height="28" fill="#8e9ad0" />
+                    <rect x="38" y="0" width="6" height="28" fill="#8e9ad0" />
+                    <rect x="46" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="54" y="0" width="6" height="28" fill="#8e9ad0" />
+                    <rect x="62" y="0" width="2" height="28" fill="#8e9ad0" />
+                    <rect x="68" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="76" y="0" width="6" height="28" fill="#8e9ad0" />
+                    <rect x="86" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="94" y="0" width="2" height="28" fill="#8e9ad0" />
+                    <rect x="98" y="0" width="2" height="28" fill="#8e9ad0" />
+                    <rect x="104" y="0" width="4" height="28" fill="#8e9ad0" />
+                    <rect x="112" y="0" width="2" height="28" fill="#8e9ad0" />
+                  </svg>
+                  <span class="pf-barcode__tag">
+                    <svg
+                      aria-hidden="true"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 8 8"
+                      shape-rendering="crispEdges"
+                    >
+                      <path
+                        fill="#8e9ad0"
+                        d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v5H0z"
+                      />
+                      <path fill="#060920" d="M3 5h2v2H3z" />
+                    </svg>
+                    LOCKED · READ-ONLY
+                  </span>
+                </div>
+
+                <p class="pf-id-card__note">
+                  These details are locked and cannot be edited. To change them,
+                  delete your account and register again.
+                </p>
+              </div>
+            </section>
+
+            <!-- RIGHT: ACTIONS + WHAT WE KEEP + HELP -->
+            <div class="pf-side">
+              <section class="pf-card" aria-labelledby="pf-actions-title">
+                <div class="pf-card__head pf-card__title--yellow">
+                  <span class="pf-card__dot" aria-hidden="true"></span>
+                  <h2 id="pf-actions-title" class="pf-card__title">
+                    QUICK ACTIONS
+                  </h2>
+                </div>
+                <div class="pf-actions">
+                  <div class="btn-shadow-wrap btn-shadow-wrap--block">
+                    <a
+                      class="btn btn--green btn--block pf-action-btn"
+                      href="./play.html"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 6 6"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#0d2a14"
+                          d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"
+                        />
+                      </svg>
+                      PLAY DEMO
+                    </a>
+                  </div>
+                  <div class="btn-shadow-wrap btn-shadow-wrap--block">
+                    <a
+                      class="btn btn--yellow btn--block pf-action-btn"
+                      href="./download.html"
+                    >
+                      DOWNLOAD
+                      <svg
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 7 7"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#1a1a2e"
+                          d="M3 0h1v4H3zM1 3h5v1H1zM2 4h3v1H2zM3 5h1v1H3zM0 6h7v1H0z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="btn-shadow-wrap btn-shadow-wrap--block">
+                    <button
+                      type="button"
+                      class="btn btn--blue btn--block pf-action-btn"
+                      data-pf-signout
+                    >
+                      <svg
+                        aria-hidden="true"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 8 8"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#eef1ff"
+                          d="M0 0h5v1H0zM0 1h1v6H0zM0 7h5v1H0zM3 3h4v1H3zM6 2h1v3H6zM5 1h1v1H5zM5 5h1v1H5z"
+                        />
+                      </svg>
+                      SIGN OUT
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="pf-card" aria-labelledby="pf-keep-title">
+                <div class="pf-card__head pf-card__title--green">
+                  <span class="pf-card__dot" aria-hidden="true"></span>
+                  <h2 id="pf-keep-title" class="pf-card__title">
+                    WHAT WE KEEP ABOUT YOU
+                  </h2>
+                </div>
+                <ul class="pf-keep-list">
+                  <li>
+                    <span class="pf-keep-check notch" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 7 7"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#0d2a14"
+                          d="M5 1h1v1H5zM4 2h1v1H4zM3 3h1v1H3zM1 3h1v1H1zM2 4h1v1H2z"
+                        />
+                      </svg>
+                    </span>
+                    <span>The full name you entered</span>
+                  </li>
+                  <li>
+                    <span class="pf-keep-check notch" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 7 7"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#0d2a14"
+                          d="M5 1h1v1H5zM4 2h1v1H4zM3 3h1v1H3zM1 3h1v1H1zM2 4h1v1H2z"
+                        />
+                      </svg>
+                    </span>
+                    <span>Your Google email address</span>
+                  </li>
+                  <li>
+                    <span class="pf-keep-check notch" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 7 7"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#0d2a14"
+                          d="M5 1h1v1H5zM4 2h1v1H4zM3 3h1v1H3zM1 3h1v1H1zM2 4h1v1H2z"
+                        />
+                      </svg>
+                    </span>
+                    <span>Your Google name and profile picture</span>
+                  </li>
+                  <li>
+                    <span class="pf-keep-check notch" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 7 7"
+                        shape-rendering="crispEdges"
+                      >
+                        <path
+                          fill="#0d2a14"
+                          d="M5 1h1v1H5zM4 2h1v1H4zM3 3h1v1H3zM1 3h1v1H1zM2 4h1v1H2z"
+                        />
+                      </svg>
+                    </span>
+                    <span>The date you agreed to the terms</span>
+                  </li>
+                </ul>
+                <p class="pf-keep-note">
+                  Nothing else. We do not sell your data. Read the details in
+                  the <a href="./policies.html#privacy">Privacy Policy</a>.
+                </p>
+              </section>
+
+              <section class="pf-card" aria-labelledby="pf-help-title">
+                <div class="pf-card__head pf-card__title--cyan">
+                  <span class="pf-card__dot" aria-hidden="true"></span>
+                  <h2 id="pf-help-title" class="pf-card__title">NEED HELP?</h2>
+                </div>
+                <p class="pf-help__copy">
+                  Questions about your data or your account? Write to the
+                  developer.
+                </p>
+                <div class="pf-help__box">
+                  <svg
+                    aria-hidden="true"
+                    width="16"
+                    height="12"
+                    viewBox="0 0 8 6"
+                    shape-rendering="crispEdges"
+                  >
+                    <path
+                      fill="#5ad1ff"
+                      d="M0 0h8v1H0zM0 1h1v5H0zM7 1h1v5H7zM0 5h8v1H0zM1 1h1v1H1zM6 1h1v1H6zM2 2h1v1H2zM5 2h1v1H5zM3 3h2v1H3z"
+                    />
+                  </svg>
+                  <a
+                    class="pf-help__mail"
+                    href="mailto:abdallahhfares@gmail.com"
+                  >
+                    abdallahhfares@gmail.com
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- DANGER ZONE -->
+          <section class="pf-danger" aria-labelledby="pf-danger-title">
+            <div class="pf-danger__stripe" aria-hidden="true"></div>
+            <div class="pf-danger__body">
+              <div class="pf-danger__content">
+                <div class="pf-danger__head">
+                  <span class="pf-danger__icon notch" aria-hidden="true">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 8 9"
+                      shape-rendering="crispEdges"
+                    >
+                      <path
+                        fill="#1a1a2e"
+                        d="M3 0h2v1H3zM0 1h8v1H0zM1 2h6v7H1z"
+                      />
+                      <path
+                        fill="#ffffff"
+                        d="M2 3h1v5H2zM5 3h1v5H5z"
+                        opacity="0.35"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div class="pf-danger__kicker">DANGER ZONE</div>
+                    <h2 id="pf-danger-title" class="pf-danger__title">
+                      DELETE ACCOUNT
+                    </h2>
+                  </div>
+                </div>
+
+                <p class="pf-danger__lead">
+                  You can delete your account at any time, for free. This is
+                  permanent. We will ask you to confirm first.
+                </p>
+
+                <ul class="pf-danger__list">
+                  <li>
+                    <span class="pf-danger__bullet" aria-hidden="true"></span>
+                    <span>
+                      Your account is deactivated the moment you confirm.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="pf-danger__bullet" aria-hidden="true"></span>
+                    <span>
+                      Your data leaves our active systems straight away and our
+                      backups within 30 days.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="pf-danger__bullet" aria-hidden="true"></span>
+                    <span>
+                      The game stays on your device, but quick sign-in stops
+                      working.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="pf-danger__bullet" aria-hidden="true"></span>
+                    <span>
+                      You can register again later. A new account starts fresh.
+                    </span>
+                  </li>
+                </ul>
+
+                <p class="pf-danger__alt">
+                  Cannot sign in? Email
+                  <a href="mailto:abdallahhfares@gmail.com">
+                    abdallahhfares@gmail.com
+                  </a>
+                  from your account address and we will delete it for you.
+                </p>
+              </div>
+
+              <div class="pf-danger__cta">
+                <div class="btn-shadow-wrap btn-shadow-wrap--block">
+                  <button
+                    type="button"
+                    class="btn btn--danger btn--lg btn--block"
+                    data-pf-open-delete
+                  >
+                    <svg
+                      aria-hidden="true"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 8 9"
+                      shape-rendering="crispEdges"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M3 0h2v1H3zM0 1h8v1H0zM1 2h6v7H1z"
+                      />
+                      <path
+                        fill="#ffffff"
+                        d="M2 3h1v5H2zM5 3h1v5H5z"
+                        opacity="0.35"
+                      />
+                    </svg>
+                    DELETE ACCOUNT
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <p class="pf-legal">
+            Read the
+            <a href="./policies.html#privacy">Privacy Policy</a>, the
+            <a href="./policies.html#terms">Terms of Use</a> and the
+            <a href="./policies.html#deletion">Account Deletion Policy</a>.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- DELETE ACCOUNT CONFIRMATION DIALOG -->
+    <dialog
+      class="pf-dialog"
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="pf-dlg-title"
+      aria-describedby="pf-dlg-desc"
+      data-pf-delete-dialog
+    >
+      <div class="pf-dialog__card" data-pf-dlg-card>
+        <div class="pf-dialog__stripe" aria-hidden="true"></div>
+        <div class="pf-dialog__body">
+          <div class="pf-dialog__head">
+            <span class="pf-dialog__icon notch" aria-hidden="true">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 9 8"
+                shape-rendering="crispEdges"
+              >
+                <path
+                  fill="#1a1a2e"
+                  d="M4 0h1v1H4zM3 1h3v1H3zM3 2h3v1H3zM2 3h5v1H2zM2 4h5v1H2zM1 5h7v1H1zM1 6h7v1H1zM0 7h9v1H0z"
+                />
+                <path fill="#ffffff" d="M4 2h1v3H4zM4 6h1v1H4z" />
+              </svg>
+            </span>
+            <h2 id="pf-dlg-title" class="pf-dialog__title">
+              DELETE YOUR<br />ACCOUNT?
+            </h2>
+          </div>
+
+          <p id="pf-dlg-desc" class="pf-dialog__desc">
+            This permanently deletes your account and the data linked to it.
+            <b class="pf-dialog__bold">This cannot be undone.</b>
+          </p>
+
+          <div class="pf-dialog__box">
+            <div class="pf-dialog__box-title">WHAT HAPPENS</div>
+            <ul class="pf-dialog__list">
+              <li>
+                <span class="pf-dialog__bullet" aria-hidden="true"></span>
+                <span>
+                  Your full name and Google details are removed from our active
+                  systems straight away.
+                </span>
+              </li>
+              <li>
+                <span class="pf-dialog__bullet" aria-hidden="true"></span>
+                <span>Copies leave our backups within 30 days.</span>
+              </li>
+              <li>
+                <span class="pf-dialog__bullet" aria-hidden="true"></span>
+                <span>
+                  The game stays on your device, but quick sign-in stops
+                  working.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <label for="pf-delete-input" class="pf-dialog__label">
+              TYPE <span class="pf-dialog__accent">DELETE</span> TO CONFIRM
+            </label>
+            <input
+              id="pf-delete-input"
+              class="pf-dialog__input"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              autocapitalize="characters"
+              placeholder="type here"
+              data-pf-confirm-input
+            />
+          </div>
+
+          <div
+            class="pf-dialog__error"
+            role="alert"
+            data-pf-dlg-error
+            hidden
+          >
+            <span class="pf-dialog__error-icon notch" aria-hidden="true">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 5 5"
+                shape-rendering="crispEdges"
+              >
+                <path
+                  fill="#1a1a2e"
+                  d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3zM0 4h1v1H0zM4 4h1v1H4z"
+                />
+              </svg>
+            </span>
+            <p class="pf-dialog__error-msg">
+              We could not delete your account. Please try again, or email
+              abdallahhfares@gmail.com.
+            </p>
+          </div>
+
+          <div class="pf-dialog__actions">
+            <div class="btn-shadow-wrap btn-shadow-wrap--block">
+              <button
+                type="button"
+                class="btn btn--blue btn--block pf-dialog__btn"
+                data-pf-dlg-cancel
+              >
+                CANCEL
+              </button>
+            </div>
+            <div class="btn-shadow-wrap btn-shadow-wrap--block">
+              <button
+                type="button"
+                class="btn btn--danger btn--block pf-dialog__btn pf-dialog__confirm-btn"
+                aria-disabled="true"
+                data-pf-dlg-confirm
+              >
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 8 9"
+                  shape-rendering="crispEdges"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M3 0h2v1H3zM0 1h8v1H0zM1 2h6v7H1z"
+                  />
+                  <path
+                    fill="#ffffff"
+                    d="M2 3h1v5H2zM5 3h1v5H5z"
+                    opacity="0.35"
+                  />
+                </svg>
+                <span data-pf-confirm-label>DELETE FOREVER</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- @include footer:profile -->
+  </body>
+</html>

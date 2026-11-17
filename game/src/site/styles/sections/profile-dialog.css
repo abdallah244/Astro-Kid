@@ -1,0 +1,266 @@
+/* Profile Delete Account Confirmation <dialog>
+   (design: Profile-Dialog-Desktop.dc.html & Profile-Dialog-Mobile.dc.html) */
+
+.pf-dialog {
+  width: min(540px, calc(100vw - 40px));
+  max-width: 540px;
+  max-height: calc(100vh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ak-text);
+  overflow: visible;
+}
+
+.pf-dialog::backdrop {
+  background-color: var(--ak-scrim-modal);
+}
+
+.pf-dialog__card {
+  max-height: calc(100vh - 32px);
+  background-color: var(--ak-panel);
+  box-shadow:
+    0 -4px 0 0 var(--ak-danger),
+    0 4px 0 0 var(--ak-danger),
+    -4px 0 0 0 var(--ak-danger),
+    4px 0 0 0 var(--ak-danger),
+    12px 12px 0 0 var(--ak-shadow-modal);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pf-dialog__stripe {
+  flex: none;
+  height: 12px;
+  background: repeating-linear-gradient(
+    135deg,
+    #ff5a6e 0 12px,
+    #1a1a2e 12px 24px
+  );
+}
+
+.pf-dialog__body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto;
+}
+
+.pf-dialog__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pf-dialog__icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-danger);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-danger-dark),
+    inset 4px 4px 0 0 var(--ak-danger-light);
+}
+
+.pf-dialog__title {
+  margin: 0;
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ak-white);
+  text-shadow: 2px 2px 0 var(--ak-blue);
+}
+
+.pf-dialog__desc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ak-white);
+}
+
+.pf-dialog__bold {
+  color: var(--ak-danger-light);
+}
+
+.pf-dialog__box {
+  padding: 14px 16px;
+  background-color: var(--ak-panel-alt);
+  box-shadow: inset 0 0 0 3px var(--ak-border-dark);
+}
+
+.pf-dialog__box-title {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--ak-danger);
+}
+
+.pf-dialog__list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pf-dialog__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ak-body-soft);
+}
+
+.pf-dialog__bullet {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 8px;
+  background-color: var(--ak-danger);
+}
+
+.pf-dialog__label {
+  display: block;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--ak-white);
+}
+
+.pf-dialog__accent {
+  color: var(--ak-danger);
+}
+
+.pf-dialog__input {
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin-top: 10px;
+  padding: 0 16px;
+  border: 0;
+  background-color: var(--ak-space);
+  box-shadow: inset 0 0 0 4px var(--ak-border);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--ak-white);
+}
+
+.pf-dialog__input::placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #5a6490;
+}
+
+.pf-dialog__input.is-ready {
+  box-shadow: inset 0 0 0 4px var(--ak-yellow);
+}
+
+.pf-dialog__input:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.pf-dialog__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background-color: #2a1020;
+  box-shadow: inset 0 0 0 3px var(--ak-danger);
+}
+
+.pf-dialog__error[hidden] {
+  display: none;
+}
+
+.pf-dialog__error-icon {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-danger);
+}
+
+.pf-dialog__error-msg {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #ffd5db;
+  overflow-wrap: anywhere;
+}
+
+.pf-dialog__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pf-dialog__btn {
+  height: 56px;
+  font-size: 14px;
+  padding: 0 14px;
+}
+
+.pf-dialog__confirm-btn[aria-disabled='true']:not(.is-loading) {
+  background-color: #1a2257;
+  color: var(--ak-placeholder);
+  box-shadow:
+    inset -4px -4px 0 0 #121842,
+    inset 4px 4px 0 0 var(--ak-blue);
+}
+
+.pf-dialog__confirm-btn.is-loading,
+.pf-dialog__confirm-btn.is-loading:disabled {
+  background-color: var(--ak-danger);
+  color: var(--ak-ink);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-danger-dark),
+    inset 4px 4px 0 0 var(--ak-danger-light);
+  cursor: progress;
+}
+
+@media (max-width: 639px) {
+  .pf-dialog__body {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .pf-dialog__title {
+    font-size: 14px;
+  }
+
+  .pf-dialog__list li {
+    font-size: 14px;
+  }
+
+  .pf-dialog__label {
+    font-size: 11px;
+  }
+
+  .pf-dialog__actions {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+}

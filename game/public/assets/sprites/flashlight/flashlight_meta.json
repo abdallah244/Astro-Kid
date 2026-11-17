@@ -1,0 +1,26 @@
+{
+  "idle": {
+    "file": "flashlight_idle.png",
+    "frames": 4,
+    "frameWidth": 92,
+    "frameHeight": 50
+  },
+  "use": {
+    "file": "flashlight_use.png",
+    "frames": 4,
+    "frameWidth": 92,
+    "frameHeight": 50
+  },
+  "low": {
+    "file": "flashlight_low.png",
+    "frames": 4,
+    "frameWidth": 92,
+    "frameHeight": 50
+  },
+  "toggle": {
+    "file": "flashlight_toggle.png",
+    "frames": 2,
+    "frameWidth": 92,
+    "frameHeight": 50
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Too many requests — Astro Kid</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#060920" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/errors.css" />
+  </head>
+  <body data-tone="cyan">
+    <div class="err-stars" aria-hidden="true"></div>
+
+    <header class="err-header">
+      <div class="err-wrap">
+        <a class="err-brand" href="/" aria-label="Astro Kid, home">
+          <img src="/favicon-48.png" alt="" width="44" height="44" />
+          <span>ASTRO <i>KID</i></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="err-main">
+      <p class="err-chip"><span></span>ERROR 429</p>
+
+      <div class="err-code" role="img" aria-label="429">
+        <span aria-hidden="true">4</span>
+        <!-- pixel hourglass standing in for the "2" -->
+        <svg aria-hidden="true" viewBox="0 0 12 12" shape-rendering="crispEdges">
+          <path fill="#5ad1ff" d="M2 0h8v1h-8zM2 1h8v1h-8zM3 2h6v1h-6zM4 3h4v1h-4zM5 4h2v1h-2zM5 5h2v1h-2zM4 6h4v1h-4zM3 7h6v1h-6zM2 10h8v1h-8z" />
+          <path fill="#e9ddff" d="M2 8h8v1h-8zM2 9h8v1h-8z" />
+        </svg>
+        <span aria-hidden="true">9</span>
+      </div>
+
+      <div class="err-nova">
+        <img src="/assets/landing/nova.png" alt="NOVA, the floating robot guide" width="72" height="94" />
+        <div class="err-bubble"><b>NOVA SAYS</b><span>Whoa, too fast!</span></div>
+      </div>
+
+      <h1 class="err-title">SLOW DOWN, <em>COMMANDER</em></h1>
+      <p class="err-text">You sent too many requests in a short time. Wait about a minute, then try again.</p>
+
+      <div class="err-actions">
+        <a class="err-btn err-btn--yellow" href="/">BACK TO HOME</a>
+        <a class="err-btn err-btn--blue is-disabled" id="retry" href="/" data-wait="60" aria-disabled="true">TRY AGAIN IN 60S</a>
+      </div>
+    </main>
+
+    <script src="/errors.js" defer></script>
+  </body>
+</html>

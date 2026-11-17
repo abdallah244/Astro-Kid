@@ -1,0 +1,618 @@
+/* About Page Section 7: Final CTA (AboutPage-FinalCTA-Desktop / Mobile) */
+
+.about-final {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ak-space);
+}
+
+.about-final__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 900;
+  overflow: hidden;
+}
+
+.about-final__bg-pic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.about-final__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Twinkle stars */
+.about-final__star {
+  position: absolute;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-final__star--1 { left: 48.4375%; top: 6.6667%; width: 1.875%; animation-delay: 0s; }
+.about-final__star--2 { left: 70.7031%; top: 16.6667%; width: 1.4063%; animation-delay: 0.9s; }
+.about-final__star--3 { left: 90.625%; top: 36.6667%; width: 1.7188%; animation-delay: 1.7s; }
+.about-final__star--4 { left: 42.1875%; top: 36.6667%; width: 1.25%; animation-delay: 0.5s; }
+.about-final__star--5 { left: 4.6875%; top: 44.4444%; width: 1.4063%; animation-delay: 1.2s; }
+
+/* Earth */
+.about-final__earth {
+  position: absolute;
+  left: 83.125%;
+  top: 4%;
+  width: 16.4063%;
+  height: auto;
+  clip-path: circle(44%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Launch tower + pad */
+.about-final__tower {
+  position: absolute;
+  left: 64.5313%;
+  top: 43.1111%;
+  width: 11.5625%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.about-final__tower svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.about-final__pad {
+  position: absolute;
+  left: 61.7188%;
+  top: 85.7778%;
+  width: 29.6875%;
+  height: 4%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.about-final__pad-hazard {
+  height: 22.2222%;
+  background: repeating-linear-gradient(135deg, var(--ak-yellow) 0 8px, var(--ak-ink) 8px 16px);
+  box-shadow: 0 -4px 0 0 var(--ak-ink);
+}
+
+.about-final__pad-base {
+  height: 77.7778%;
+  background-color: var(--ak-border);
+  box-shadow:
+    inset 0 4px 0 0 var(--ak-placeholder),
+    inset 0 -4px 0 0 #1a1f4a;
+}
+
+.about-final__pad-shadow {
+  position: absolute;
+  left: 62.5%;
+  top: 89.7778%;
+  width: 28.125%;
+  height: 1.3333%;
+  background-color: rgba(6, 9, 32, 0.45);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Rocket, flames & smoke puffs */
+.about-final__rocket {
+  position: absolute;
+  left: 70.1563%;
+  top: 38.6667%;
+  width: 17.5%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.about-final__rocket svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-final__flame {
+  position: absolute;
+  left: 75.1563%;
+  top: 79.5556%;
+  width: 7.5%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.about-final__flame svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-final__fb {
+  opacity: 0;
+}
+
+.about-final__smoke {
+  position: absolute;
+  height: auto;
+  z-index: 6;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.about-final__smoke--1 { left: 70.5469%; top: 83.1111%; width: 2.6563%; --dx: -36px; animation-delay: 0s; }
+.about-final__smoke--2 { left: 73.2813%; top: 82%; width: 3.4375%; --dx: -20px; animation-delay: 0.3s; }
+.about-final__smoke--3 { left: 81.7969%; top: 81.7778%; width: 3.5938%; --dx: 24px; animation-delay: 0.6s; }
+.about-final__smoke--4 { left: 85.3906%; top: 83.1111%; width: 2.6563%; --dx: 40px; animation-delay: 0.9s; }
+.about-final__smoke--5 { left: 75.8594%; top: 82.6667%; width: 2.9688%; --dx: -8px; animation-delay: 1.2s; }
+.about-final__smoke--6 { left: 80.0781%; top: 83.5556%; width: 2.3438%; --dx: 12px; animation-delay: 1.5s; }
+
+/* Astronaut + NOVA */
+.about-final__astro-shadow {
+  position: absolute;
+  left: 50.1563%;
+  top: 90.2222%;
+  width: 8.8281%;
+  height: 0.8889%;
+  background-color: var(--ak-shadow-color);
+  z-index: 7;
+  pointer-events: none;
+}
+
+.about-final__astro {
+  position: absolute;
+  left: 49.6875%;
+  top: 72.1111%;
+  width: 9.7656%;
+  height: 18.7778%;
+  background: url('/assets/sprites/astro_idle.png') 0 0 / 200% 100% no-repeat;
+  z-index: 8;
+}
+
+.about-final__nova {
+  position: absolute;
+  left: 60.3125%;
+  top: 65.1111%;
+  width: 5.1563%;
+  z-index: 9;
+  pointer-events: none;
+}
+
+.about-final__nova-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* NOVA speech bubble + Telemetry card (desktop / wide tablet) */
+.about-final__bubble {
+  position: absolute;
+  left: 45.625%;
+  top: 52.2222%;
+  width: 216px;
+  padding: 12px 14px;
+  z-index: 11;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: var(--ak-white);
+}
+
+.about-final__bubble-speaker {
+  color: var(--ak-cyan);
+}
+
+.about-final__bubble-tail {
+  position: absolute;
+  left: 136px;
+  bottom: -14px;
+  display: block;
+}
+
+.about-final__telemetry {
+  position: absolute;
+  right: 22px;
+  top: 43.5556%;
+  width: 172px;
+  padding: 12px 14px;
+  z-index: 12;
+  font-family: var(--font-ui);
+}
+
+.about-final__tel-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--ak-green);
+  white-space: nowrap;
+}
+
+.about-final__tel-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--ak-green);
+}
+
+.about-final__tel-lbl {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--ak-label-muted);
+}
+
+.about-final__tel-val {
+  margin-top: 4px;
+  font-family: var(--font-px);
+  font-size: 16px;
+  color: var(--ak-yellow);
+  text-shadow: 2px 2px 0 var(--ak-yellow-shadow);
+}
+
+/* Main left CTA copy & buttons */
+.about-final__content {
+  position: absolute;
+  left: 6.25%;
+  top: 11.1111%;
+  width: min(540px, 44%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.about-final__title {
+  margin-top: 22px;
+  font-size: clamp(22px, 2.58vw, 33px);
+  line-height: 1.5;
+}
+
+.about-final__lead {
+  margin: 24px 0 0;
+  font-size: clamp(15px, 1.48vw, 19px);
+  line-height: 1.6;
+  color: var(--ak-body-soft);
+  text-shadow: 0 2px 0 rgba(6, 9, 32, 0.85);
+}
+
+.about-final__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.about-final__ring {
+  position: absolute;
+  inset: -4px;
+  border: 4px solid var(--ak-yellow);
+  pointer-events: none;
+}
+
+.about-final__btn-primary {
+  height: 72px;
+  padding: 0 40px;
+  font-size: 21px;
+  gap: 16px;
+}
+
+.about-final__btn-secondary {
+  height: 60px;
+  padding: 0 32px;
+  font-size: 17px;
+  gap: 14px;
+}
+
+.about-final__btn-arrow {
+  transition: transform 0.1s steps(2);
+}
+
+.about-final__btn-primary:hover .about-final__btn-arrow,
+.about-final__btn-secondary:hover .about-final__btn-arrow {
+  transform: translateX(4px);
+}
+
+.about-final__badges-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 26px;
+  max-width: 620px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #e8ecff;
+  text-shadow: 0 2px 0 rgba(6, 9, 32, 0.95);
+}
+
+.about-final__badge-dot-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-final__badge-dot-row i {
+  width: 8px;
+  height: 8px;
+}
+
+.about-final__dot--green { background-color: var(--ak-green); }
+.about-final__dot--cyan { background-color: var(--ak-cyan); }
+.about-final__dot--yellow { background-color: var(--ak-yellow); }
+
+/* 6 Missions waiting badge strip */
+.about-final__missions {
+  position: absolute;
+  left: 6.25%;
+  top: 84.4444%;
+  z-index: 20;
+}
+
+.about-final__missions-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--ak-white);
+  text-shadow: 0 2px 0 rgba(6, 9, 32, 0.9);
+}
+
+.about-final__missions-head i {
+  width: 8px;
+  height: 8px;
+  background-color: var(--ak-yellow);
+}
+
+.about-final__missions-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.about-final__mission-badge {
+  width: 60px;
+  height: 60px;
+  display: block;
+  box-shadow:
+    0 0 0 4px var(--ak-border),
+    4px 4px 0 4px var(--ak-shadow-color);
+}
+
+/* Keyframes (paused unless .about-final.is-live is active) */
+@keyframes finalShake {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, 0); }
+  50% { transform: translate(0, -2px); }
+  75% { transform: translate(-2px, 0); }
+}
+
+@keyframes finalFlameA {
+  0%, 49.99% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes finalFlameB {
+  0%, 49.99% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes finalSmokePuff {
+  0% { transform: translate(0, 0) scale(0.5); opacity: 0.85; }
+  100% { transform: translate(var(--dx, 0px), -26px) scale(1.5); opacity: 0; }
+}
+
+@keyframes finalNovaBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes finalBlink {
+  0%, 49.99% { opacity: 1; }
+  50%, 100% { opacity: 0.15; }
+}
+
+@keyframes finalRingPulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(1.09, 1.2); opacity: 0; }
+}
+
+@keyframes finalAstroIdle {
+  0%, 49.99% { background-position: 0 0; }
+  50%, 100% { background-position: 100% 0; }
+}
+
+@keyframes finalTwinkle {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0.2; }
+}
+
+.about-final.is-live .about-final__rocket { animation: finalShake 0.24s steps(1, end) infinite; }
+.about-final.is-live .about-final__fa { animation: finalFlameA 0.3s steps(1, end) infinite; }
+.about-final.is-live .about-final__fb { animation: finalFlameB 0.3s steps(1, end) infinite; }
+.about-final.is-live .about-final__smoke { animation: finalSmokePuff 1.8s steps(6, end) infinite; }
+.about-final.is-live .about-final__nova { animation: finalNovaBob 1.6s steps(2, end) infinite; }
+.about-final.is-live .about-final__blink,
+.about-final.is-live .about-final__tel-dot { animation: finalBlink 1.2s steps(1, end) infinite; }
+.about-final.is-live .about-final__ring { animation: finalRingPulse 1.6s steps(4, end) infinite; }
+.about-final.is-live .about-final__astro { animation: finalAstroIdle 1.2s linear infinite; }
+.about-final.is-live .about-final__star { animation: finalTwinkle 2.6s steps(1, end) infinite; }
+
+@media (max-width: 1120px) and (min-width: 860px) {
+  .about-final__btn-primary {
+    height: 62px;
+    padding: 0 28px;
+    font-size: 17px;
+  }
+
+  .about-final__btn-secondary {
+    height: 54px;
+    padding: 0 24px;
+    font-size: 15px;
+  }
+
+  .about-final__bubble,
+  .about-final__telemetry {
+    display: none;
+  }
+
+  .about-final__mission-badge {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Mobile stage (390x1180 design geometry) */
+@media (max-width: 859px) {
+  .about-final__stage {
+    aspect-ratio: 390 / 1180;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .about-final__bubble,
+  .about-final__telemetry,
+  .about-final__star--4,
+  .about-final__star--5 {
+    display: none;
+  }
+
+  .about-final__star--1 { left: 10.2564%; top: 47.4576%; width: 4.1026%; }
+  .about-final__star--2 { left: 84.6154%; top: 44.0678%; width: 3.5897%; }
+  .about-final__star--3 { left: 25.641%; top: 59.322%; width: 3.5897%; }
+
+  .about-final__earth { left: 72.8205%; top: 50.5085%; width: 20.5128%; }
+  .about-final__tower { left: 40%; top: 56.2712%; width: 23.5897%; }
+  .about-final__pad { left: 33.8462%; top: 76.6102%; width: 59.4872%; height: 2.0339%; }
+  .about-final__pad-hazard { height: 25%; }
+  .about-final__pad-base { height: 75%; }
+  .about-final__pad-shadow { left: 36.4103%; top: 78.6441%; width: 54.359%; height: 0.678%; }
+
+  .about-final__rocket { left: 51.7949%; top: 54.0678%; width: 35.8974%; }
+  .about-final__flame { left: 62.0513%; top: 73.5593%; width: 15.3846%; }
+
+  .about-final__smoke--1 { left: 52.5641%; top: 75.678%; width: 5.3846%; }
+  .about-final__smoke--2 { left: 58.2051%; top: 75.1695%; width: 6.9231%; }
+  .about-final__smoke--3 { left: 75.641%; top: 75.0847%; width: 7.1795%; }
+  .about-final__smoke--4 { left: 82.8205%; top: 75.678%; width: 5.3846%; }
+  .about-final__smoke--5 { left: 63.5897%; top: 75.5085%; width: 5.8974%; }
+  .about-final__smoke--6 { left: 72.0513%; top: 75.9322%; width: 4.6154%; }
+
+  .about-final__astro-shadow { left: 3.0769%; top: 79.4915%; width: 22.5641%; height: 0.678%; }
+  .about-final__astro { left: 1.5385%; top: 68.5593%; width: 25.641%; height: 11.4407%; }
+  .about-final__nova { left: 25.641%; top: 68.3051%; width: 11.2821%; }
+
+  .about-final__content {
+    left: 5.1282%;
+    top: 5.0847%;
+    width: 89.7436%;
+  }
+
+  .about-final__eyebrow {
+    font-size: 12px;
+    padding: 0 14px;
+  }
+
+  .about-final__title {
+    margin-top: 18px;
+    font-size: 19px;
+    line-height: 1.55;
+    text-shadow: 2px 2px 0 var(--ak-blue);
+  }
+
+  .about-final__title .px-title__accent {
+    text-shadow: 2px 2px 0 var(--ak-yellow-shadow);
+  }
+
+  .about-final__lead {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .about-final__actions {
+    width: 100%;
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .about-final__btn-wrap {
+    width: 100%;
+  }
+
+  .about-final__btn-primary {
+    width: 100%;
+    height: 64px;
+    padding: 0 16px;
+    font-size: 15px;
+    gap: 14px;
+  }
+
+  .about-final__btn-secondary {
+    width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+
+  .about-final__badges-bar {
+    gap: 10px;
+    margin-top: 22px;
+    font-size: 10px;
+  }
+
+  .about-final__missions {
+    left: 5.1282%;
+    top: 83.7288%;
+    right: 5.1282%;
+  }
+
+  .about-final__missions-head {
+    margin-bottom: 14px;
+    font-size: 11px;
+  }
+
+  .about-final__missions-grid {
+    gap: 8px;
+  }
+
+  .about-final__mission-badge {
+    width: clamp(42px, 12vw, 56px);
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-final.is-live .about-final__rocket,
+  .about-final.is-live .about-final__fa,
+  .about-final.is-live .about-final__fb,
+  .about-final.is-live .about-final__smoke,
+  .about-final.is-live .about-final__nova,
+  .about-final.is-live .about-final__blink,
+  .about-final.is-live .about-final__tel-dot,
+  .about-final.is-live .about-final__ring,
+  .about-final.is-live .about-final__astro,
+  .about-final.is-live .about-final__star {
+    animation: none;
+  }
+
+  .about-final__fb { opacity: 0; }
+  .about-final__smoke { opacity: 0.5; }
+  .about-final__btn-arrow { transition: none; }
+}

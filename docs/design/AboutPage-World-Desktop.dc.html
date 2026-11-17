@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Page World Map Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 16px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:2px;color:#ffd23f}
+.eyebrow i{width:8px;height:8px;background:#ffd23f}
+.h2{margin:22px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:30px;line-height:1.45;color:#ffffff;text-shadow:3px 3px 0 #243372}
+.h3{margin:0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:20px;line-height:1.5;color:#ffffff;text-shadow:3px 3px 0 #243372}
+.lead{margin:20px 0 0;max-width:700px;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:19px;line-height:1.6;color:#a4aed9;text-align:center}
+.frame{position:relative;background:#0d1236;box-shadow:0 -4px 0 0 #3a4a94,0 4px 0 0 #3a4a94,-4px 0 0 0 #3a4a94,4px 0 0 0 #3a4a94,12px 12px 0 0 rgba(0,0,0,0.5)}
+.mk{position:absolute;width:36px;height:36px;display:flex;align-items:center;justify-content:center;transform:translate(-50%,-50%);font-family:'Press Start 2P',monospace;font-size:13px}
+.mk.open{background:#3fbf5f;color:#0d2a14;box-shadow:0 0 0 4px #060920,inset -3px -3px 0 0 #1d7a36,inset 3px 3px 0 0 #8be8a2}
+.mk.fog{background:#4a8cff;color:#06122e;box-shadow:0 0 0 4px #060920,inset -3px -3px 0 0 #2a5cc0,inset 3px 3px 0 0 #a9c8ff}
+.mk.lock{background:#8e9ad0;color:#1a1a2e;box-shadow:0 0 0 4px #060920,inset -3px -3px 0 0 #5a6490,inset 3px 3px 0 0 #c9d0f5}
+.mk.cave{background:#5ad1ff;color:#06223a;box-shadow:0 0 0 4px #060920,inset -3px -3px 0 0 #2a8fb8,inset 3px 3px 0 0 #d6f4ff}
+.key{display:inline-flex;align-items:center;gap:8px;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#c9d0f5}
+.key i{width:12px;height:12px}
+.grid3{list-style:none;margin:0;padding:0;width:1120px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{box-sizing:border-box;padding:20px 22px;background:#141c4d;box-shadow:0 -4px 0 0 #3a4a94,0 4px 0 0 #3a4a94,-4px 0 0 0 #3a4a94,4px 0 0 0 #3a4a94,8px 8px 0 0 rgba(0,0,0,0.45)}
+.card .top{display:flex;align-items:center;gap:12px}
+.card .nm{flex:1;min-width:0;font-family:'Silkscreen',monospace;font-weight:700;font-size:16px;letter-spacing:1px;line-height:1.25;color:#ffffff}
+.card .bd{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:'Press Start 2P',monospace;font-size:12px}
+.card .st{display:inline-flex;align-items:center;height:22px;padding:0 8px;font-family:'Silkscreen',monospace;font-weight:700;font-size:10px;letter-spacing:1px}
+.card p{margin:12px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:16px;line-height:1.55;color:#d5daf7}
+.card h4{margin:14px 0 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;color:#ffffff}
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px}
+</style>
+</helmet>
+<div id="world" style="position:relative;width:1280px;height:2880px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <div style="position:absolute;left:80px;top:96px;width:1120px;display:flex;flex-direction:column;align-items:center;text-align:center">
+
+    <!-- ===== header ===== -->
+    <div class="eyebrow notch"><i></i>THE WORLD MAP</div>
+    <h2 class="h2" id="world-title">EXPLORE. DISCOVER. <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">UNLOCK.</span></h2>
+    <p class="lead">One big lunar map, seven regions and two caves. The map stays the same in every mission. Only what you have discovered changes.</p>
+
+    <!-- ===== annotated map ===== -->
+    <div class="frame" style="width:1120px;height:630px;margin-top:48px">
+      <img src="/assets/ui/map/lunar_map_discovered.webp" alt="The Astro Kid world map: the outpost in the centre, solar fields, mines, crater areas and glowing crystals, linked by paths" width="1120" height="630" style="display:block;width:1120px;height:630px;object-fit:cover">
+      <div class="mk open" aria-hidden="true" style="left:534px;top:350px">1</div>
+      <div class="mk open" aria-hidden="true" style="left:744px;top:389px">2</div>
+      <div class="mk fog" aria-hidden="true" style="left:237px;top:341px">3</div>
+      <div class="mk fog" aria-hidden="true" style="left:639px;top:498px">4</div>
+      <div class="mk lock" aria-hidden="true" style="left:333px;top:166px">5</div>
+      <div class="mk lock" aria-hidden="true" style="left:814px;top:249px">6</div>
+      <div class="mk lock" aria-hidden="true" style="left:953px;top:187px">7</div>
+      <div class="mk cave" aria-hidden="true" style="left:703px;top:316px">A</div>
+      <div class="mk cave" aria-hidden="true" style="left:844px;top:448px">B</div>
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:34px;margin-top:34px">
+      <span class="key"><i style="background:#3fbf5f"></i>OPEN</span>
+      <span class="key"><i style="background:#4a8cff"></i>FOG</span>
+      <span class="key"><i style="background:#8e9ad0"></i>LOCKED</span>
+      <span class="key"><i style="background:#5ad1ff"></i>CAVE</span>
+    </div>
+
+    <!-- ===== every place on the map ===== -->
+    <ul class="grid3" style="margin-top:34px;text-align:left">
+      <li class="card"><div class="top"><span class="bd" style="background:#3fbf5f;color:#0d2a14">1</span><span class="nm">LUNAR BASE</span><span class="st" style="background:#3fbf5f;color:#0d2a14">OPEN</span></div><p>Your outpost: airlock, workstation, storage, life support and bed. Open from the start.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#3fbf5f;color:#0d2a14">2</span><span class="nm">LUNAR PLAINS</span><span class="st" style="background:#3fbf5f;color:#0d2a14">OPEN</span></div><p>Wide open ground with loose regolith to mine. Both caves are here. Open from the start.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#4a8cff;color:#06122e">3</span><span class="nm">IRON FIELD</span><span class="st" style="background:#4a8cff;color:#06122e">FOG</span></div><p>Hidden by fog on the map. Walk in to discover it.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#4a8cff;color:#06122e">4</span><span class="nm">SILICATE FLATS</span><span class="st" style="background:#4a8cff;color:#06122e">FOG</span></div><p>Hidden by fog on the map. Walk in to discover it.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#8e9ad0;color:#1a1a2e">5</span><span class="nm">HIGHLAND RIDGE</span><span class="st" style="background:#8e9ad0;color:#1a1a2e">LOCKED</span></div><p>Behind a padlock. It opens in a later mission.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#8e9ad0;color:#1a1a2e">6</span><span class="nm">SHADOWED CRATER</span><span class="st" style="background:#8e9ad0;color:#1a1a2e">LOCKED</span></div><p>Behind a padlock. It opens in a later mission. Ice hides in shadowed places.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#8e9ad0;color:#1a1a2e">7</span><span class="nm">ICE DEPOSIT</span><span class="st" style="background:#8e9ad0;color:#1a1a2e">LOCKED</span></div><p>Water ice stays locked until you have the right protection and equipment.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#5ad1ff;color:#06223a">A</span><span class="nm">IRON CAVE</span><span class="st" style="background:#5ad1ff;color:#06223a">CAVE</span></div><p>A dark cave in the plains. Iron-bearing rock is found only here. Turn on your flashlight.</p></li>
+      <li class="card"><div class="top"><span class="bd" style="background:#5ad1ff;color:#06223a">B</span><span class="nm">CRYSTAL CAVE</span><span class="st" style="background:#5ad1ff;color:#06223a">CAVE</span></div><p>A dark cave in the plains. Silicate rock is found only here, and its crystals glow in the dark.</p></li>
+    </ul>
+
+    <!-- ===== how regions open ===== -->
+    <h3 class="h3" style="margin-top:110px">HOW REGIONS <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">OPEN</span></h3>
+    <p class="lead" style="margin-top:16px">Every region is in one of three states. Exploring is what changes them.</p>
+
+    <ul class="grid3" style="margin-top:36px;text-align:left">
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#3fbf5f;color:#0d2a14">1 · OPEN</span>
+        <h4 style="font-size:17px;margin-top:16px">WALK RIGHT IN</h4>
+        <p>Lunar Base and Lunar Plains are open from the start. Explore them freely.</p>
+      </li>
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#4a8cff;color:#06122e">2 · FOG</span>
+        <h4 style="font-size:17px;margin-top:16px">FIND IT</h4>
+        <p>Fogged regions show a "?" on the map. Walk in to discover one: its name appears, a "New area discovered!" message pops up and you earn a discovery bonus.</p>
+      </li>
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#8e9ad0;color:#1a1a2e">3 · LOCKED</span>
+        <h4 style="font-size:17px;margin-top:16px">EARN IT</h4>
+        <p>Locked regions show a padlock. They open as missions advance, and some need the right protection and equipment first, like water ice.</p>
+      </li>
+    </ul>
+
+    <!-- before / after -->
+    <div style="display:flex;align-items:center;justify-content:space-between;width:1120px;margin-top:56px">
+      <div style="width:500px;text-align:left">
+        <span class="tag notch" style="background:#141c4d;color:#4a8cff;box-shadow:inset -3px -3px 0 0 #0d1236,inset 3px 3px 0 0 #3a4a94">BEFORE · FOG</span>
+        <div class="frame" style="width:500px;height:282px;margin-top:16px"><img src="/assets/ui/map/lunar_map_fog_of_war.webp" alt="The world map covered in fog, with only the outpost area visible" width="500" height="282" style="display:block;width:500px;height:282px;object-fit:cover"></div>
+      </div>
+      <svg aria-hidden="true" width="48" height="48" viewBox="0 0 6 6" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+      <div style="width:500px;text-align:left">
+        <span class="tag notch" style="background:#141c4d;color:#3fbf5f;box-shadow:inset -3px -3px 0 0 #0d1236,inset 3px 3px 0 0 #3a4a94">AFTER · DISCOVERED</span>
+        <div class="frame" style="width:500px;height:282px;margin-top:16px"><img src="/assets/ui/map/lunar_map_discovered.webp" alt="The same map after exploring, with every region shown in full detail" width="500" height="282" style="display:block;width:500px;height:282px;object-fit:cover"></div>
+      </div>
+    </div>
+
+    <!-- ===== reading the map ===== -->
+    <h3 class="h3" style="margin-top:110px">READING THE <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">MAP</span></h3>
+    <ul class="grid3" style="margin-top:36px;text-align:left">
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#141c4d;color:#ffd23f;box-shadow:inset -3px -3px 0 0 #0d1236,inset 3px 3px 0 0 #3a4a94">MINIMAP</span>
+        <p>A round minimap sits in the top-right corner and follows you. When the outpost is far away, a little house arrow points the way back.</p>
+      </li>
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#141c4d;color:#ffd23f;box-shadow:inset -3px -3px 0 0 #0d1236,inset 3px 3px 0 0 #3a4a94">FULL MAP · KEY M</span>
+        <p>Press M outside the outpost to open the full map. Discovered areas show full detail, the rest stay foggy, and a yellow pin shows where you are.</p>
+      </li>
+      <li class="card" style="padding-bottom:26px">
+        <span class="tag notch" style="background:#141c4d;color:#ffd23f;box-shadow:inset -3px -3px 0 0 #0d1236,inset 3px 3px 0 0 #3a4a94">MAP KEY</span>
+        <ul style="list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:16px;color:#d5daf7">
+          <li style="display:flex;align-items:center;gap:12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 8 8" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#ffffff" d="M3 0h2v1H3zM2 1h4v1H2zM1 2h6v1H1zM0 3h8v1H0zM1 4h6v1H1zM1 5h2v3H1zM5 5h2v3H5zM3 5h2v1H3z"/></svg>Base: your outpost</li>
+          <li style="display:flex;align-items:center;gap:12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 6 8" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#ffd23f" d="M1 0h4v1H1zM0 1h6v3H0zM1 4h4v1H1zM2 5h2v2H2z"/><path fill="#060920" d="M2 2h2v1H2z"/></svg>You: your position</li>
+          <li style="display:flex;align-items:center;gap:12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 8 6" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#5ad1ff" d="M2 0h4v1H2zM1 1h6v1H1zM0 2h8v4H0z"/><path fill="#060920" d="M3 3h2v3H3z"/></svg>Cave: a dark cave to enter</li>
+          <li style="display:flex;align-items:center;gap:12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 6 6" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#6c77ad" d="M0 0h3v3H0zM3 3h3v3H3z"/><path fill="#a4aed9" d="M3 0h3v3H3zM0 3h3v3H0z"/></svg>Fog: not discovered yet</li>
+          <li style="display:flex;align-items:center;gap:12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 8 8" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#a4aed9" d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v1H0zM0 4h8v1H0zM0 5h3v1H0zM5 5h3v1H5zM0 6h3v1H0zM5 6h3v1H5zM0 7h8v1H0z"/></svg>Locked: not available yet</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2880}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

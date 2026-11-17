@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hero Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+a.navlink{color:#a4aed9}
+a.navlink:hover{color:#ffd23f}
+a.btn:hover{filter:brightness(1.12)}
+a.btn:active{transform:translateY(3px)}
+a:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+.astro{width:250px;height:338px;background:url(/assets/sprites/astro_idle.png) 0 0/500px 338px no-repeat;image-rendering:pixelated;animation:astroIdle 1.2s linear infinite}
+@keyframes astroIdle{0%,49.99%{background-position:0 0}50%,100%{background-position:-250px 0}}
+.bob{animation:bob 1s linear infinite}
+@keyframes bob{0%,49.99%{transform:translateY(0)}50%,100%{transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){.astro,.bob{animation:none}}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:760px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <!-- NAV (same as the navbar board) -->
+  <header style="position:absolute;left:0;top:0;width:1280px;z-index:5;height:88px;box-sizing:border-box;background:#060920;border-bottom:4px solid #3a4a94;box-shadow:0 4px 0 0 #172052;display:flex;align-items:center;justify-content:center">
+    <div style="width:1120px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" aria-label="Astro Kid, home" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+        <img src="/favicon-48.png" alt="" width="48" height="48" style="width:48px;height:48px;image-rendering:pixelated;display:block">
+        <span style="font-family:'Press Start 2P',monospace;font-size:18px;line-height:1;color:#ffffff;text-shadow:3px 3px 0 #243372;white-space:nowrap">ASTRO <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">KID</span></span>
+      </a>
+      <nav aria-label="Primary" style="display:flex;align-items:center;gap:36px">
+        <a class="navlink" href="#learn" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">LEARN</a>
+        <a class="navlink" href="#missions" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">MISSIONS</a>
+        <a class="navlink" href="#install" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">INSTALL</a>
+        <span aria-hidden="true" style="width:4px;height:32px;background:#243372"></span>
+        <a class="btn notch" href="#demo" style="display:inline-flex;align-items:center;gap:10px;height:48px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#0d2a14;background:#3fbf5f;box-shadow:inset -4px -4px 0 0 #1d7a36,inset 4px 4px 0 0 #8be8a2">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+          PLAY DEMO
+        </a>
+        <a class="btn notch" href="#get" style="display:inline-flex;align-items:center;height:48px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#1a1a2e;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0">GET THE GAME</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section aria-labelledby="hero-title" style="position:absolute;left:0;top:92px;width:1280px;height:668px;overflow:hidden">
+
+    <img src="/assets/backgrounds/lunar_base_expanded.png" alt="" width="1280" height="668" style="position:absolute;left:0;top:0;width:1280px;height:668px;object-fit:cover;object-position:center bottom;image-rendering:pixelated">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(6,9,32,0.4)"></div>
+    <!-- stepped shade behind the copy so the text stays readable -->
+    <div aria-hidden="true" style="position:absolute;left:0;top:0;width:660px;height:668px"><div style="position:absolute;left:0px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.55)"></div><div style="position:absolute;left:110px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.45)"></div><div style="position:absolute;left:220px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.36)"></div><div style="position:absolute;left:330px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.27)"></div><div style="position:absolute;left:440px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.18)"></div><div style="position:absolute;left:550px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.1)"></div></div>
+    <!-- stepped fade into the page background (pixel dither, no gradients) -->
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:0;width:1280px;height:120px">
+      <div style="position:absolute;left:0;top:0;width:1280px;height:20px;background:rgba(6,9,32,0.15)"></div>
+      <div style="position:absolute;left:0;top:20px;width:1280px;height:20px;background:rgba(6,9,32,0.3)"></div>
+      <div style="position:absolute;left:0;top:40px;width:1280px;height:20px;background:rgba(6,9,32,0.5)"></div>
+      <div style="position:absolute;left:0;top:60px;width:1280px;height:20px;background:rgba(6,9,32,0.7)"></div>
+      <div style="position:absolute;left:0;top:80px;width:1280px;height:20px;background:rgba(6,9,32,0.88)"></div>
+      <div style="position:absolute;left:0;top:100px;width:1280px;height:20px;background:#060920"></div>
+    </div>
+
+    <div style="position:absolute;left:80px;top:52px;width:1120px;height:520px;display:flex;align-items:center;justify-content:space-between">
+
+      <!-- copy -->
+      <div style="width:580px;display:flex;flex-direction:column;align-items:flex-start">
+        <div class="notch" style="display:inline-flex;align-items:center;gap:10px;height:36px;box-sizing:border-box;padding:0 16px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:1px;color:#ffd23f">
+          <span aria-hidden="true" style="width:8px;height:8px;background:#ffd23f"></span>
+          LEARN SPACE SCIENCE BY PLAYING
+        </div>
+
+        <h1 id="hero-title" style="margin:28px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:84px;line-height:1.18;color:#ffffff;text-shadow:4px 4px 0 #243372,8px 8px 0 #172052">ASTRO<br><span style="color:#ffd23f;text-shadow:4px 4px 0 #c2410c,8px 8px 0 #7a2a0a">KID</span></h1>
+
+        <p style="margin:30px 0 0;max-width:500px;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:20px;line-height:1.55;color:#e4e8ff;text-shadow:0 2px 0 #060920">Survive on the Moon. Manage oxygen, power and time. Learn the real trade-offs behind every space mission, without opening a textbook.</p>
+
+        <div style="display:flex;align-items:center;gap:24px;margin-top:30px">
+          <a class="btn notch" href="#demo" style="display:inline-flex;align-items:center;gap:12px;height:64px;box-sizing:border-box;padding:0 30px;font-family:'Silkscreen',monospace;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none;color:#0d2a14;background:#3fbf5f;box-shadow:inset -4px -4px 0 0 #1d7a36,inset 4px 4px 0 0 #8be8a2">
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+            PLAY FREE DEMO
+          </a>
+          <a class="btn notch" href="#get" style="display:inline-flex;align-items:center;height:64px;box-sizing:border-box;padding:0 30px;font-family:'Silkscreen',monospace;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none;color:#1a1a2e;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0">GET THE GAME</a>
+        </div>
+
+        <ul style="list-style:none;margin:28px 0 0;padding:0;display:flex;align-items:center;gap:22px;font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:1px;color:#c9d0f5;text-shadow:0 2px 0 #060920">
+          <li style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:8px;height:8px;background:#3fbf5f"></span>AGES 7-12</li>
+          <li style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:8px;height:8px;background:#3fbf5f"></span>RUNS IN BROWSER</li>
+          <li style="display:flex;align-items:center;gap:8px"><span aria-hidden="true" style="width:8px;height:8px;background:#3fbf5f"></span>NO SIGN-UP</li>
+        </ul>
+      </div>
+
+      <!-- astronaut -->
+      <div style="position:relative;width:500px;height:500px">
+        <div aria-hidden="true" style="position:absolute;left:165px;top:529px;width:170px;height:6px;background:rgba(0,0,0,0.35)"></div>
+        <div aria-hidden="true" style="position:absolute;left:185px;top:535px;width:130px;height:6px;background:rgba(0,0,0,0.35)"></div>
+        <div class="astro" role="img" aria-label="Astro Kid, the young astronaut" style="position:absolute;left:125px;top:213px"></div>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:28px;width:1280px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:2px;color:#a4aed9">
+      SCROLL
+      <svg class="bob" width="20" height="12" viewBox="0 0 5 3" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2z"/></svg>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

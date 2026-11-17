@@ -1,0 +1,60 @@
+<header class="site-header" data-site-header>
+  <div class="wrap site-header__bar">
+    <a class="brand" href="{{HOME_HREF}}" aria-label="Astro Kid, home">
+      <img class="brand__logo pixelated" src="./favicon-48.png" alt="" width="48" height="48" />
+      <span class="brand__text">
+        ASTRO <span class="brand__accent">KID</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-links">
+        <a class="nav-link" href="{{LEARN_HREF}}">LEARN</a>
+        <a class="nav-link" href="{{MISSIONS_HREF}}" {{MISSIONS_ATTR}}>MISSIONS</a>
+        <a class="nav-link" href="{{INSTALL_HREF}}" {{INSTALL_ATTR}}>INSTALL</a>
+      </div>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <div class="nav-actions" data-nav-actions>
+        <a class="btn btn--nav btn--green" href="./play.html">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges">
+            <path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z" />
+          </svg>
+          PLAY DEMO
+        </a>
+        <button class="btn btn--nav btn--yellow" type="button" data-auth-trigger="download">
+          GET THE GAME
+        </button>
+      </div>
+    </nav>
+
+    <div class="nav-mobile-controls" data-nav-mobile-controls>
+      <button class="btn btn--blue nav-toggle" type="button" data-nav-toggle aria-label="Open menu"
+        aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <span class="nav-burger" aria-hidden="true">
+          <span class="nav-burger__bar"></span>
+          <span class="nav-burger__bar"></span>
+          <span class="nav-burger__bar"></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-nav-drawer" class="nav-drawer" aria-label="Primary" data-nav-drawer hidden>
+    <a class="nav-drawer__link" href="{{LEARN_HREF}}">LEARN</a>
+    <div class="divider-pixel" aria-hidden="true"></div>
+    <a class="nav-drawer__link" href="{{MISSIONS_HREF}}" {{MISSIONS_ATTR}}>MISSIONS</a>
+    <div class="divider-pixel" aria-hidden="true"></div>
+    <a class="nav-drawer__link" href="{{INSTALL_HREF}}" {{INSTALL_ATTR}}>INSTALL</a>
+    <div class="nav-drawer__actions">
+      <a class="btn btn--green btn--block" href="./play.html">
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges">
+          <path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z" />
+        </svg>
+        PLAY DEMO
+      </a>
+      <button class="btn btn--yellow btn--block" type="button" data-auth-trigger="download">
+        GET THE GAME
+      </button>
+    </div>
+  </nav>
+</header>

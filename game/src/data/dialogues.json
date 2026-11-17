@@ -1,0 +1,602 @@
+{
+  "language": "English",
+  "subtitle_ready": true,
+  "radio_box": "bottom_screen",
+  "bubble_text_policy": "Dialogue text is added at runtime; speech bubbles in artwork remain empty.",
+  "dialogues": [
+    {
+      "id": "cutscene_01_launch",
+      "scene": "Earth Launch Site",
+      "trigger": "cutscene_start",
+      "speaker": "MISSION_CONTROL",
+      "line": "All systems are ready. Lunar mission is a GO.",
+      "sfx": [
+        "WIND",
+        "ENGINE_HUM",
+        "RADIO_STATIC",
+        "COUNTDOWN_BEEP"
+      ]
+    },
+    {
+      "id": "cutscene_01_reply",
+      "scene": "Earth Launch Site",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Ready for launch.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_02_control",
+      "scene": "Liftoff",
+      "trigger": "rocket_ignition",
+      "speaker": "MISSION_CONTROL",
+      "line": "We have liftoff!",
+      "sfx": [
+        "COUNTDOWN",
+        "ENGINE_IGNITION",
+        "ROCKET_THRUST",
+        "CAMERA_SHAKE"
+      ]
+    },
+    {
+      "id": "cutscene_02_reply",
+      "scene": "Liftoff",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "See you on the Moon.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_03_nova",
+      "scene": "Earth Orbit",
+      "trigger": "nova_first_activation",
+      "speaker": "NOVA",
+      "line": "Hello, Commander. I am NOVA, your mission assistant.",
+      "sfx": [
+        "RADIO_BEEP",
+        "SYSTEM_ONLINE"
+      ]
+    },
+    {
+      "id": "cutscene_03_astronaut",
+      "scene": "Earth Orbit",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Nice to meet you, NOVA.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_03_nova2",
+      "scene": "Earth Orbit",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "I will be monitoring your systems throughout the mission.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_04_nova",
+      "scene": "Lunar Transfer",
+      "trigger": "lunar_transfer_confirmed",
+      "speaker": "NOVA",
+      "line": "Lunar transfer trajectory confirmed.",
+      "sfx": [
+        "NAVIGATION_BEEP",
+        "ENGINE_HUM"
+      ]
+    },
+    {
+      "id": "cutscene_04_astronaut",
+      "scene": "Lunar Transfer",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "How long until landing?",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_04_nova2",
+      "scene": "Lunar Transfer",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Preparing the landing sequence.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_05_nova",
+      "scene": "Lunar Descent",
+      "trigger": "descent_started",
+      "speaker": "NOVA",
+      "line": "Descent sequence initiated.",
+      "sfx": [
+        "WARNING_BEEP",
+        "THRUST_ACTIVATED",
+        "METAL_VIBRATION"
+      ]
+    },
+    {
+      "id": "cutscene_05_astronaut",
+      "scene": "Lunar Descent",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Keep the landing stable.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_05_nova2",
+      "scene": "Lunar Descent",
+      "trigger": "trajectory_adjustment",
+      "speaker": "NOVA",
+      "line": "Adjusting trajectory.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_06_nova",
+      "scene": "Touchdown",
+      "trigger": "landing_confirmed",
+      "speaker": "NOVA",
+      "line": "Landing successful!",
+      "sfx": [
+        "LANDING_IMPACT",
+        "ENGINE_SHUTDOWN",
+        "SYSTEM_CONFIRMED"
+      ]
+    },
+    {
+      "id": "cutscene_06_astronaut",
+      "scene": "Touchdown",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "We made it.",
+      "sfx": []
+    },
+    {
+      "id": "cutscene_07_astronaut",
+      "scene": "A New Home",
+      "trigger": "first_outpost_reveal",
+      "speaker": "ASTRONAUT",
+      "line": "Well... this is our new home.",
+      "sfx": [
+        "LUNAR_AMBIENCE"
+      ]
+    },
+    {
+      "id": "cutscene_07_nova",
+      "scene": "A New Home",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Welcome to your lunar outpost, Commander.",
+      "sfx": []
+    },
+    {
+      "id": "obj01_dr1",
+      "scene": "Establish Communication",
+      "trigger": "first_gameplay_frame",
+      "speaker": "DR. KARIM",
+      "line": "Commander, this is Mission Control. Can you hear me?",
+      "sfx": [
+        "RADIO_STATIC",
+        "RADIO_CONNECT"
+      ]
+    },
+    {
+      "id": "obj01_astronaut",
+      "scene": "Establish Communication",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Loud and clear, Doctor.",
+      "sfx": []
+    },
+    {
+      "id": "obj01_dr2",
+      "scene": "Establish Communication",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Good. Your landing was successful, but the outpost is not fully operational.",
+      "sfx": []
+    },
+    {
+      "id": "obj01_astronaut2",
+      "scene": "Establish Communication",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "What should I do first?",
+      "sfx": []
+    },
+    {
+      "id": "obj01_dr3",
+      "scene": "Establish Communication",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Start by inspecting the base. We need to understand exactly what equipment and supplies we have.",
+      "sfx": []
+    },
+    {
+      "id": "obj01_dr4",
+      "scene": "Establish Communication",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Remember, every resource you have is valuable. Use what you have carefully.",
+      "sfx": []
+    },
+    {
+      "id": "obj02_nova",
+      "scene": "Explore the Lunar Outpost",
+      "trigger": "approach_airlock",
+      "speaker": "NOVA",
+      "line": "Commander, the outpost is ready for inspection. Let's check the interior systems.",
+      "sfx": [
+        "NOVA_HOVER"
+      ]
+    },
+    {
+      "id": "obj02_astronaut",
+      "scene": "Explore the Lunar Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Let's see what we have.",
+      "sfx": []
+    },
+    {
+      "id": "obj03_nova1",
+      "scene": "Inspect the Interior",
+      "trigger": "enter_outpost",
+      "speaker": "NOVA",
+      "line": "Outpost inspection started.",
+      "sfx": [
+        "AIRLOCK_HISS",
+        "DOOR_OPEN"
+      ]
+    },
+    {
+      "id": "obj03_astronaut",
+      "scene": "Inspect the Interior",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "What are our main systems?",
+      "sfx": []
+    },
+    {
+      "id": "obj03_nova2",
+      "scene": "Inspect the Interior",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Workstation, storage, temporary life support, and sleeping area.",
+      "sfx": []
+    },
+    {
+      "id": "obj03_astronaut2",
+      "scene": "Inspect the Interior",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "At least we have a place to start.",
+      "sfx": []
+    },
+    {
+      "id": "obj03_nova3",
+      "scene": "Inspect the Interior",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Yes, Commander. But we still need local resources to expand our capabilities.",
+      "sfx": []
+    },
+    {
+      "id": "obj04_dr1",
+      "scene": "Prepare for Exploration",
+      "trigger": "inspect_all_base_systems",
+      "speaker": "DR. KARIM",
+      "line": "Commander, we have reviewed your initial inspection.",
+      "sfx": [
+        "RADIO_BEEP"
+      ]
+    },
+    {
+      "id": "obj04_dr2",
+      "scene": "Prepare for Exploration",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Your supplies are limited. We cannot depend on Earth for every replacement part.",
+      "sfx": []
+    },
+    {
+      "id": "obj04_astronaut",
+      "scene": "Prepare for Exploration",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "So we need to use local resources?",
+      "sfx": []
+    },
+    {
+      "id": "obj04_dr3",
+      "scene": "Prepare for Exploration",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Exactly. The Moon contains useful materials, but we must identify and process them.",
+      "sfx": []
+    },
+    {
+      "id": "obj04_nova",
+      "scene": "Prepare for Exploration",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "I have prepared your initial equipment.",
+      "sfx": []
+    },
+    {
+      "id": "obj04_nova2",
+      "scene": "Prepare for Exploration",
+      "trigger": "equip_pickaxe",
+      "speaker": "NOVA",
+      "line": "Your pickaxe has limited durability. Watch its condition while mining.",
+      "sfx": [
+        "EQUIPMENT_READY"
+      ]
+    },
+    {
+      "id": "obj04_astronaut2",
+      "scene": "Prepare for Exploration",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Understood.",
+      "sfx": []
+    },
+    {
+      "id": "obj05_nova",
+      "scene": "Explore the Lunar Plains",
+      "trigger": "exit_airlock",
+      "speaker": "NOVA",
+      "line": "Commander, this area is suitable for initial surface exploration.",
+      "sfx": [
+        "LUNAR_FOOTSTEPS"
+      ]
+    },
+    {
+      "id": "obj05_astronaut",
+      "scene": "Explore the Lunar Plains",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "What should I look for?",
+      "sfx": []
+    },
+    {
+      "id": "obj05_nova2",
+      "scene": "Explore the Lunar Plains",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Start with the nearby rocks. Some contain useful mineral materials.",
+      "sfx": []
+    },
+    {
+      "id": "obj06_dr1",
+      "scene": "Collect Lunar Resources",
+      "trigger": "enter_resource_zone",
+      "speaker": "DR. KARIM",
+      "line": "Commander, we need material samples before we can plan the next construction phase.",
+      "sfx": [
+        "RADIO_STATIC"
+      ]
+    },
+    {
+      "id": "obj06_astronaut",
+      "scene": "Collect Lunar Resources",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "What exactly do you need?",
+      "sfx": []
+    },
+    {
+      "id": "obj06_dr2",
+      "scene": "Collect Lunar Resources",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "Collect five samples of common lunar material, five iron-bearing rock samples, and five silicate-rich samples.",
+      "sfx": []
+    },
+    {
+      "id": "obj06_nova",
+      "scene": "Collect Lunar Resources",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "I will track your collected materials.",
+      "sfx": [
+        "OBJECTIVE_TRACKER_ON"
+      ]
+    },
+    {
+      "id": "obj06_complete_nova",
+      "scene": "Collect Lunar Resources",
+      "trigger": "all_resource_targets_met",
+      "speaker": "NOVA",
+      "line": "All requested samples collected.",
+      "sfx": [
+        "OBJECTIVE_COMPLETE"
+      ]
+    },
+    {
+      "id": "obj06_complete_astronaut",
+      "scene": "Collect Lunar Resources",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "That's a good start.",
+      "sfx": []
+    },
+    {
+      "id": "obj06_complete_nova2",
+      "scene": "Collect Lunar Resources",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Returning to the outpost is recommended.",
+      "sfx": []
+    },
+    {
+      "id": "obj07_nova",
+      "scene": "Return to the Outpost",
+      "trigger": "return_to_base_zone",
+      "speaker": "NOVA",
+      "line": "Commander, our storage is ready to receive the collected samples.",
+      "sfx": [
+        "BASE_PROXIMITY_BEEP"
+      ]
+    },
+    {
+      "id": "obj07_astronaut",
+      "scene": "Return to the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Let's head back.",
+      "sfx": []
+    },
+    {
+      "id": "obj07_nova2",
+      "scene": "Return to the Outpost",
+      "trigger": "deposit_all_samples",
+      "speaker": "NOVA",
+      "line": "Inventory updated. All samples have been secured.",
+      "sfx": [
+        "STORAGE_CONFIRM"
+      ]
+    },
+    {
+      "id": "obj08_nova",
+      "scene": "Research Your First Technology",
+      "trigger": "open_workstation_after_deposit",
+      "speaker": "NOVA",
+      "line": "Your collected samples are sufficient to begin basic material processing research.",
+      "sfx": [
+        "WORKSTATION_ON"
+      ]
+    },
+    {
+      "id": "obj08_astronaut",
+      "scene": "Research Your First Technology",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Can we use these materials to make new equipment?",
+      "sfx": []
+    },
+    {
+      "id": "obj08_nova2",
+      "scene": "Research Your First Technology",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "After processing, some materials may become suitable for manufacturing.",
+      "sfx": []
+    },
+    {
+      "id": "obj08_astronaut2",
+      "scene": "Research Your First Technology",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Then let's get started.",
+      "sfx": []
+    },
+    {
+      "id": "obj09_nova",
+      "scene": "Build Your First Material Processor",
+      "trigger": "craft_complete",
+      "speaker": "NOVA",
+      "line": "Material Processor assembly is complete.",
+      "sfx": [
+        "CRAFT_COMPLETE"
+      ]
+    },
+    {
+      "id": "obj09_astronaut",
+      "scene": "Build Your First Material Processor",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "One step closer to making this place self-sufficient.",
+      "sfx": []
+    },
+    {
+      "id": "obj09_nova2",
+      "scene": "Build Your First Material Processor",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Correct. We can now begin planning local material production.",
+      "sfx": []
+    },
+    {
+      "id": "obj10_dr1",
+      "scene": "Stabilize the Outpost",
+      "trigger": "processor_installed",
+      "speaker": "DR. KARIM",
+      "line": "Excellent work, Commander. You've collected your first lunar materials and established a basic processing capability.",
+      "sfx": [
+        "RADIO_BEEP"
+      ]
+    },
+    {
+      "id": "obj10_astronaut",
+      "scene": "Stabilize the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "But the outpost still depends on temporary oxygen supplies.",
+      "sfx": []
+    },
+    {
+      "id": "obj10_dr2",
+      "scene": "Stabilize the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "DR. KARIM",
+      "line": "That's our next major challenge. We need a reliable life-support system.",
+      "sfx": []
+    },
+    {
+      "id": "obj10_nova",
+      "scene": "Stabilize the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Current life-support reserves are stable, but limited.",
+      "sfx": []
+    },
+    {
+      "id": "obj10_astronaut2",
+      "scene": "Stabilize the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "Then we need to work on a permanent solution.",
+      "sfx": []
+    },
+    {
+      "id": "obj10_nova2",
+      "scene": "Stabilize the Outpost",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Research path identified: Oxygen Recovery and Power Systems.",
+      "sfx": []
+    },
+    {
+      "id": "ending_astronaut",
+      "scene": "Level Complete",
+      "trigger": "all_level_conditions_met",
+      "speaker": "ASTRONAUT",
+      "line": "We came here with a small outpost and limited supplies.",
+      "sfx": [
+        "LEVEL_COMPLETE_STING"
+      ]
+    },
+    {
+      "id": "ending_nova",
+      "scene": "Level Complete",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "And now we have our first local processing system.",
+      "sfx": []
+    },
+    {
+      "id": "ending_astronaut2",
+      "scene": "Level Complete",
+      "trigger": "after_previous_line",
+      "speaker": "ASTRONAUT",
+      "line": "It's a start. We still have a long way to go.",
+      "sfx": []
+    },
+    {
+      "id": "ending_nova2",
+      "scene": "Level Complete",
+      "trigger": "after_previous_line",
+      "speaker": "NOVA",
+      "line": "Next mission: improve our life-support systems.",
+      "sfx": []
+    }
+  ]
+}

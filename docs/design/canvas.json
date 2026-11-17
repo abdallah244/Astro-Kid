@@ -1,0 +1,845 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-16T12:30:00Z"
+  },
+  "title": "Astro Kid Landing",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing"
+    },
+    {
+      "id": "about",
+      "name": "About page"
+    },
+    {
+      "id": "download",
+      "name": "Download page"
+    },
+    {
+      "id": "profile",
+      "name": "Profile page"
+    },
+    {
+      "id": "installer",
+      "name": "Installer (.exe)"
+    }
+  ],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 220,
+      "title": "Navbar · Desktop"
+    },
+    "Nav-Mobile.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 640,
+      "title": "Navbar · Mobile",
+      "is_interactive": true
+    },
+    "Hero-Desktop.dc.html": {
+      "x": 0,
+      "y": 760,
+      "w": 1280,
+      "h": 760,
+      "title": "Hero · Desktop"
+    },
+    "Hero-Mobile.dc.html": {
+      "x": 1360,
+      "y": 760,
+      "w": 390,
+      "h": 1060,
+      "title": "Hero · Mobile"
+    },
+    "Learn-Desktop.dc.html": {
+      "x": 0,
+      "y": 1940,
+      "w": 1280,
+      "h": 1540,
+      "title": "What you learn · Desktop"
+    },
+    "Learn-Mobile.dc.html": {
+      "x": 1360,
+      "y": 1940,
+      "w": 390,
+      "h": 1580,
+      "title": "What you learn · Mobile"
+    },
+    "About-Desktop.dc.html": {
+      "x": 0,
+      "y": 3740,
+      "w": 1280,
+      "h": 600,
+      "title": "About · Desktop"
+    },
+    "About-Mobile.dc.html": {
+      "x": 1360,
+      "y": 3740,
+      "w": 390,
+      "h": 640,
+      "title": "About · Mobile"
+    },
+    "Download-CTA-Desktop.dc.html": {
+      "x": 0,
+      "y": 4600,
+      "w": 1280,
+      "h": 560,
+      "title": "Download CTA · Desktop"
+    },
+    "Download-CTA-Mobile.dc.html": {
+      "x": 1360,
+      "y": 4600,
+      "w": 390,
+      "h": 700,
+      "title": "Download CTA · Mobile"
+    },
+    "Footer-Desktop.dc.html": {
+      "x": 0,
+      "y": 5420,
+      "w": 1280,
+      "h": 320,
+      "title": "Footer · Desktop"
+    },
+    "Footer-Mobile.dc.html": {
+      "x": 1360,
+      "y": 5420,
+      "w": 390,
+      "h": 690,
+      "title": "Footer · Mobile"
+    },
+    "Modal-Desktop.dc.html": {
+      "x": 0,
+      "y": 6340,
+      "w": 1280,
+      "h": 720,
+      "title": "Sign-in modal (step 1) · Desktop",
+      "is_interactive": true
+    },
+    "Modal-Mobile.dc.html": {
+      "x": 1360,
+      "y": 6340,
+      "w": 390,
+      "h": 760,
+      "title": "Sign-in modal (step 1) · Mobile",
+      "is_interactive": true
+    },
+    "Modal-Name-Desktop.dc.html": {
+      "x": 0,
+      "y": 7320,
+      "w": 1280,
+      "h": 760,
+      "title": "Add full name (step 2) · Desktop",
+      "is_interactive": true
+    },
+    "Modal-Name-Mobile.dc.html": {
+      "x": 1360,
+      "y": 7320,
+      "w": 390,
+      "h": 800,
+      "title": "Add full name (step 2) · Mobile",
+      "is_interactive": true
+    },
+    "Cookie-Desktop.dc.html": {
+      "x": 0,
+      "y": 8340,
+      "w": 1280,
+      "h": 720,
+      "title": "Cookie notice · Desktop"
+    },
+    "Cookie-Mobile.dc.html": {
+      "x": 1360,
+      "y": 8340,
+      "w": 390,
+      "h": 760,
+      "title": "Cookie notice · Mobile"
+    },
+    "Policies.dc.html": {
+      "x": 0,
+      "y": 9320,
+      "w": 1280,
+      "h": 10650,
+      "expand": "fill",
+      "title": "Policies page (Privacy + Terms)"
+    },
+    "Nav-Auth-Desktop.dc.html": {
+      "x": 1830,
+      "y": 0,
+      "w": 1280,
+      "h": 600,
+      "title": "Navbar signed in · Desktop",
+      "is_interactive": true
+    },
+    "Nav-Auth-Mobile.dc.html": {
+      "x": 3190,
+      "y": 0,
+      "w": 390,
+      "h": 640,
+      "title": "Navbar signed in · Mobile",
+      "is_interactive": true
+    },
+    "Error-404.dc.html": {
+      "x": 3800,
+      "y": 0,
+      "w": 1280,
+      "h": 760,
+      "expand": "fill",
+      "title": "Error 404 · Page not found"
+    },
+    "Error-500.dc.html": {
+      "x": 5160,
+      "y": 0,
+      "w": 1280,
+      "h": 760,
+      "expand": "fill",
+      "title": "Error 500 · Server error"
+    },
+    "Error-429.dc.html": {
+      "x": 6520,
+      "y": 0,
+      "w": 1280,
+      "h": 760,
+      "expand": "fill",
+      "title": "Error 429 · Too many requests"
+    },
+    "Loading-Desktop.dc.html": {
+      "x": 3800,
+      "y": 1100,
+      "w": 1280,
+      "h": 720,
+      "title": "Loading · Desktop",
+      "is_interactive": true
+    },
+    "Loading-Mobile.dc.html": {
+      "x": 5160,
+      "y": 1100,
+      "w": 390,
+      "h": 760,
+      "title": "Loading · Mobile",
+      "is_interactive": true
+    },
+    "Scrollbar.dc.html": {
+      "x": 5640,
+      "y": 1100,
+      "w": 1280,
+      "h": 760,
+      "title": "Pixel scrollbar",
+      "is_interactive": true
+    },
+    "Loading-Components.dc.html": {
+      "x": 3800,
+      "y": 1940,
+      "w": 1280,
+      "h": 480,
+      "title": "Loading states (spinner, button, progress, skeleton)"
+    },
+    "AboutPage-Hero-Desktop.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 760,
+      "page": "about",
+      "title": "About · Hero · Desktop"
+    },
+    "AboutPage-Hero-Mobile.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 940,
+      "page": "about",
+      "title": "About · Hero · Mobile"
+    },
+    "AboutPage-Map-Desktop.dc.html": {
+      "x": 0,
+      "y": 1000,
+      "w": 1280,
+      "h": 2880,
+      "page": "about",
+      "title": "About · Mission map · Desktop"
+    },
+    "AboutPage-Map-Mobile.dc.html": {
+      "x": 1360,
+      "y": 1180,
+      "w": 390,
+      "h": 4120,
+      "page": "about",
+      "title": "About · Mission map · Mobile"
+    },
+    "AboutPage-Crew-Desktop.dc.html": {
+      "x": 0,
+      "y": 4160,
+      "w": 1280,
+      "h": 2040,
+      "page": "about",
+      "title": "About · Crew · Desktop"
+    },
+    "AboutPage-Crew-Mobile.dc.html": {
+      "x": 1360,
+      "y": 5420,
+      "w": 390,
+      "h": 3100,
+      "page": "about",
+      "title": "About · Crew · Mobile"
+    },
+    "AboutPage-World-Desktop.dc.html": {
+      "x": 0,
+      "y": 6680,
+      "w": 1280,
+      "h": 2880,
+      "page": "about",
+      "title": "About · World map · Desktop"
+    },
+    "AboutPage-World-Mobile.dc.html": {
+      "x": 1360,
+      "y": 8700,
+      "w": 390,
+      "h": 4080,
+      "page": "about",
+      "title": "About · World map · Mobile"
+    },
+    "AboutPage-Outpost-Desktop.dc.html": {
+      "x": 0,
+      "y": 9860,
+      "w": 1280,
+      "h": 3060,
+      "page": "about",
+      "title": "About · Outpost + tech tree · Desktop"
+    },
+    "AboutPage-Outpost-Mobile.dc.html": {
+      "x": 1360,
+      "y": 12960,
+      "w": 390,
+      "h": 6190,
+      "page": "about",
+      "title": "About · Outpost + tech tree · Mobile"
+    },
+    "AboutPage-Toolbox-Desktop.dc.html": {
+      "x": 0,
+      "y": 13160,
+      "w": 1280,
+      "h": 1040,
+      "page": "about",
+      "title": "About · Toolbox pile · Desktop"
+    },
+    "AboutPage-Toolbox-Mobile.dc.html": {
+      "x": 1360,
+      "y": 19400,
+      "w": 390,
+      "h": 1120,
+      "page": "about",
+      "title": "About · Toolbox pile · Mobile"
+    },
+    "AboutPage-FinalCTA-Desktop.dc.html": {
+      "x": 0,
+      "y": 14440,
+      "w": 1280,
+      "h": 900,
+      "page": "about",
+      "title": "About · Final CTA · Desktop"
+    },
+    "AboutPage-FinalCTA-Mobile.dc.html": {
+      "x": 1360,
+      "y": 20780,
+      "w": 390,
+      "h": 1180,
+      "page": "about",
+      "title": "About · Final CTA · Mobile"
+    },
+    "Download-Hero-Desktop.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 900,
+      "page": "download",
+      "title": "Download · Hero + download panel · Desktop"
+    },
+    "Download-Hero-Mobile.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 1440,
+      "page": "download",
+      "title": "Download · Hero + download panel · Mobile"
+    },
+    "Download-Install-Desktop.dc.html": {
+      "x": 0,
+      "y": 1180,
+      "w": 1280,
+      "h": 1600,
+      "page": "download",
+      "title": "Download · Install guide · Desktop"
+    },
+    "Download-Install-Mobile.dc.html": {
+      "x": 1360,
+      "y": 1700,
+      "w": 390,
+      "h": 2680,
+      "page": "download",
+      "title": "Download · Install guide · Mobile"
+    },
+    "Download-Faq-Desktop.dc.html": {
+      "x": 0,
+      "y": 3020,
+      "w": 1280,
+      "h": 1000,
+      "page": "download",
+      "title": "Download · Questions, demo and help · Desktop"
+    },
+    "Download-Faq-Mobile.dc.html": {
+      "x": 1360,
+      "y": 4640,
+      "w": 390,
+      "h": 1530,
+      "page": "download",
+      "title": "Download · Questions, demo and help · Mobile"
+    },
+    "Download-States-Desktop.dc.html": {
+      "x": 0,
+      "y": 4500,
+      "w": 1280,
+      "h": 1990,
+      "page": "download",
+      "title": "Download · Panel states + toasts · Desktop"
+    },
+    "Download-States-Mobile.dc.html": {
+      "x": 1360,
+      "y": 6430,
+      "w": 390,
+      "h": 2780,
+      "page": "download",
+      "title": "Download · Panel states + toasts · Mobile"
+    },
+    "Profile-Page-Desktop.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 1700,
+      "page": "profile",
+      "title": "Profile · Account details + delete · Desktop"
+    },
+    "Profile-Page-Mobile.dc.html": {
+      "x": 1360,
+      "y": 0,
+      "w": 390,
+      "h": 2900,
+      "page": "profile",
+      "title": "Profile · Account details + delete · Mobile"
+    },
+    "Profile-Dialog-Desktop.dc.html": {
+      "x": 0,
+      "y": 2180,
+      "w": 1280,
+      "h": 1840,
+      "page": "profile",
+      "title": "Profile · Delete confirmation dialog · Desktop"
+    },
+    "Profile-Dialog-Mobile.dc.html": {
+      "x": 1360,
+      "y": 3160,
+      "w": 390,
+      "h": 3420,
+      "page": "profile",
+      "title": "Profile · Delete confirmation dialog · Mobile"
+    },
+    "Profile-States-Desktop.dc.html": {
+      "x": 0,
+      "y": 4500,
+      "w": 1280,
+      "h": 1340,
+      "page": "profile",
+      "title": "Profile · Loading, error, after deleting · Desktop"
+    },
+    "Profile-States-Mobile.dc.html": {
+      "x": 1360,
+      "y": 6840,
+      "w": 390,
+      "h": 1700,
+      "page": "profile",
+      "title": "Profile · Loading, error, after deleting · Mobile"
+    },
+    "Installer-Welcome.dc.html": {
+      "x": 0,
+      "y": 80,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Step 1 · Welcome"
+    },
+    "Installer-License.dc.html": {
+      "x": 1000,
+      "y": 80,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Step 2 · Terms of Use"
+    },
+    "Installer-Destination.dc.html": {
+      "x": 2000,
+      "y": 80,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Step 3 · Install location"
+    },
+    "Installer-Installing.dc.html": {
+      "x": 0,
+      "y": 860,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Step 4 · Installing"
+    },
+    "Installer-Finished.dc.html": {
+      "x": 1000,
+      "y": 860,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Step 5 · Finished"
+    },
+    "Installer-Cancel.dc.html": {
+      "x": 2000,
+      "y": 860,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Quit setup? (dialog over step 4)"
+    },
+    "Installer-Error.dc.html": {
+      "x": 0,
+      "y": 1640,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Setup could not finish"
+    },
+    "Installer-Already.dc.html": {
+      "x": 1000,
+      "y": 1640,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Already installed"
+    },
+    "Installer-Uninstall.dc.html": {
+      "x": 2000,
+      "y": 1640,
+      "w": 880,
+      "h": 600,
+      "page": "installer",
+      "title": "Installer · Uninstaller"
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Nav-Mobile.dc.html",
+    "Hero-Desktop.dc.html",
+    "Hero-Mobile.dc.html",
+    "Learn-Desktop.dc.html",
+    "Learn-Mobile.dc.html",
+    "About-Desktop.dc.html",
+    "About-Mobile.dc.html",
+    "Download-CTA-Desktop.dc.html",
+    "Download-CTA-Mobile.dc.html",
+    "Footer-Desktop.dc.html",
+    "Footer-Mobile.dc.html",
+    "Modal-Desktop.dc.html",
+    "Modal-Mobile.dc.html",
+    "Modal-Name-Desktop.dc.html",
+    "Modal-Name-Mobile.dc.html",
+    "Cookie-Desktop.dc.html",
+    "Cookie-Mobile.dc.html",
+    "Policies.dc.html",
+    "Nav-Auth-Desktop.dc.html",
+    "Nav-Auth-Mobile.dc.html",
+    "Error-404.dc.html",
+    "Error-500.dc.html",
+    "Error-429.dc.html",
+    "Loading-Desktop.dc.html",
+    "Loading-Mobile.dc.html",
+    "Scrollbar.dc.html",
+    "Loading-Components.dc.html",
+    "AboutPage-Hero-Desktop.dc.html",
+    "AboutPage-Hero-Mobile.dc.html",
+    "AboutPage-Map-Desktop.dc.html",
+    "AboutPage-Map-Mobile.dc.html",
+    "AboutPage-Crew-Desktop.dc.html",
+    "AboutPage-Crew-Mobile.dc.html",
+    "AboutPage-World-Desktop.dc.html",
+    "AboutPage-World-Mobile.dc.html",
+    "AboutPage-Outpost-Desktop.dc.html",
+    "AboutPage-Outpost-Mobile.dc.html",
+    "AboutPage-Toolbox-Desktop.dc.html",
+    "AboutPage-Toolbox-Mobile.dc.html",
+    "AboutPage-FinalCTA-Desktop.dc.html",
+    "AboutPage-FinalCTA-Mobile.dc.html",
+    "Download-Hero-Desktop.dc.html",
+    "Download-Hero-Mobile.dc.html",
+    "Download-Install-Desktop.dc.html",
+    "Download-Install-Mobile.dc.html",
+    "Download-Faq-Desktop.dc.html",
+    "Download-Faq-Mobile.dc.html",
+    "Download-States-Desktop.dc.html",
+    "Download-States-Mobile.dc.html",
+    "Profile-Page-Desktop.dc.html",
+    "Profile-Page-Mobile.dc.html",
+    "Profile-Dialog-Desktop.dc.html",
+    "Profile-Dialog-Mobile.dc.html",
+    "Profile-States-Desktop.dc.html",
+    "Profile-States-Mobile.dc.html",
+    "Installer-Welcome.dc.html",
+    "Installer-License.dc.html",
+    "Installer-Destination.dc.html",
+    "Installer-Installing.dc.html",
+    "Installer-Finished.dc.html",
+    "Installer-Cancel.dc.html",
+    "Installer-Error.dc.html",
+    "Installer-Already.dc.html",
+    "Installer-Uninstall.dc.html"
+  ],
+  "notes": {
+    "t1": {
+      "x": 0,
+      "y": -150,
+      "text": "Astro Kid landing — Step 1: Pixel navbar",
+      "kind": "title1",
+      "maxW": 1750
+    },
+    "t2": {
+      "x": 0,
+      "y": 530,
+      "text": "Step 2: Hero section",
+      "kind": "title1",
+      "maxW": 1750
+    },
+    "t3": {
+      "x": 0,
+      "y": 1700,
+      "text": "Step 3: What you learn",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t4": {
+      "x": 0,
+      "y": 3500,
+      "text": "Step 4: About teaser",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t5": {
+      "x": 0,
+      "y": 4360,
+      "text": "Step 5: Download CTA",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t6": {
+      "x": 0,
+      "y": 5180,
+      "text": "Step 6: Footer",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t7": {
+      "x": 0,
+      "y": 6100,
+      "text": "Step 7: Sign-in modal, step 1 (Play demo + Get the game)",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t8": {
+      "x": 0,
+      "y": 7080,
+      "text": "Step 8: Add full name, step 2",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t9": {
+      "x": 0,
+      "y": 8100,
+      "text": "Step 9: Cookie notice",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t10": {
+      "x": 0,
+      "y": 9080,
+      "text": "Step 10: Policies page",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "t11": {
+      "x": 1830,
+      "y": -150,
+      "text": "Navbar after sign-in (read-only account + delete)",
+      "kind": "title1",
+      "maxW": 1750
+    },
+    "t12": {
+      "x": 3800,
+      "y": -150,
+      "text": "Error pages: 404, 500, 429",
+      "kind": "title1",
+      "maxW": 4000
+    },
+    "t13": {
+      "x": 3800,
+      "y": 880,
+      "text": "Loading animation + states",
+      "kind": "title1",
+      "maxW": 1300
+    },
+    "t14": {
+      "x": 5640,
+      "y": 880,
+      "text": "Pixel scrollbar",
+      "kind": "title1",
+      "maxW": 1280
+    },
+    "a1": {
+      "x": 0,
+      "y": -150,
+      "text": "About page — Step 1: Hero",
+      "kind": "title1",
+      "maxW": 1750,
+      "page": "about"
+    },
+    "a2": {
+      "x": 0,
+      "y": 770,
+      "text": "About page — Step 2: Mission map",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "a3": {
+      "x": 0,
+      "y": 3920,
+      "text": "About page — Step 3: Meet the crew",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "a4": {
+      "x": 0,
+      "y": 6440,
+      "text": "About page — Step 4: The world map",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "a5": {
+      "x": 0,
+      "y": 9620,
+      "text": "About page — Step 5: Outpost and Technology Tree",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "a6": {
+      "x": 0,
+      "y": 12920,
+      "text": "About page — Step 6: The toolbox pile",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "a7": {
+      "x": 0,
+      "y": 14200,
+      "text": "About page — Step 7: Final call to action",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "about"
+    },
+    "d1": {
+      "x": 0,
+      "y": -150,
+      "text": "Download page — Step 1: Hero and download panel",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "download"
+    },
+    "d2": {
+      "x": 0,
+      "y": 940,
+      "text": "Download page — Step 2: Install guide",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "download"
+    },
+    "d3": {
+      "x": 0,
+      "y": 2780,
+      "text": "Download page — Step 3: Questions, demo and help",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "download"
+    },
+    "d4": {
+      "x": 0,
+      "y": 4260,
+      "text": "Download page — Step 4: Panel states and toast messages (sample values: version, size, date, checksum)",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "download"
+    },
+    "p1": {
+      "x": 0,
+      "y": -150,
+      "text": "Profile page — Step 1: Account details (read-only) and delete account",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "profile"
+    },
+    "p2": {
+      "x": 0,
+      "y": 1940,
+      "text": "Profile page — Step 2: Delete confirmation dialog (4 states)",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "profile"
+    },
+    "p3": {
+      "x": 0,
+      "y": 4260,
+      "text": "Profile page — Step 3: Loading, error and after-deleting states (sample data: name, email, date)",
+      "kind": "title1",
+      "maxW": 1280,
+      "page": "profile"
+    },
+    "i1": {
+      "x": 0,
+      "y": -80,
+      "text": "Installer — main flow: Welcome, Terms, Location (window 880 × 600)",
+      "kind": "title1",
+      "maxW": 2880,
+      "page": "installer"
+    },
+    "i2": {
+      "x": 0,
+      "y": 700,
+      "text": "Installer — Installing (the crate lands as the bar fills), Finished, and the quit dialog",
+      "kind": "title1",
+      "maxW": 2880,
+      "page": "installer"
+    },
+    "i3": {
+      "x": 0,
+      "y": 1480,
+      "text": "Installer — Error, Already installed, Uninstaller (sample values: version, paths, sizes)",
+      "kind": "title1",
+      "maxW": 2880,
+      "page": "installer"
+    }
+  },
+  "designSystems": []
+}

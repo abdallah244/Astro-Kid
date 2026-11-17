@@ -1,0 +1,622 @@
+/* About Page Section 2: Mission Map Trail (AboutPage-Map-Desktop / Mobile) */
+
+.about-map {
+  position: relative;
+  overflow: hidden;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: var(--ak-space);
+}
+
+.about-map__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-map__title {
+  margin-top: 22px;
+  font-size: 30px;
+  line-height: 1.45;
+}
+
+.about-map__lead {
+  margin: 22px 0 0;
+  max-width: 680px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ak-muted);
+}
+
+.about-map__steps-kicker {
+  margin-top: 52px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--ak-label-muted);
+}
+
+.about-map__steps {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  text-align: left;
+}
+
+.about-map__step {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 14px 16px;
+  background-color: var(--ak-panel-alt);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-space),
+    inset 4px 4px 0 0 var(--ak-bevel-light);
+}
+
+.about-map__step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ak-yellow);
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-yellow-dark),
+    inset 3px 3px 0 0 var(--ak-yellow-light);
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--ak-ink);
+}
+
+.about-map__step-title {
+  margin: 10px 0 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--ak-white);
+}
+
+.about-map__step-desc {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ak-muted);
+}
+
+.about-map__step-arr {
+  flex: none;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Faint 64px pixel map-table grid wrapper starting below header */
+.about-map__board {
+  position: relative;
+  margin-top: 44px;
+  padding-top: 28px;
+  padding-bottom: 16px;
+  background:
+    repeating-linear-gradient(0deg, rgba(28, 39, 102, 0.35) 0 2px, transparent 2px 64px),
+    repeating-linear-gradient(90deg, rgba(28, 39, 102, 0.35) 0 2px, transparent 2px 64px);
+}
+
+.about-map__board-wrap {
+  position: relative;
+}
+
+.about-map__key {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-bottom: 18px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--ak-muted);
+}
+
+.about-map__key-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-map__key-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.about-map__key-dot--do { background-color: var(--ak-yellow); }
+.about-map__key-dot--learn { background-color: var(--ak-green); }
+
+/* Flow mission list: centered 700px cards with alternating left/right spine nodes on desktop */
+.about-map__list {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  z-index: 2;
+}
+
+.about-map__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-map__start {
+  position: absolute;
+  left: 110px;
+  top: 46px;
+  z-index: 4;
+  height: 28px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--ak-green);
+  box-shadow:
+    inset -3px -3px 0 0 var(--ak-green-dark),
+    inset 3px 3px 0 0 var(--ak-green-light);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--ak-green-ink);
+}
+
+.about-map__card {
+  position: relative;
+  width: 700px;
+  min-height: 230px;
+  padding: 20px 28px 20px 20px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background-color: var(--ak-panel);
+  box-shadow:
+    0 -4px 0 0 var(--ak-border),
+    0 4px 0 0 var(--ak-border),
+    -4px 0 0 0 var(--ak-border),
+    4px 0 0 0 var(--ak-border),
+    10px 10px 0 0 rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.about-map__card--mars {
+  background-color: var(--ak-panel-dark);
+  box-shadow:
+    0 -4px 0 0 var(--ak-blue),
+    0 4px 0 0 var(--ak-blue),
+    -4px 0 0 0 var(--ak-blue),
+    4px 0 0 0 var(--ak-blue),
+    10px 10px 0 0 rgba(0, 0, 0, 0.4);
+}
+
+.about-map__badge-wrap {
+  flex: none;
+}
+
+.about-map__badge {
+  width: 210px;
+  height: auto;
+  display: block;
+}
+
+.about-map__mars-thumb {
+  flex: none;
+  width: 210px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-panel-alt);
+  box-shadow:
+    inset -4px -4px 0 0 var(--ak-space),
+    inset 4px 4px 0 0 var(--ak-bevel-light);
+}
+
+.about-map__card-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-map__lbl {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.about-map__lbl--do { color: var(--ak-yellow); }
+.about-map__lbl--learn { margin-top: 14px; color: var(--ak-green); }
+.about-map__lbl--later { color: var(--ak-cyan); }
+
+.about-map__txt {
+  margin: 6px 0 0;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ak-body-soft);
+}
+
+.about-map__mars-title {
+  margin: 8px 0 0;
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ak-muted);
+}
+
+.about-map__txt--mars {
+  margin-top: 12px;
+  color: var(--ak-muted);
+}
+
+/* Spine nodes + horizontal & vertical dashed segments on Desktop */
+.about-map__node {
+  position: absolute;
+  top: 87px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-yellow);
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -4px -4px 0 0 var(--ak-yellow-dark),
+    inset 4px 4px 0 0 var(--ak-yellow-light);
+  font-family: var(--font-px);
+  font-size: 20px;
+  color: var(--ak-ink);
+  z-index: 3;
+}
+
+.about-map__node--locked {
+  background-color: var(--ak-border);
+  box-shadow:
+    0 0 0 4px var(--ak-space),
+    inset -4px -4px 0 0 var(--ak-blue),
+    inset 4px 4px 0 0 var(--ak-border-disabled);
+}
+
+.about-map__item--left .about-map__node {
+  left: 122px;
+}
+
+.about-map__item--right .about-map__node {
+  right: 122px;
+}
+
+/* Horizontal stub connecting node to card edge */
+.about-map__node::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  width: 32px;
+  height: 4px;
+  background-color: #5a6cc0;
+}
+
+.about-map__item--left .about-map__node::before {
+  left: 56px;
+}
+
+.about-map__item--right .about-map__node::before {
+  right: 56px;
+}
+
+.about-map__node--locked::before {
+  background-color: var(--ak-border);
+}
+
+/* Desktop S-curve dashed legs between cards (pseudo-elements on item except last) */
+.about-map__item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 143px;
+  height: 132px;
+  width: 4px;
+  background: repeating-linear-gradient(180deg, #5a6cc0 0 8px, transparent 8px 16px);
+  z-index: 1;
+}
+
+.about-map__item--left:not(:last-child)::before {
+  left: 148px;
+}
+
+.about-map__item--right:not(:last-child)::before {
+  right: 148px;
+}
+
+.about-map__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 148px;
+  right: 148px;
+  top: 273px;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #5a6cc0 0 8px, transparent 8px 16px);
+  z-index: 1;
+}
+
+.about-map__spine-down {
+  position: absolute;
+  top: 273px;
+  width: 4px;
+  height: 134px;
+  background: repeating-linear-gradient(180deg, #5a6cc0 0 8px, transparent 8px 16px);
+  z-index: 1;
+}
+
+.about-map__item--left .about-map__spine-down {
+  right: 148px;
+}
+
+.about-map__item--right .about-map__spine-down {
+  left: 148px;
+}
+
+/* Dimmer last leg heading into locked Mars */
+.about-map__item--to-mars::before,
+.about-map__item--to-mars .about-map__spine-down {
+  background: repeating-linear-gradient(180deg, var(--ak-border) 0 8px, transparent 8px 16px);
+}
+
+.about-map__item--to-mars::after {
+  background: repeating-linear-gradient(90deg, var(--ak-border) 0 8px, transparent 8px 16px);
+}
+
+/* Decorative craters & sprites in margins on wide screens */
+.about-map__scenery {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-map__crater {
+  position: absolute;
+  opacity: 0.55;
+}
+
+.about-map__rock {
+  position: absolute;
+  width: 91px;
+  height: 82px;
+  background-repeat: no-repeat;
+  background-size: 364px 82px;
+  background-position: 0 0;
+  opacity: 0.7;
+}
+
+.about-map__rock--iron { background-image: url('/assets/level01/world/rock_ironrich.png'); }
+.about-map__rock--silicate { background-image: url('/assets/level01/world/rock_silicate.png'); }
+.about-map__rock--regolith { background-image: url('/assets/level01/world/rock_regolith.png'); }
+
+.about-map__dec--1 { left: 24px; top: 2%; width: 150px; height: auto; }
+.about-map__dec--2 { left: 60px; top: 15%; }
+.about-map__dec--3 { left: 50px; top: 30%; width: 110px; height: auto; }
+.about-map__dec--4 { left: 70px; top: 46%; }
+.about-map__dec--5 { left: 20px; top: 61%; width: 150px; height: auto; }
+.about-map__dec--6 { left: 60px; top: 77%; }
+
+.about-map__dec--7 { right: 49px; top: 5%; }
+.about-map__dec--8 { right: 40px; top: 12%; width: 110px; height: auto; }
+.about-map__dec--9 { right: 39px; top: 27%; }
+.about-map__dec--10 { right: 20px; top: 38%; width: 150px; height: auto; }
+.about-map__dec--11 { right: 39px; top: 55%; }
+.about-map__dec--12 { right: 40px; top: 68%; width: 110px; height: auto; }
+.about-map__dec--13 { right: 39px; top: 84%; }
+
+@media (max-width: 1239px) {
+  .about-map__scenery {
+    display: none;
+  }
+}
+
+@media (max-width: 1159px) and (min-width: 1024px) {
+  .about-map__card {
+    width: 640px;
+  }
+
+  .about-map__start {
+    left: 64px;
+  }
+
+  .about-map__item--left .about-map__node { left: 72px; }
+  .about-map__item--right .about-map__node { right: 72px; }
+  .about-map__item--left:not(:last-child)::before,
+  .about-map__item--right .about-map__spine-down { left: 98px; }
+  .about-map__item--right:not(:last-child)::before,
+  .about-map__item--left .about-map__spine-down { right: 98px; }
+  .about-map__item:not(:last-child)::after {
+    left: 98px;
+    right: 98px;
+  }
+}
+
+/* Tablet & Mobile spine on left */
+@media (max-width: 1023px) {
+  .about-map {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .about-map__title {
+    margin-top: 18px;
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  .about-map__lead {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .about-map__steps-kicker {
+    margin-top: 34px;
+  }
+
+  .about-map__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .about-map__step-arr {
+    display: none;
+  }
+
+  .about-map__board {
+    margin-top: 32px;
+    background:
+      repeating-linear-gradient(0deg, rgba(28, 39, 102, 0.35) 0 2px, transparent 2px 48px),
+      repeating-linear-gradient(90deg, rgba(28, 39, 102, 0.35) 0 2px, transparent 2px 48px);
+  }
+
+  .about-map__key {
+    justify-content: center;
+    margin-bottom: 64px; /* leaves room for the START tag above the first card */
+  }
+
+  .about-map__list {
+    padding-left: 56px;
+    gap: 40px;
+  }
+
+  .about-map__start {
+    left: -60px;
+    top: -36px;
+  }
+
+  .about-map__item {
+    justify-content: stretch;
+  }
+
+  .about-map__card {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .about-map__item--left .about-map__node,
+  .about-map__item--right .about-map__node {
+    left: -60px;
+    right: auto;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    box-shadow:
+      0 0 0 4px var(--ak-space),
+      inset -3px -3px 0 0 var(--ak-yellow-dark),
+      inset 3px 3px 0 0 var(--ak-yellow-light);
+  }
+
+  .about-map__item .about-map__node--locked {
+    box-shadow:
+      0 0 0 4px var(--ak-space),
+      inset -3px -3px 0 0 var(--ak-blue),
+      inset 3px 3px 0 0 var(--ak-border-disabled);
+  }
+
+  .about-map__item--left .about-map__node::before,
+  .about-map__item--right .about-map__node::before {
+    left: 40px;
+    right: auto;
+    top: 18px;
+    width: 20px;
+  }
+
+  .about-map__item--left:not(:last-child)::before,
+  .about-map__item--right:not(:last-child)::before {
+    left: -42px;
+    right: auto;
+    top: 60px;
+    height: calc(100% + 4px);
+  }
+
+  .about-map__item:not(:last-child)::after,
+  .about-map__spine-down {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-map__title {
+    font-size: 18px;
+  }
+
+  .about-map__card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 0;
+    box-shadow:
+      0 -4px 0 0 var(--ak-border),
+      0 4px 0 0 var(--ak-border),
+      -4px 0 0 0 var(--ak-border),
+      4px 0 0 0 var(--ak-border),
+      8px 8px 0 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .about-map__badge-wrap {
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+
+  .about-map__badge {
+    width: 200px;
+  }
+
+  .about-map__mars-thumb {
+    display: none;
+  }
+
+  .about-map__lbl {
+    font-size: 12px;
+  }
+
+  .about-map__lbl--learn {
+    margin-top: 12px;
+  }
+
+  .about-map__txt {
+    font-size: 16px;
+  }
+
+  .about-map__mars-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-map__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-map__step-title {
+    font-size: 14px;
+  }
+}

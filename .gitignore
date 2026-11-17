@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+game/node_modules/
+server/node_modules/
+desktop/node_modules/
+desktop/installer/node_modules/
+desktop/installer/extraResources/
+desktop/installer/assets/
+desktop/installer/dist/
+
+# Releases (private installers never committed)
+server/releases/*
+!server/releases/.gitkeep
+
+# Production build outputs
+dist/
+game/dist/
+desktop/game-dist/
+
+
+# Environment & local secrets
+.env
+.env.*
+!.env.example
+!game/.env.example
+!server/.env.example
+
+# Logs & caches
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vite/
+game/.vite/
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+~$*

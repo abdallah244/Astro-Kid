@@ -1,0 +1,95 @@
+/* Page loader overlays (see js/page-loader.js). Transform/opacity/background steps only. */
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-toast) + 10);
+  display: grid;
+  place-items: center;
+  background: rgba(6, 9, 32, 0.9);
+  opacity: 0;
+  transition: opacity 0.2s steps(3);
+}
+
+.page-loader.is-visible {
+  opacity: 1;
+}
+
+.page-loader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-loader__label {
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: var(--ak-body);
+}
+
+/* thin progress strip along the top edge */
+.page-loader__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  overflow: hidden;
+  container-type: inline-size;
+  background: var(--ak-panel-dark);
+}
+
+.page-loader__bar i {
+  display: block;
+  width: 64px;
+  height: 100%;
+  background: var(--ak-yellow);
+  animation: progress-run 1.2s steps(14) infinite;
+}
+
+/* the full /play.html screen must sit above the header, modal and toasts */
+body > #boot-loader {
+  z-index: calc(var(--z-toast) + 10);
+}
+
+/* signed-in visitors: do not flash the signed-out buttons while /api/me answers.
+   The hint class is set before first paint by /intro-gate.js and removed by site.js. */
+html.auth-pending [data-nav-actions] > *,
+html.auth-pending [data-nav-mobile-controls] > [data-auth-trigger] {
+  visibility: hidden;
+}
+
+html.auth-pending [data-nav-actions] {
+  position: relative;
+  min-width: 220px;
+  min-height: 44px;
+}
+
+html.auth-pending [data-nav-actions]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ak-bevel-light);
+  animation: skeleton-pulse 1.2s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader {
+    transition: none;
+  }
+
+  .page-loader__bar i {
+    width: 100%;
+    animation: none;
+  }
+
+  html.auth-pending [data-nav-actions]::after {
+    animation: none;
+  }
+}

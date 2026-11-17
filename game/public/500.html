@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Something went wrong — Astro Kid</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#060920" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/errors.css" />
+  </head>
+  <body data-tone="red">
+    <div class="err-stars" aria-hidden="true"></div>
+
+    <header class="err-header">
+      <div class="err-wrap">
+        <a class="err-brand" href="/" aria-label="Astro Kid, home">
+          <img src="/favicon-48.png" alt="" width="44" height="44" />
+          <span>ASTRO <i>KID</i></span>
+        </a>
+      </div>
+    </header>
+
+    <main class="err-main">
+      <p class="err-chip"><span></span>ERROR 500</p>
+
+      <div class="err-code" role="img" aria-label="500">
+        <span aria-hidden="true">5</span><span aria-hidden="true">0</span><span aria-hidden="true">0</span>
+      </div>
+
+      <div class="err-nova">
+        <img src="/assets/landing/nova_alert.png" alt="NOVA, the floating robot guide, raising the alarm" width="72" height="94" />
+        <div class="err-bubble"><b>NOVA SAYS</b><span>Houston, we have a problem!</span></div>
+      </div>
+
+      <h1 class="err-title">SOMETHING WENT <em>WRONG</em></h1>
+      <p class="err-text">Our server had a problem. It is not you. Please try again in a moment.</p>
+
+      <div class="err-actions">
+        <a class="err-btn err-btn--yellow" id="retry" href="/">TRY AGAIN</a>
+        <a class="err-btn err-btn--blue" href="/">BACK TO HOME</a>
+      </div>
+    </main>
+
+    <script src="/errors.js" defer></script>
+  </body>
+</html>

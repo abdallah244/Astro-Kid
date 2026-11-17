@@ -1,0 +1,27 @@
+{
+  "name": "astro-kid-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Astro Kid VPS API server (Fastify + PostgreSQL + Google OAuth)",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "migrate": "node scripts/migrate.js",
+    "export-marketing": "node scripts/export-marketing.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "@fastify/helmet": "^13.0.1",
+    "@fastify/rate-limit": "^10.2.2",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.1",
+    "google-auth-library": "^9.15.1",
+    "pg": "^8.14.1",
+    "zod": "^3.24.2"
+  }
+}

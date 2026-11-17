@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Page Mission Map Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+.card{position:absolute;left:290px;width:700px;height:230px;box-sizing:border-box;padding:0 28px 0 20px;display:flex;align-items:center;gap:22px;background:#141c4d;box-shadow:0 -4px 0 0 #3a4a94,0 4px 0 0 #3a4a94,-4px 0 0 0 #3a4a94,4px 0 0 0 #3a4a94,10px 10px 0 0 rgba(0,0,0,0.5)}
+.card img.badge{flex:none;width:210px;height:auto;display:block}
+.lbl{font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:2px}
+.txt{margin:6px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:17px;line-height:1.5;color:#d5daf7}
+.node{position:absolute;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#ffd23f;box-shadow:0 0 0 4px #060920,inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0;font-family:'Press Start 2P',monospace;font-size:20px;color:#1a1a2e}
+.dv{position:absolute;width:4px;background:repeating-linear-gradient(180deg,#5a6cc0 0 8px,transparent 8px 16px)}
+.dh{position:absolute;left:228px;width:824px;height:4px;background:repeating-linear-gradient(90deg,#5a6cc0 0 8px,transparent 8px 16px)}
+.dc{position:absolute;height:4px;width:32px;background:#5a6cc0}
+.step{flex:1;box-sizing:border-box;padding:14px 14px 16px;background:#0a0f33;box-shadow:inset -4px -4px 0 0 #060920,inset 4px 4px 0 0 #1c2766}
+.step b{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#ffd23f;box-shadow:inset -3px -3px 0 0 #f5a524,inset 3px 3px 0 0 #fff3b0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:10px;color:#1a1a2e}
+.step h3{margin:10px 0 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;color:#ffffff}
+.step p{margin:6px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:14px;line-height:1.45;color:#a4aed9}
+.arr{flex:none;width:22px;display:flex;align-items:center;justify-content:center}
+.rock{position:absolute;width:91px;height:82px;background-repeat:no-repeat;background-size:364px 82px;background-position:0 0;image-rendering:pixelated;opacity:0.7}
+.crater{position:absolute;opacity:0.55;image-rendering:pixelated}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:2880px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <!-- faint map-table grid -->
+  <div aria-hidden="true" style="position:absolute;left:0;top:560px;width:1280px;height:2320px;background:repeating-linear-gradient(0deg,rgba(28,39,102,0.35) 0 2px,transparent 2px 64px),repeating-linear-gradient(90deg,rgba(28,39,102,0.35) 0 2px,transparent 2px 64px)"></div>
+
+  <!-- ===== header ===== -->
+  <section aria-labelledby="map-title" style="position:absolute;left:80px;top:96px;width:1120px;display:flex;flex-direction:column;align-items:center;text-align:center">
+
+    <div class="notch" style="display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 16px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:2px;color:#ffd23f">
+      <span aria-hidden="true" style="width:8px;height:8px;background:#ffd23f"></span>THE MISSION MAP
+    </div>
+
+    <h2 id="map-title" style="margin:22px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:30px;line-height:1.45;color:#ffffff;text-shadow:3px 3px 0 #243372">SIX MISSIONS. <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">ONE REAL IDEA EACH.</span></h2>
+
+    <p style="margin:22px 0 0;max-width:680px;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:19px;line-height:1.6;color:#a4aed9">The missions are linked: your base, supplies, research and discovered map carry over from one to the next. Follow the trail to see what you do and what you learn.</p>
+
+    <div style="margin-top:52px;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:3px;color:#8e9ad0">HOW EVERY MISSION WORKS</div>
+
+    <ol style="list-style:none;margin:18px 0 0;padding:0;width:1120px;display:flex;align-items:stretch;text-align:left">
+      <li class="step"><b>1</b><h3>EXPLORE</h3><p>Walk the surface and find new regions.</p></li>
+      <li class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg></li>
+      <li class="step"><b>2</b><h3>COLLECT</h3><p>Mine rock samples with your pickaxe.</p></li>
+      <li class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg></li>
+      <li class="step"><b>3</b><h3>RETURN</h3><p>Carry the samples back and store them.</p></li>
+      <li class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg></li>
+      <li class="step"><b>4</b><h3>RESEARCH</h3><p>Unlock new technology at the workstation.</p></li>
+      <li class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg></li>
+      <li class="step"><b>5</b><h3>BUILD</h3><p>Craft machines and install them in the base.</p></li>
+      <li class="arr" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg></li>
+      <li class="step"><b>6</b><h3>SURVIVE</h3><p>Keep oxygen, stamina and hunger healthy.</p></li>
+    </ol>
+  </section>
+
+  <!-- map key -->
+  <div aria-hidden="true" style="position:absolute;left:880px;top:556px;width:320px;display:flex;justify-content:flex-end;gap:24px;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#a4aed9">
+    <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#ffd23f"></span>YOU DO</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#3fbf5f"></span>YOU LEARN</span>
+  </div>
+
+  <!-- ===== scenery (real game decals, kept in the margins) ===== -->
+  <img class="crater" src="/assets/level01/world/decal_crater_m.png" alt="" width="150" height="146" style="left:24px;top:620px;width:150px;height:146px">
+  <div class="rock" aria-hidden="true" style="left:60px;top:940px;background-image:url(/assets/level01/world/rock_ironrich.png)"></div>
+  <img class="crater" src="/assets/level01/world/decal_crater_s.png" alt="" width="110" height="107" style="left:50px;top:1260px;width:110px;height:107px">
+  <div class="rock" aria-hidden="true" style="left:70px;top:1620px;background-image:url(/assets/level01/world/rock_silicate.png)"></div>
+  <img class="crater" src="/assets/level01/world/decal_crater_m.png" alt="" width="150" height="146" style="left:20px;top:1940px;width:150px;height:146px">
+  <div class="rock" aria-hidden="true" style="left:60px;top:2310px;background-image:url(/assets/level01/world/rock_regolith.png)"></div>
+  <div class="rock" aria-hidden="true" style="left:1140px;top:700px;background-image:url(/assets/level01/world/rock_regolith.png)"></div>
+  <img class="crater" src="/assets/level01/world/decal_crater_s.png" alt="" width="110" height="107" style="left:1130px;top:860px;width:110px;height:107px">
+  <div class="rock" aria-hidden="true" style="left:1150px;top:1210px;background-image:url(/assets/level01/world/rock_ironrich.png)"></div>
+  <img class="crater" src="/assets/level01/world/decal_crater_m.png" alt="" width="150" height="146" style="left:1110px;top:1440px;width:150px;height:146px">
+  <div class="rock" aria-hidden="true" style="left:1150px;top:1820px;background-image:url(/assets/level01/world/rock_silicate.png)"></div>
+  <img class="crater" src="/assets/level01/world/decal_crater_s.png" alt="" width="110" height="107" style="left:1130px;top:2120px;width:110px;height:107px">
+  <div class="rock" aria-hidden="true" style="left:1150px;top:2460px;background-image:url(/assets/level01/world/rock_ironrich.png)"></div>
+
+  <!-- ===== the winding trail (dashed pixel path) ===== -->
+  <div aria-hidden="true">
+    <div class="dv" style="left:228px;top:743px;height:132px"></div><div class="dh" style="top:873px"></div><div class="dv" style="left:1048px;top:873px;height:134px"></div>
+    <div class="dv" style="left:1048px;top:1063px;height:132px"></div><div class="dh" style="top:1193px"></div><div class="dv" style="left:228px;top:1193px;height:134px"></div>
+    <div class="dv" style="left:228px;top:1383px;height:132px"></div><div class="dh" style="top:1513px"></div><div class="dv" style="left:1048px;top:1513px;height:134px"></div>
+    <div class="dv" style="left:1048px;top:1703px;height:132px"></div><div class="dh" style="top:1833px"></div><div class="dv" style="left:228px;top:1833px;height:134px"></div>
+    <div class="dv" style="left:228px;top:2023px;height:132px"></div><div class="dh" style="top:2153px"></div><div class="dv" style="left:1048px;top:2153px;height:134px"></div>
+    <!-- last leg to Mars is dimmer: not unlocked yet -->
+    <div class="dv" style="left:1048px;top:2343px;height:132px;background:repeating-linear-gradient(180deg,#3a4a94 0 8px,transparent 8px 16px)"></div><div class="dh" style="top:2473px;background:repeating-linear-gradient(90deg,#3a4a94 0 8px,transparent 8px 16px)"></div><div class="dv" style="left:228px;top:2473px;height:134px;background:repeating-linear-gradient(180deg,#3a4a94 0 8px,transparent 8px 16px)"></div>
+  </div>
+
+  <!-- start flag -->
+  <div class="notch" style="position:absolute;left:190px;top:646px;display:inline-flex;align-items:center;height:28px;padding:0 12px;background:#3fbf5f;box-shadow:inset -3px -3px 0 0 #1d7a36,inset 3px 3px 0 0 #8be8a2;font-family:'Silkscreen',monospace;font-weight:700;font-size:11px;letter-spacing:2px;color:#0d2a14">START</div>
+
+  <!-- ===== missions ===== -->
+  <div aria-hidden="true">
+    <div class="dc" style="left:258px;top:713px"></div><div class="node" style="left:202px;top:687px">1</div>
+    <div class="dc" style="left:990px;top:1033px"></div><div class="node" style="left:1022px;top:1007px">2</div>
+    <div class="dc" style="left:258px;top:1353px"></div><div class="node" style="left:202px;top:1327px">3</div>
+    <div class="dc" style="left:990px;top:1673px"></div><div class="node" style="left:1022px;top:1647px">4</div>
+    <div class="dc" style="left:258px;top:1993px"></div><div class="node" style="left:202px;top:1967px">5</div>
+    <div class="dc" style="left:990px;top:2313px"></div><div class="node" style="left:1022px;top:2287px">6</div>
+  </div>
+
+  <ol style="list-style:none;margin:0;padding:0">
+
+    <li><article class="card" style="top:600px">
+      <img class="badge" src="/assets/missions/01_first_landing.webp" alt="Mission 1: First Landing. Build a basic lunar base." width="210" height="183">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">Contact Earth, inspect the four base systems, explore the plains, collect rock samples and build your first machine.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Resources are limited, local materials matter, tools wear out, and no mineral is a pure metal.</p>
+      </div>
+    </article></li>
+
+    <li><article class="card" style="top:920px">
+      <img class="badge" src="/assets/missions/02_power_crisis.webp" alt="Mission 2: Power Crisis. Manage limited power." width="210" height="145">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">Balance solar panels, batteries and which machines to run.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Power budgeting and storage, and why night is a problem on the Moon.</p>
+      </div>
+    </article></li>
+
+    <li><article class="card" style="top:1240px">
+      <img class="badge" src="/assets/missions/03_radiation_alert.webp" alt="Mission 3: Radiation Alert. Protect the crew from solar radiation." width="210" height="168">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">A solar storm is coming. Build and place shielding and decide what to power.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Space weather, shielding, and the cost of safety.</p>
+      </div>
+    </article></li>
+
+    <li><article class="card" style="top:1560px">
+      <img class="badge" src="/assets/missions/04_food_production.webp" alt="Mission 4: Food Production. Grow food in space." width="210" height="159">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">Build a growing area, analyze the soil and plant seeds.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Closed-loop food, what plants need, and why growing food in space is hard.</p>
+      </div>
+    </article></li>
+
+    <li><article class="card" style="top:1880px">
+      <img class="badge" src="/assets/missions/05_water_recycling.webp" alt="Mission 5: Water Recycling. Recycle and conserve water." width="210" height="157">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">Find ice in a protected region, extract it and recycle your water.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Water is the most valuable resource, and how crews reuse it.</p>
+      </div>
+    </article></li>
+
+    <li><article class="card" style="top:2200px">
+      <img class="badge" src="/assets/missions/06_survival_mission.webp" alt="Mission 6: Survival Mission. Keep the base alive for 7 days." width="210" height="164">
+      <div style="min-width:0">
+        <div class="lbl" style="color:#ffd23f">YOU DO</div>
+        <p class="txt">Run every system together for a full week of events, nights and choices.</p>
+        <div class="lbl" style="margin-top:14px;color:#3fbf5f">YOU LEARN</div>
+        <p class="txt">Balancing everything at once: the real job of a mission planner.</p>
+      </div>
+    </article></li>
+
+    <!-- later: Mars (locked) -->
+    <li><article class="card" style="top:2520px;background:#0d1236;box-shadow:0 -4px 0 0 #243372,0 4px 0 0 #243372,-4px 0 0 0 #243372,4px 0 0 0 #243372,10px 10px 0 0 rgba(0,0,0,0.4)">
+      <div aria-hidden="true" style="flex:none;width:210px;height:150px;display:flex;align-items:center;justify-content:center;background:#0a0f33;box-shadow:inset -4px -4px 0 0 #060920,inset 4px 4px 0 0 #1c2766">
+        <svg width="72" height="72" viewBox="0 0 8 8" shape-rendering="crispEdges" style="display:block"><path fill="#6c77ad" d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v1H0zM0 4h8v1H0zM0 5h3v1H0zM5 5h3v1H5zM0 6h3v1H0zM5 6h3v1H5zM0 7h8v1H0z"/></svg>
+      </div>
+      <div style="min-width:0">
+        <div class="lbl" style="color:#5ad1ff">COMING LATER</div>
+        <h3 style="margin:8px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:20px;line-height:1.4;color:#a4aed9">MARS</h3>
+        <p class="txt" style="margin-top:12px;color:#a4aed9">Weaker sunlight, dust storms and a long communication delay. Urgent events must be handled alone.</p>
+      </div>
+    </article></li>
+  </ol>
+
+  <!-- locked Mars node -->
+  <div aria-hidden="true">
+    <div class="dc" style="left:258px;top:2633px;background:#3a4a94"></div>
+    <div class="node" style="left:202px;top:2607px;background:#3a4a94;box-shadow:0 0 0 4px #060920,inset -4px -4px 0 0 #243372,inset 4px 4px 0 0 #4a5cb0">
+      <svg width="24" height="24" viewBox="0 0 8 8" shape-rendering="crispEdges" style="display:block"><path fill="#a4aed9" d="M2 0h4v1H2zM1 1h2v1H1zM5 1h2v1H5zM1 2h2v1H1zM5 2h2v1H5zM0 3h8v1H0zM0 4h8v1H0zM0 5h3v1H0zM5 5h3v1H5zM0 6h3v1H0zM5 6h3v1H5zM0 7h8v1H0z"/></svg>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2880}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Navbar Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+a.mlink{color:#eef1ff}
+a.mlink:hover{color:#ffd23f}
+a.btn:hover,button.btn:hover{filter:brightness(1.12)}
+a.btn:active,button.btn:active{transform:translateY(3px)}
+a:focus-visible,button:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+</style>
+</helmet>
+<div style="position:relative;width:390px;height:640px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <div aria-hidden="true" style="position:absolute;inset:0">
+    <div style="position:absolute;left:28px;top:560px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:88px;top:604px;width:8px;height:8px;background:#a4aed9"></div>
+    <div style="position:absolute;left:176px;top:572px;width:4px;height:4px;background:#ffd23f"></div>
+    <div style="position:absolute;left:252px;top:616px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:336px;top:588px;width:8px;height:8px;background:#ffffff"></div>
+    <div style="position:absolute;left:348px;top:540px;width:4px;height:4px;background:#a4aed9"></div>
+  </div>
+
+  <header style="position:relative;z-index:2;background:#060920;border-bottom:4px solid #3a4a94;box-shadow:0 4px 0 0 #172052">
+
+    <div style="height:72px;box-sizing:border-box;padding:0 16px;display:flex;align-items:center;justify-content:space-between">
+      <a href="#top" aria-label="Astro Kid, home" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="/favicon-48.png" alt="" width="40" height="40" style="width:40px;height:40px;image-rendering:pixelated;display:block">
+        <span style="font-family:'Press Start 2P',monospace;font-size:14px;line-height:1;color:#ffffff;text-shadow:2px 2px 0 #243372;white-space:nowrap">ASTRO <span style="color:#ffd23f;text-shadow:2px 2px 0 #c2410c">KID</span></span>
+      </a>
+
+      <!-- hamburger: three pixel bars, becomes an X when open -->
+      <button class="btn" type="button" onClick="{{toggle}}" aria-label="Menu" aria-expanded="{{open}}" style="width:48px;height:48px;padding:0;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#243372;box-shadow:inset -4px -4px 0 0 #172052,inset 4px 4px 0 0 #3a4a94;clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))">
+        <sc-if value="{{open}}" hint-placeholder-val="{{ true }}">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 5 5" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3zM0 4h1v1H0zM4 4h1v1H4z"/></svg>
+        </sc-if>
+        <sc-if value="{{closed}}" hint-placeholder-val="{{ false }}">
+          <div aria-hidden="true" style="display:flex;flex-direction:column;gap:4px">
+            <div style="width:20px;height:4px;background:#eef1ff"></div>
+            <div style="width:20px;height:4px;background:#eef1ff"></div>
+            <div style="width:20px;height:4px;background:#eef1ff"></div>
+          </div>
+        </sc-if>
+      </button>
+    </div>
+
+    <sc-if value="{{open}}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Primary" style="background:#0a0f33;border-top:4px solid #172052;padding:8px 16px 24px">
+        <a class="mlink" href="#learn" style="display:flex;align-items:center;justify-content:space-between;height:56px;font-family:'Silkscreen',monospace;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none">LEARN</a>
+        <div aria-hidden="true" style="height:4px;background:repeating-linear-gradient(90deg,#243372 0 8px,transparent 8px 16px)"></div>
+        <a class="mlink" href="#missions" style="display:flex;align-items:center;justify-content:space-between;height:56px;font-family:'Silkscreen',monospace;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none">MISSIONS</a>
+        <div aria-hidden="true" style="height:4px;background:repeating-linear-gradient(90deg,#243372 0 8px,transparent 8px 16px)"></div>
+        <a class="mlink" href="#install" style="display:flex;align-items:center;justify-content:space-between;height:56px;font-family:'Silkscreen',monospace;font-weight:700;font-size:18px;letter-spacing:1px;text-decoration:none">INSTALL</a>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:20px">
+          <a class="btn" href="#demo" style="display:flex;align-items:center;justify-content:center;gap:10px;height:56px;box-sizing:border-box;font-family:'Silkscreen',monospace;font-weight:700;font-size:17px;letter-spacing:1px;text-decoration:none;color:#0d2a14;background:#3fbf5f;box-shadow:inset -4px -4px 0 0 #1d7a36,inset 4px 4px 0 0 #8be8a2;clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))">
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+            PLAY DEMO
+          </a>
+          <a class="btn" href="#get" style="display:flex;align-items:center;justify-content:center;height:56px;box-sizing:border-box;font-family:'Silkscreen',monospace;font-weight:700;font-size:17px;letter-spacing:1px;text-decoration:none;color:#1a1a2e;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0;clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))">GET THE GAME</a>
+        </div>
+      </nav>
+    </sc-if>
+  </header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":640}}'>
+class Component extends DCLogic {
+  state = { open: true };
+  renderVals() {
+    return {
+      open: this.state.open,
+      closed: !this.state.open,
+      toggle: () => this.setState({ open: !this.state.open }),
+    };
+  }
+}
+</script>
+</body>
+</html>

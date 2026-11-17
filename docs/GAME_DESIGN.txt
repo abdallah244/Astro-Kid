@@ -1,0 +1,178 @@
+ASTRO KID
+A pixel-art space survival and science game for kids ages 7 to 12
+
+------------------------------------------------------------
+1. THE IDEA IN ONE PARAGRAPH
+------------------------------------------------------------
+Astro Kid puts a child in the boots of a young astronaut who arrives at a small, unfinished outpost on the Moon. Supplies from Earth are limited, the air is only temporary, and the power is not guaranteed. The child explores the lunar surface, collects rock samples, researches new technology, builds machines and keeps the crew alive. Every choice costs something: oxygen, power, time, tool durability or a risk. Nothing is free. By playing, the child learns the real constraints that mission planners face on the Moon and Mars, without reading a textbook.
+
+------------------------------------------------------------
+2. WHO IT IS FOR AND WHAT IT TEACHES
+------------------------------------------------------------
+Audience: children aged 7 to 12, played in a web browser (and later as a desktop app).
+
+The game turns real engineering trade-offs into gameplay:
+- Life support: oxygen is limited and must be made, saved or brought from Earth.
+- Power budgeting: solar panels stop working at night, so batteries and storage matter.
+- Radiation shielding: solar storms are dangerous, and protection costs resources.
+- Food production: you cannot depend on Earth for every meal.
+- Water: ice exists only in some shadowed polar regions and must be found and recycled.
+- Communication delay: Earth cannot answer instantly, so crews must decide for themselves.
+- Resource science: the player collects mineral-bearing rocks, not pure metals. Iron and titanium come from minerals like ilmenite, silicon comes from silicate rocks, and regolith is a mix of dust and fragments.
+- Lunar facts: gravity is about one sixth of Earth's, a lunar day lasts about 29.5 Earth days (about two weeks of light, two weeks of dark), and there is no air to carry sound.
+
+Rule of the design: every mission must leave the child understanding one real constraint of deep space survival, not just having fun.
+
+------------------------------------------------------------
+3. THE SETTING AND THE STORY
+------------------------------------------------------------
+Place: a fictional outpost inspired by the Moon's south polar region, the area targeted by NASA's Artemis program. A second destination, Mars, follows the same ideas with harder conditions (weaker sunlight, dust storms, much longer communication delay).
+
+Story: the player is the Commander of a two-person mission. After launch, a transfer through space and a rocky landing, the crew finds the outpost half ready. Dr. Karim at Mission Control on Earth gives guidance over a radio link. NOVA, a small floating robot, helps the player on site. The goal across six linked missions is to turn a fragile outpost into one that can survive on its own.
+
+Characters:
+- The Astronaut: the player. A kid in a white and orange suit with a blue visor.
+- NOVA: a small floating robot companion. Guide, tutor, and the voice that explains systems. Friendly and curious.
+- Dr. Karim: Mission Control on Earth. Heard over the radio only (voice with a radio filter). Calm, kind and practical.
+
+------------------------------------------------------------
+4. HOW THE GAME PLAYS (THE CORE LOOP)
+------------------------------------------------------------
+The game is a top-down 2D exploration game. The player walks freely in all directions (up, down, left, right) across a large map. The loop repeats in every mission:
+
+  Explore -> Collect -> Return -> Research -> Build -> Survive the next challenge
+
+1. Explore: walk the surface, discover new regions, read the minimap and the map.
+2. Collect: use a pickaxe to break rocks and gather samples. The pickaxe wears out, so every hit matters.
+3. Return: carry samples back and store them at the outpost.
+4. Research: use the Workstation to open a full-screen Technology Tree and unlock new abilities.
+5. Build: craft machines from the samples and parts, then install them in the outpost.
+6. Survive: keep oxygen, stamina and hunger healthy, protect the crew from the mission's challenge, and finish the objectives.
+
+------------------------------------------------------------
+5. THE SYSTEMS
+------------------------------------------------------------
+Movement and exploration
+- Free 8-direction walking and running (running uses stamina).
+- A large world with regions that are open, hidden by fog, or locked. Entering a new region shows its name and gives a discovery bonus.
+- A minimap in the corner and a full map on a key. The map stays the same in every mission; only what you have discovered changes.
+
+Vital signs (no health bar)
+- Three vertical meters: Oxygen, Stamina, Hunger.
+- Three hearts mean three allowed mistakes (lives). A heart is lost when the crew fails a dangerous moment.
+- Warnings are gentle and gradual: stable, attention, critical. The first mission never fails by surprise.
+
+Tools and items
+- A 9-slot quick bar and a 24-slot backpack.
+- Starting gear: flashlight (needs batteries), basic pickaxe (durability 30).
+- Supplies: oxygen canisters, canned food, battery cells, a spare parts kit.
+- Later tools: mining drill, wrench, scanner, build tool, repair kit, medkit, oxygen tank, water purifier, soil analyzer, seed planter, harvest tool, solar panel kit, shield generator and a beacon for contact with Earth. They unlock as missions advance.
+
+Resources
+- Early samples: lunar regolith, iron-bearing basalt, silicate-rich rock.
+- Later resources: water ice, anorthosite and others from new regions.
+- Water ice is locked until the player has the right protection and equipment.
+
+Research and building
+- Six research branches: Tools, Life Support, Power, Agriculture, Construction, Exploration.
+- Machines are crafted from exact amounts of samples and parts, then installed in the base.
+
+Time and sleep
+- A day cycle with sunrise, day, sunset and night. Sunlight powers solar panels; night needs batteries.
+- A light sleep system lets the player skip the night and recover stamina, but time keeps passing and life support keeps running.
+- Missions have a target number of days. Staying longer than needed is allowed, but supplies run low faster and the next mission starts weaker.
+
+Communication delay
+- The player can ask Mission Control for advice. On the Moon the answer arrives almost at once. On Mars it arrives after a long delay, so urgent events must be handled alone. Children learn why Mars crews need independence without being lectured.
+
+Space weather and radiation
+- Solar storms and radiation events are based on real solar activity records from NASA's DONKI database, with a built-in archive so the game always works offline.
+- Protection costs power or resources, so the player must trade safety against other needs.
+
+Real NASA science in the game
+- Facts and events come from public NASA sources: DONKI (solar activity), the Open Science Data Repository (astronaut health and plant research), and Artemis and Mars mission information.
+- The game is an independent educational project and is not an official NASA product.
+
+Score and progress
+- Score comes from completing objectives, collecting samples, discovering new areas, researching and crafting. Repeating the same action does not give endless points.
+- Each mission is a mission, not a star rating. Finishing one unlocks the next. There are no stars and no rankings.
+- A report at the end of a mission lists objectives, resources, research and rewards.
+
+------------------------------------------------------------
+6. THE SIX MISSIONS
+------------------------------------------------------------
+The missions are linked. The base, supplies, research and discovered map carry over from one to the next.
+
+1. FIRST LANDING - "Build a basic lunar base."
+   Learn the controls and the outpost. Make contact with Earth, inspect the four systems (Workstation, Supply Storage, Life Support, Sleeping Area), equip the flashlight and pickaxe, explore the plains, collect 5 samples of each of three rock types, store them, research Basic Material Processing, build the first Material Processor, and review the next research paths.
+   Teaches: resources are limited, local materials matter, tools wear out, and no minerals are "pure metal."
+
+2. POWER CRISIS - "Manage limited power."
+   Power runs short. The player must balance solar generation, batteries and which machines to run.
+   Teaches: power budgeting and storage, and why night is a problem on the Moon.
+
+3. RADIATION ALERT - "Protect the crew from solar radiation."
+   A solar storm approaches. The player builds and positions shielding and decides what to power.
+   Teaches: space weather, shielding, and the cost of safety.
+
+4. FOOD PRODUCTION - "Grow food in space."
+   Build a growing area, analyze soil and plant seeds.
+   Teaches: closed-loop food, plant needs, and why growing food in space is hard.
+
+5. WATER RECYCLING - "Recycle and conserve water."
+   Find ice in a protected region, extract it, and recycle water.
+   Teaches: water as the most valuable resource and how crews reuse it.
+
+6. SURVIVAL MISSION - "Keep the base alive for 7 days."
+   All systems run together across a full week with events, night cycles and choices.
+   Teaches: balancing everything at once, the real job of a mission planner.
+
+Later: a Mars version with weaker sunlight, dust storms and a long communication delay.
+
+------------------------------------------------------------
+7. THE EXPERIENCE: LOOK, SOUND AND FEEL
+------------------------------------------------------------
+Look
+- Colored pixel-art style: crisp pixels, dark outlines, a cool gray-lavender Moon, white and orange suits, glowing cyan screens, warm orange lights.
+- A readable HUD with dark navy panels, lavender borders and gold highlights, designed so a 7 year old can understand it at a glance.
+- Opening story told in a short manga-style cutscene (launch, flight, landing).
+
+Sound
+- A soft retro sci-fi style that is never scary.
+- Every action has a sound: footsteps, mining, picking up samples, doors, machines, warnings.
+- Voices for every character: NOVA (bright and friendly), Dr. Karim (calm, with a radio filter) and the Astronaut.
+- Original music: main menu, exploration, base interior, victory and ending.
+- No realistic wind on the Moon, because there is no air.
+
+Feel
+- Calm, curious and encouraging. Warnings are clear and early. A mistake teaches; it does not humiliate.
+- NOVA explains things in short, simple sentences.
+
+------------------------------------------------------------
+8. CONTROLS AND ACCESSIBILITY
+------------------------------------------------------------
+- Keyboard and mouse. Default keys: move with A, D, W, S or the arrow keys, run with Shift, interact with E, use a tool with J or a click, flashlight F, backpack I, technology C, map M, objectives O, quick slots 1 to 9, pause Esc.
+- Every key except the quick slots and Esc can be changed in Settings.
+- Settings include volume for music, effects and voice, mentor tips on or off, and fullscreen.
+- English text with subtitles for every voice line.
+- Plays in the browser with no installation, and can later become a desktop app.
+
+------------------------------------------------------------
+9. HOW IT ANSWERS THE NASA CHALLENGE
+------------------------------------------------------------
+The challenge asks for a game where kids manage a lunar or Martian outpost and make real decisions about life support, radiation shielding, power, food and communication delay, ideally with real NASA data.
+
+Astro Kid meets this by:
+- Making each mission about one real constraint, so the trade-off is visible and meaningful.
+- Letting no choice be free: spending oxygen, power, time or tool life always has a price.
+- Using real NASA data sources (DONKI, OSDR, Artemis and Mars information) to shape events and facts.
+- Showing a mission report that connects choices to what actually happens in real missions.
+- Staying kind and clear for ages 7 to 12.
+
+------------------------------------------------------------
+10. FUTURE DIRECTION
+------------------------------------------------------------
+- Mars missions with long communication delay and dust storms.
+- More regions on the shared map (Iron Field, Silicate Flats, Highland Ridge, Shadowed Crater, Ice Deposit).
+- More tools, more machines and deeper research branches.
+- A desktop app version and classroom materials for teachers.

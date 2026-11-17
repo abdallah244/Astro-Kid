@@ -1,0 +1,22 @@
+{
+ "rock_regolith": {
+  "frames": 4,
+  "frameWidth": 91,
+  "frameHeight": 79
+ },
+ "rock_ironrich": {
+  "frames": 4,
+  "frameWidth": 91,
+  "frameHeight": 82
+ },
+ "rock_silicate": {
+  "frames": 4,
+  "frameWidth": 91,
+  "frameHeight": 82
+ },
+ "rock_ore_extra": {
+  "frames": 4,
+  "frameWidth": 96,
+  "frameHeight": 82
+ }
+}

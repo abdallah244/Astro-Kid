@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Page Hero Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+a.navlink{color:#a4aed9}
+a.navlink:hover{color:#ffd23f}
+a.btn:hover{filter:brightness(1.12)}
+a.btn:active{transform:translateY(3px)}
+a:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+.bob{animation:bob 1s linear infinite}
+@keyframes bob{0%,49.99%{transform:translateY(0)}50%,100%{transform:translateY(4px)}}
+@media (prefers-reduced-motion:reduce){.bob{animation:none}}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:760px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <!-- NAV (same as the landing page) -->
+  <header style="position:absolute;left:0;top:0;width:1280px;z-index:5;height:88px;box-sizing:border-box;background:#060920;border-bottom:4px solid #3a4a94;box-shadow:0 4px 0 0 #172052;display:flex;align-items:center;justify-content:center">
+    <div style="width:1120px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" aria-label="Astro Kid, home" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+        <img src="/favicon-48.png" alt="" width="48" height="48" style="width:48px;height:48px;image-rendering:pixelated;display:block">
+        <span style="font-family:'Press Start 2P',monospace;font-size:18px;line-height:1;color:#ffffff;text-shadow:3px 3px 0 #243372;white-space:nowrap">ASTRO <span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">KID</span></span>
+      </a>
+      <nav aria-label="Primary" style="display:flex;align-items:center;gap:36px">
+        <a class="navlink" href="#learn" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">LEARN</a>
+        <a class="navlink" href="#missions" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">MISSIONS</a>
+        <a class="navlink" href="#install" style="font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;padding:12px 0">INSTALL</a>
+        <span aria-hidden="true" style="width:4px;height:32px;background:#243372"></span>
+        <a class="btn notch" href="#demo" style="display:inline-flex;align-items:center;gap:10px;height:48px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#0d2a14;background:#3fbf5f;box-shadow:inset -4px -4px 0 0 #1d7a36,inset 4px 4px 0 0 #8be8a2">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+          PLAY DEMO
+        </a>
+        <a class="btn notch" href="#get" style="display:inline-flex;align-items:center;height:48px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#1a1a2e;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0">GET THE GAME</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section aria-labelledby="about-hero-title" style="position:absolute;left:0;top:92px;width:1280px;height:668px;overflow:hidden">
+
+    <!-- the real touchdown cutscene: where the story begins -->
+    <img src="/assets/landing/about_hero.webp" alt="A lunar lander touching down on the Moon, with Earth in the sky and the outpost in the distance" width="1280" height="668" style="position:absolute;left:0;top:0;width:1280px;height:668px;object-fit:cover;object-position:center bottom;image-rendering:pixelated">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(6,9,32,0.35)"></div>
+
+    <!-- stepped shade behind the copy (flat bands, no gradient) -->
+    <div aria-hidden="true" style="position:absolute;left:0;top:0;width:550px;height:668px">
+      <div style="position:absolute;left:0;top:0;width:110px;height:668px;background:rgba(6,9,32,0.82)"></div>
+      <div style="position:absolute;left:110px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.72)"></div>
+      <div style="position:absolute;left:220px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.6)"></div>
+      <div style="position:absolute;left:330px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.48)"></div>
+      <div style="position:absolute;left:440px;top:0;width:110px;height:668px;background:rgba(6,9,32,0.36)"></div>
+    </div>
+
+    <!-- stepped fade into the page background -->
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:0;width:1280px;height:120px">
+      <div style="position:absolute;left:0;top:0;width:1280px;height:20px;background:rgba(6,9,32,0.15)"></div>
+      <div style="position:absolute;left:0;top:20px;width:1280px;height:20px;background:rgba(6,9,32,0.3)"></div>
+      <div style="position:absolute;left:0;top:40px;width:1280px;height:20px;background:rgba(6,9,32,0.5)"></div>
+      <div style="position:absolute;left:0;top:60px;width:1280px;height:20px;background:rgba(6,9,32,0.7)"></div>
+      <div style="position:absolute;left:0;top:80px;width:1280px;height:20px;background:rgba(6,9,32,0.88)"></div>
+      <div style="position:absolute;left:0;top:100px;width:1280px;height:20px;background:#060920"></div>
+    </div>
+
+    <div style="position:absolute;left:80px;top:78px;width:440px;display:flex;flex-direction:column;align-items:flex-start">
+
+      <div class="notch" style="display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 16px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:2px;color:#ffd23f">
+        <span aria-hidden="true" style="width:8px;height:8px;background:#ffd23f"></span>ABOUT ASTRO KID
+      </div>
+
+      <h1 id="about-hero-title" style="margin:24px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:36px;line-height:1.4;color:#ffffff;text-shadow:4px 4px 0 #243372,8px 8px 0 #172052">THE STORY<br>BEHIND<br><span style="color:#ffd23f;text-shadow:4px 4px 0 #c2410c,8px 8px 0 #7a2a0a">ASTRO KID</span></h1>
+
+      <p style="margin:26px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:18px;line-height:1.6;color:#e4e8ff;text-shadow:0 2px 0 #060920">Astro Kid puts a child in the boots of a young astronaut at a half-built outpost on the Moon. Every choice costs something, and every mission leaves you understanding one real constraint of deep space survival.</p>
+
+      <div style="display:flex;align-items:center;gap:16px;margin-top:30px">
+        <a class="btn notch" href="#demo" style="display:inline-flex;align-items:center;gap:10px;height:56px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#0d2a14;background:#3fbf5f;box-shadow:inset -4px -4px 0 0 #1d7a36,inset 4px 4px 0 0 #8be8a2">
+          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 6 6" shape-rendering="crispEdges" style="display:block"><path fill="#0d2a14" d="M0 0h2v6H0zM2 1h2v4H2zM4 2h2v2H4z"/></svg>
+          PLAY FREE DEMO
+        </a>
+        <a class="btn notch" href="#crew" style="display:inline-flex;align-items:center;gap:10px;height:56px;box-sizing:border-box;padding:0 22px;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;text-decoration:none;color:#ffffff;background:#243372;box-shadow:inset -4px -4px 0 0 #172052,inset 4px 4px 0 0 #3a4a94">
+          MEET THE CREW
+          <svg aria-hidden="true" width="14" height="10" viewBox="0 0 5 3" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h5v1H0zM1 1h3v1H1zM2 2h1v1H2z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div aria-hidden="true" style="position:absolute;left:0;bottom:28px;width:1280px;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:2px;color:#a4aed9">
+      SCROLL
+      <svg class="bob" width="20" height="12" viewBox="0 0 5 3" shape-rendering="crispEdges" style="display:block"><path fill="#ffd23f" d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2z"/></svg>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

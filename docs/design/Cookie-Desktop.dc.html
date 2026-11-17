@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cookie Banner Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+button.cbtn:hover{filter:brightness(1.12)}
+button.cbtn:active{transform:translateY(3px)}
+a.plink{color:#ffd23f}
+a.plink:hover{color:#fff3b0}
+a:focus-visible,button:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:720px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <!-- the page behind the banner -->
+  <img src="/assets/backgrounds/lunar_base_expanded.png" alt="" width="1280" height="720" style="position:absolute;left:0;top:0;width:1280px;height:720px;object-fit:cover;image-rendering:pixelated">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(6,9,32,0.45)"></div>
+
+  <section role="region" aria-label="Cookie notice" style="position:absolute;left:80px;top:548px;width:1120px;box-sizing:border-box;padding:26px 32px;display:flex;align-items:center;gap:28px;background:#141c4d;box-shadow:0 -4px 0 0 #3a4a94,0 4px 0 0 #3a4a94,-4px 0 0 0 #3a4a94,4px 0 0 0 #3a4a94,12px 12px 0 0 rgba(0,0,0,0.55)">
+
+    <svg aria-hidden="true" width="60" height="60" viewBox="0 0 12 12" shape-rendering="crispEdges" style="flex:none;display:block"><path fill="#e0a458" d="M3 0h6v1H3zM2 1h8v1H2zM1 2h3v1H1zM5 2h6v1H5zM1 3h10v1H1zM0 4h6v1H0zM7 4h5v1H7zM0 5h2v1H0zM3 5h9v1H3zM0 6h9v1H0zM10 6h2v1h-2zM1 7h10v1H1zM1 8h4v1H1zM6 8h5v1H6zM2 9h8v1H2zM3 10h2v1H3zM6 10h3v1H6zM4 11h4v1H4z"/><path fill="#6b3f1d" d="M4 2h1v1H4zM6 4h1v1H6zM2 5h1v1H2zM9 6h1v1H9zM5 8h1v1H5zM5 10h1v1H5z"/></svg>
+
+    <div style="flex:1;min-width:0">
+      <div style="font-family:'Silkscreen',monospace;font-weight:700;font-size:14px;letter-spacing:2px;color:#ffd23f">COOKIES</div>
+      <p style="margin:8px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:17px;line-height:1.55;color:#d5daf7">We use essential cookies to make the site work and to make downloading easier. You can control or turn them off in your browser settings. More in our <a class="plink" href="#privacy">Privacy Policy</a>.</p>
+    </div>
+
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px">
+      <button class="cbtn notch" type="button" style="display:flex;align-items:center;justify-content:center;width:200px;height:48px;padding:0;border:0;cursor:pointer;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;color:#1a1a2e">ACCEPT</button>
+      <button class="cbtn notch" type="button" style="display:flex;align-items:center;justify-content:center;width:200px;height:48px;padding:0;border:0;cursor:pointer;background:#243372;box-shadow:inset -4px -4px 0 0 #172052,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:15px;letter-spacing:1px;color:#ffffff">ESSENTIAL ONLY</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

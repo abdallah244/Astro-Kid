@@ -1,0 +1,198 @@
+/* Sign-In & Full-Name <dialog> Modals (Modal-Desktop/Mobile & Modal-Name-Desktop/Mobile) */
+.ak-dialog {
+  width: min(520px, calc(100vw - 32px));
+  max-width: 520px;
+  max-height: calc(100vh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: var(--ak-text);
+  overflow: visible;
+}
+
+.ak-dialog::backdrop {
+  background-color: var(--ak-scrim-modal);
+}
+
+.ak-dialog__box {
+  position: relative;
+  padding: 46px 40px 40px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.ak-dialog__step {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+}
+
+.ak-dialog__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+}
+
+.ak-dialog__close:hover {
+  filter: brightness(1.25);
+}
+
+.ak-dialog__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ak-dialog__nova {
+  width: 58px;
+  height: 76px;
+}
+
+.ak-dialog__nova--sm {
+  width: 50px;
+  height: 65px;
+}
+
+.ak-dialog__title {
+  margin: 16px 0 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.ak-dialog__lead {
+  margin: 14px 0 0;
+  max-width: 400px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ak-muted);
+}
+
+.ak-dialog__consent {
+  margin-top: 26px;
+}
+
+.ak-dialog__submit {
+  margin-top: 24px;
+  height: 60px;
+}
+
+.ak-dialog__demo-link {
+  display: block;
+  margin-top: 16px;
+  min-height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--ak-green);
+  text-decoration: none;
+}
+
+.ak-dialog__demo-link:hover {
+  color: var(--ak-green-light);
+  text-decoration: underline;
+}
+
+.ak-dialog__google-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 12px 16px;
+}
+
+.ak-dialog__google-badge {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ak-white);
+}
+
+.ak-dialog__google-meta {
+  min-width: 0;
+}
+
+.ak-dialog__google-tag {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--ak-green);
+}
+
+.ak-dialog__google-email {
+  margin-top: 2px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ak-white);
+  overflow-wrap: anywhere;
+}
+
+.ak-dialog__form {
+  margin-top: 22px;
+}
+
+.ak-dialog__error {
+  margin: 10px 0 0;
+}
+
+@media (max-width: 480px) {
+  .ak-dialog {
+    width: calc(100vw - 40px);
+  }
+
+  .ak-dialog__box {
+    padding: 52px 24px 28px;
+  }
+
+  .ak-dialog__step {
+    left: 12px;
+    top: 16px;
+  }
+
+  .ak-dialog__close {
+    right: 12px;
+    top: 12px;
+  }
+
+  .ak-dialog__nova {
+    width: 50px;
+    height: 65px;
+  }
+
+  .ak-dialog__nova--sm {
+    width: 44px;
+    height: 58px;
+  }
+
+  .ak-dialog__title {
+    font-size: 18px;
+    text-shadow: 2px 2px 0 var(--ak-blue);
+  }
+
+  .ak-dialog__title .px-title__accent {
+    text-shadow: 2px 2px 0 var(--ak-yellow-shadow);
+  }
+
+  .ak-dialog__lead {
+    font-size: 16px;
+  }
+
+  .ak-dialog__submit {
+    font-size: 15px;
+  }
+}

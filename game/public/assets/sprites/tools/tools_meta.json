@@ -1,0 +1,302 @@
+{
+  "mining_drill": {
+    "idle": {
+      "file": "mining_drill_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "mining_drill_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "mining_drill_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "pickaxe": {
+    "idle": {
+      "file": "pickaxe_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "pickaxe_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "pickaxe_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "wrench": {
+    "idle": {
+      "file": "wrench_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "wrench_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "wrench_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "scanner": {
+    "idle": {
+      "file": "scanner_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "scanner_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "scanner_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "build_tool": {
+    "idle": {
+      "file": "build_tool_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "build_tool_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "build_tool_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "repair_kit": {
+    "idle": {
+      "file": "repair_kit_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "repair_kit_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "repair_kit_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "medkit": {
+    "idle": {
+      "file": "medkit_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "medkit_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "medkit_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "oxygen_tank": {
+    "idle": {
+      "file": "oxygen_tank_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "oxygen_tank_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "oxygen_tank_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "water_purifier": {
+    "idle": {
+      "file": "water_purifier_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "water_purifier_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "water_purifier_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "soil_analyzer": {
+    "idle": {
+      "file": "soil_analyzer_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "soil_analyzer_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "soil_analyzer_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "seed_planter": {
+    "idle": {
+      "file": "seed_planter_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "seed_planter_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "seed_planter_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "harvest_tool": {
+    "idle": {
+      "file": "harvest_tool_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "harvest_tool_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "harvest_tool_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "solar_panel_kit": {
+    "idle": {
+      "file": "solar_panel_kit_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "solar_panel_kit_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "solar_panel_kit_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "shield_generator": {
+    "idle": {
+      "file": "shield_generator_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "shield_generator_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "shield_generator_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  },
+  "beacon": {
+    "idle": {
+      "file": "beacon_idle.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "use": {
+      "file": "beacon_use.png",
+      "frames": 6,
+      "frameWidth": 64,
+      "frameHeight": 34
+    },
+    "fx": {
+      "file": "beacon_fx.png",
+      "frames": 5,
+      "frameWidth": 64,
+      "frameHeight": 34
+    }
+  }
+}

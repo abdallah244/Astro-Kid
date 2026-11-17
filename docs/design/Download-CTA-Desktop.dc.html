@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Download CTA Desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+a.btn:hover{filter:brightness(1.12)}
+a.btn:active{transform:translateY(3px)}
+a.btn:hover svg{transform:translateX(4px)}
+a.lnk{color:#a4aed9}
+a.lnk:hover{color:#3fbf5f}
+a:focus-visible{outline:4px solid #ffd23f;outline-offset:4px}
+</style>
+</helmet>
+<div style="position:relative;width:1280px;height:560px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <div aria-hidden="true" style="position:absolute;inset:0">
+    <div style="position:absolute;left:60px;top:52px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:150px;top:480px;width:8px;height:8px;background:#a4aed9"></div>
+    <div style="position:absolute;left:372px;top:36px;width:4px;height:4px;background:#ffd23f"></div>
+    <div style="position:absolute;left:640px;top:508px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:688px;top:84px;width:8px;height:8px;background:#a4aed9"></div>
+    <div style="position:absolute;left:1236px;top:64px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:1180px;top:476px;width:4px;height:4px;background:#ffd23f"></div>
+    <div style="position:absolute;left:728px;top:392px;width:4px;height:4px;background:#ffffff"></div>
+    <div style="position:absolute;left:1212px;top:268px;width:8px;height:8px;background:#a4aed9"></div>
+    <div style="position:absolute;left:92px;top:292px;width:4px;height:4px;background:#ffffff"></div>
+  </div>
+
+  <!-- space scene: the Moon above-left of Earth (tiny lander + astronaut on it), NOVA orbiting Earth -->
+  <div role="img" aria-label="Planet Earth with a small Moon above-left of it. The robot NOVA orbits around the Earth." style="position:absolute;left:0;top:0;width:1280px;height:560px">
+    <svg width="1280" height="560" viewBox="0 0 1280 560" style="position:absolute;left:0;top:0"><g transform="rotate(-18 940 340)"><ellipse cx="940" cy="340" rx="240" ry="70" fill="none" stroke="#3a4a94" stroke-width="4" stroke-dasharray="4 12" shape-rendering="crispEdges"/></g></svg>
+    <img src="/assets/landing/earth.png" alt="" width="320" height="320" style="position:absolute;left:780px;top:180px;width:320px;height:320px;image-rendering:pixelated">
+    <svg width="1280" height="560" viewBox="0 0 1280 560" style="position:absolute;left:0;top:0"><g transform="rotate(-18 940 340)"><path d="M 700 340 A 240 70 0 0 0 1180 340" fill="none" stroke="#b6c3ff" stroke-width="4" stroke-dasharray="4 12" shape-rendering="crispEdges"/></g></svg>
+    <img src="/assets/landing/moon.png" alt="" width="128" height="128" style="position:absolute;left:701px;top:61px;width:128px;height:128px;image-rendering:pixelated">
+    <img src="/assets/landing/nova.png" alt="" width="66" height="86" style="position:absolute;left:889px;top:375px;width:66px;height:86px;image-rendering:pixelated">
+  </div>
+
+  <section id="get" aria-labelledby="cta-title" style="position:absolute;left:80px;top:88px;width:580px;display:flex;flex-direction:column;align-items:flex-start">
+
+    <div class="notch" style="display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 16px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:2px;color:#3fbf5f">
+      <span aria-hidden="true" style="width:8px;height:8px;background:#3fbf5f"></span>FREE TO TRY
+    </div>
+
+    <h2 id="cta-title" style="margin:22px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:30px;line-height:1.5;color:#ffffff;text-shadow:3px 3px 0 #243372">READY TO LAND<br><span style="color:#ffd23f;text-shadow:3px 3px 0 #c2410c">ON THE MOON?</span></h2>
+
+    <p style="margin:22px 0 0;max-width:500px;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:19px;line-height:1.6;color:#c9d0f5">Play the free demo in your browser, or get the full game for your desktop.</p>
+
+    <div style="position:relative;display:inline-block;margin-top:36px">
+      <div aria-hidden="true" class="notch" style="position:absolute;left:6px;top:6px;width:100%;height:100%;background:rgba(0,0,0,0.5)"></div>
+      <a class="btn notch" href="#download-page" style="position:relative;display:inline-flex;align-items:center;gap:18px;height:72px;box-sizing:border-box;padding:0 40px;font-family:'Silkscreen',monospace;font-weight:700;font-size:21px;letter-spacing:1px;text-decoration:none;color:#1a1a2e;background:#ffd23f;box-shadow:inset -4px -4px 0 0 #f5a524,inset 4px 4px 0 0 #fff3b0">GET THE GAME <svg aria-hidden="true" width="18" height="18" viewBox="0 0 7 7" shape-rendering="crispEdges" style="display:block"><path fill="#1a1a2e" d="M0 3h5v1H0zM4 2h1v3H4zM5 1h1v5H5zM6 2h1v3H6z"/></svg></a>
+    </div>
+
+    <a class="lnk" href="#demo" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:8px 0;font-family:'Silkscreen',monospace;font-weight:700;font-size:13px;letter-spacing:1px;text-decoration:none">
+      <span aria-hidden="true" style="width:8px;height:8px;background:#3fbf5f"></span>OR PLAY THE FREE DEMO
+    </a>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

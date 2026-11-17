@@ -1,0 +1,61 @@
+{
+  "name": "astro-kid-installer",
+  "productName": "Astro Kid Setup",
+  "version": "0.1.0",
+  "description": "Astro Kid Windows installer (Step 0 spike)",
+  "author": "Abdallah Hany",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "prepare": "node scripts/prepare-spike.mjs",
+    "dev": "node scripts/prepare-spike.mjs && electron . --dev",
+    "build": "node scripts/prepare-spike.mjs && electron-builder --win portable"
+  },
+  "dependencies": {
+    "7zip-bin": "^5.2.0"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.abdallahhany.astrokid.setup",
+    "productName": "Astro Kid Setup",
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/7zip-bin/**"
+    ],
+    "compression": "maximum",
+    "electronLanguages": [
+      "en-US"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ui/**/*",
+      "assets/**/*",
+      "package.json",
+      "node_modules/7zip-bin/**/*",
+      "!node_modules/7zip-bin/linux/**",
+      "!node_modules/7zip-bin/mac/**"
+    ],
+    "extraResources": [
+      {
+        "from": "extraResources",
+        "to": "."
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "../build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "AstroKid-Setup.exe"
+    }
+  }
+}

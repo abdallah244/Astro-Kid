@@ -1,0 +1,93 @@
+/* Astro Kid Design Tokens (source of truth: docs/design/*.dc.html) */
+:root {
+  /* Core Surfaces */
+  --ak-space: #060920;
+  --ak-panel: #141c4d;
+  --ak-panel-dark: #0d1236;
+  --ak-panel-alt: #0a0f33;
+
+  /* Borders & Blues */
+  --ak-border: #3a4a94;
+  --ak-border-dark: #172052;
+  --ak-blue: #243372;
+  --ak-bevel-light: #1c2766;
+  --ak-border-disabled: #4a5cb0;
+
+  /* Typography Colors */
+  --ak-text: #eef1ff;
+  --ak-body: #c9d0f5;
+  --ak-body-soft: #d5daf7;
+  --ak-body-bright: #e4e8ff;
+  --ak-muted: #a4aed9;
+  --ak-label-muted: #8e9ad0;
+  --ak-placeholder: #6c77ad;
+  --ak-white: #ffffff;
+  --ak-white-bevel-dark: #b9bfdc;
+
+  /* Brand & Action Palette */
+  --ak-yellow: #ffd23f;
+  --ak-yellow-dark: #f5a524;
+  --ak-yellow-light: #fff3b0;
+  --ak-yellow-shadow: #c2410c;
+  --ak-yellow-shadow-deep: #7a2a0a;
+  --ak-ink: #1a1a2e;
+
+  --ak-green: #3fbf5f;
+  --ak-green-dark: #1d7a36;
+  --ak-green-light: #8be8a2;
+  --ak-green-ink: #0d2a14;
+
+  --ak-cyan: #5ad1ff;
+
+  --ak-danger: #ff5a6e;
+  --ak-danger-dark: #c2253d;
+  --ak-danger-light: #ff9aa6;
+
+  --ak-orange: #ff9b54;
+  --ak-orbit-light: #b6c3ff;
+
+  /* Cookie graphic palette */
+  --ak-cookie-crust: #e0a458;
+  --ak-cookie-chip: #6b3f1d;
+
+  /* Hard-stop Shadows & Overlays (0 blur) */
+  --ak-shadow-color: rgba(0, 0, 0, 0.5);
+  --ak-shadow-modal: rgba(0, 0, 0, 0.55);
+  --ak-scrim-hero: rgba(6, 9, 32, 0.4);
+  --ak-scrim-modal: rgba(6, 9, 32, 0.82);
+
+  /* Pixel Geometry */
+  --notch-clip: polygon(
+    0 4px,
+    4px 4px,
+    4px 0,
+    calc(100% - 4px) 0,
+    calc(100% - 4px) 4px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    4px calc(100% - 4px),
+    0 calc(100% - 4px)
+  );
+
+  /* Typography */
+  --font-px: 'Press Start 2P', monospace;
+  --font-ui: 'Silkscreen', monospace;
+  --font-body: 'Chakra Petch', system-ui, -apple-system, sans-serif;
+
+  /* Layout & Breakpoint metrics (1280px desktop, 390px mobile) */
+  --container-w: 1120px;
+  --gutter-mobile: 20px;
+  --nav-h-desktop: 88px;
+  --nav-h-mobile: 72px;
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-dropdown: 70;
+  --z-cookie: 80;
+  --z-modal: 100;
+  --z-toast: 120;
+}

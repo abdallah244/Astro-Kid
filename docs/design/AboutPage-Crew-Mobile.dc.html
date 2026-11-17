@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Page Crew Mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#060920}
+.notch{clip-path:polygon(0 4px,4px 4px,4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px))}
+.card{position:absolute;left:20px;width:350px}
+.stage{position:relative;width:350px;height:380px;overflow:hidden;background:#0d1236;box-shadow:0 -4px 0 0 #3a4a94,0 4px 0 0 #3a4a94,-4px 0 0 0 #3a4a94,4px 0 0 0 #3a4a94,8px 8px 0 0 rgba(0,0,0,0.5)}
+.role{display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 14px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px}
+.role i{width:8px;height:8px}
+.name{margin:18px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:22px;line-height:1.4}
+.bio{margin:14px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:16px;line-height:1.6;color:#d5daf7}
+.facts{list-style:none;margin:18px 0 0;padding:0}
+.facts li{display:flex;gap:14px;align-items:baseline;padding:10px 0;border-top:4px solid transparent;background:linear-gradient(90deg,#243372 0 8px,transparent 8px 16px) top left/16px 4px repeat-x}
+.facts span{flex:none;width:76px;font-family:'Silkscreen',monospace;font-weight:700;font-size:11px;letter-spacing:2px;color:#8e9ad0}
+.facts b{font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:16px;line-height:1.4;color:#ffffff}
+.astro{position:absolute;left:50px;top:26px;width:250px;height:338px;background:url(/assets/sprites/astro_idle.png) 0 0/500px 338px no-repeat;image-rendering:pixelated;animation:idle 1.2s linear infinite}
+@keyframes idle{0%,49.99%{background-position:0 0}50%,100%{background-position:-250px 0}}
+@media (prefers-reduced-motion:reduce){.astro{animation:none}}
+</style>
+</helmet>
+<div style="position:relative;width:390px;height:3100px;overflow:hidden;background:#060920;font-family:'Silkscreen',monospace">
+
+  <!-- pixel-art nebula sky: purple behind the Commander, blue behind NOVA, ember behind Dr. Karim -->
+  <img src="/assets/about/crew_bg_m.png" alt="" width="390" height="3100" style="position:absolute;left:0;top:0;width:390px;height:3100px;image-rendering:pixelated">
+  <img src="/assets/landing/earth.png" alt="" width="64" height="64" style="position:absolute;left:296px;top:72px;width:64px;height:64px;image-rendering:pixelated;opacity:0.9">
+  <img src="/assets/landing/moon.png" alt="" width="72" height="72" style="position:absolute;left:24px;top:2990px;width:72px;height:72px;image-rendering:pixelated;opacity:0.85">
+
+  <section id="crew" aria-labelledby="crew-title-m" style="position:absolute;left:20px;top:64px;width:350px;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div class="notch" style="display:inline-flex;align-items:center;gap:10px;height:32px;box-sizing:border-box;padding:0 14px;background:#141c4d;box-shadow:inset -4px -4px 0 0 #0d1236,inset 4px 4px 0 0 #3a4a94;font-family:'Silkscreen',monospace;font-weight:700;font-size:12px;letter-spacing:2px;color:#ffd23f">
+      <span aria-hidden="true" style="width:8px;height:8px;background:#ffd23f"></span>THE CREW
+    </div>
+    <h2 id="crew-title-m" style="margin:18px 0 0;font-family:'Press Start 2P',monospace;font-weight:400;font-size:20px;line-height:1.5;color:#ffffff;text-shadow:2px 2px 0 #243372">MEET THE <span style="color:#ffd23f;text-shadow:2px 2px 0 #c2410c">CREW</span></h2>
+    <p style="margin:18px 0 0;font-family:'Chakra Petch',sans-serif;font-weight:500;font-size:16px;line-height:1.6;color:#a4aed9">Three characters guide every mission: the kid in the suit, the robot beside you and the calm voice from Earth.</p>
+  </section>
+
+  <ol style="list-style:none;margin:0;padding:0">
+
+    <!-- Commander -->
+    <li class="card" style="top:320px">
+      <div class="stage">
+        <img src="/assets/backgrounds/moon_background.webp" alt="" width="350" height="380" style="position:absolute;left:0;top:0;width:350px;height:380px;object-fit:cover;object-position:62% bottom;image-rendering:pixelated">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:rgba(6,9,32,0.28)"></div>
+        <div aria-hidden="true" style="position:absolute;left:80px;top:344px;width:190px;height:6px;background:rgba(0,0,0,0.35)"></div>
+        <div aria-hidden="true" style="position:absolute;left:100px;top:350px;width:150px;height:6px;background:rgba(0,0,0,0.35)"></div>
+        <div class="astro" role="img" aria-label="The Commander, a kid in a white and orange space suit"></div>
+      </div>
+      <div style="margin-top:30px">
+        <div class="role notch" style="color:#ffd23f"><i style="background:#ffd23f"></i>THE PLAYER</div>
+        <h3 class="name" style="color:#ffd23f;text-shadow:2px 2px 0 #c2410c">THE COMMANDER</h3>
+        <p class="bio">That is you. A kid in a white and orange suit with a blue visor, in charge of a two-person mission. You explore, collect, research, build and keep the crew alive.</p>
+        <ul class="facts">
+          <li><span>ROLE</span><b>The player</b></li>
+          <li><span>OUTFIT</span><b>White and orange suit, blue visor</b></li>
+          <li><span>JOB</span><b>Run the outpost, one choice at a time</b></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- NOVA -->
+    <li class="card" style="top:1130px">
+      <div class="stage" style="background:#060920">
+        <div aria-hidden="true" style="position:absolute;inset:0">
+          <div style="position:absolute;left:30px;top:40px;width:4px;height:4px;background:#ffffff"></div>
+          <div style="position:absolute;left:80px;top:120px;width:8px;height:8px;background:#a4aed9"></div>
+          <div style="position:absolute;left:300px;top:60px;width:4px;height:4px;background:#ffd23f"></div>
+          <div style="position:absolute;left:320px;top:200px;width:8px;height:8px;background:#a4aed9"></div>
+          <div style="position:absolute;left:50px;top:300px;width:4px;height:4px;background:#5ad1ff"></div>
+          <div style="position:absolute;left:290px;top:330px;width:4px;height:4px;background:#ffffff"></div>
+        </div>
+        <img src="/assets/landing/nova.png" alt="NOVA, a small floating robot with a glowing jet and a friendly face" width="240" height="315" style="position:absolute;left:55px;top:26px;width:240px;height:315px;image-rendering:pixelated">
+        <div aria-hidden="true" style="position:absolute;left:100px;top:348px;width:150px;height:6px;background:rgba(90,209,255,0.22)"></div>
+        <div aria-hidden="true" style="position:absolute;left:120px;top:354px;width:110px;height:6px;background:rgba(90,209,255,0.14)"></div>
+      </div>
+      <div style="margin-top:30px">
+        <div class="role notch" style="color:#5ad1ff"><i style="background:#5ad1ff"></i>ROBOT GUIDE</div>
+        <h3 class="name" style="color:#5ad1ff;text-shadow:2px 2px 0 #1d5f80">NOVA</h3>
+        <p class="bio">A small floating robot who helps you on site. Guide, tutor and the voice that explains how each system works, in short, simple sentences. Friendly and curious.</p>
+        <ul class="facts">
+          <li><span>ROLE</span><b>Guide and tutor</b></li>
+          <li><span>VOICE</span><b>Bright and friendly</b></li>
+          <li><span>STYLE</span><b>Short, simple sentences</b></li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Dr. Karim -->
+    <li class="card" style="top:1940px">
+      <div class="stage" style="background:#07131f;height:350px">
+        <img src="/assets/level01/interior/dr_karim.webp" alt="Dr. Karim at Mission Control, smiling, wearing a headset" width="318" height="318" style="position:absolute;left:16px;top:16px;width:318px;height:318px;object-fit:cover;box-shadow:0 0 0 4px #3a4a94">
+        <div aria-hidden="true" style="position:absolute;left:16px;top:16px;width:318px;height:318px;background:repeating-linear-gradient(0deg,rgba(0,0,0,0.16) 0 2px,transparent 2px 4px)"></div>
+        <div aria-hidden="true" class="notch" style="position:absolute;left:28px;top:28px;display:inline-flex;align-items:center;gap:8px;height:26px;padding:0 10px;background:rgba(6,9,32,0.88);font-family:'Silkscreen',monospace;font-weight:700;font-size:10px;letter-spacing:2px;color:#ffffff"><span style="width:8px;height:8px;background:#ff5a6e"></span>LIVE RADIO</div>
+        <div aria-hidden="true" class="notch" style="position:absolute;left:28px;top:296px;display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 10px;background:rgba(6,9,32,0.88);font-family:'Silkscreen',monospace;font-weight:700;font-size:10px;letter-spacing:1px;color:#ff9b54">
+          <span style="display:flex;align-items:flex-end;gap:3px;height:12px"><span style="width:4px;height:4px;background:#ff9b54"></span><span style="width:4px;height:7px;background:#ff9b54"></span><span style="width:4px;height:9px;background:#ff9b54"></span><span style="width:4px;height:12px;background:#ff9b54"></span></span>
+          EARTH · MISSION CONTROL
+        </div>
+      </div>
+      <div style="margin-top:30px">
+        <div class="role notch" style="color:#ff9b54"><i style="background:#ff9b54"></i>MISSION CONTROL</div>
+        <h3 class="name" style="color:#ff9b54;text-shadow:2px 2px 0 #8a3d0f">DR. KARIM</h3>
+        <p class="bio">Your link to Mission Control on Earth, heard over the radio only. Calm, kind and practical. On the Moon his answers arrive almost at once; on Mars they take a long time, so you will have to decide alone.</p>
+        <ul class="facts">
+          <li><span>ROLE</span><b>Mission Control on Earth</b></li>
+          <li><span>VOICE</span><b>Calm, with a radio filter</b></li>
+          <li><span>HEARD</span><b>Over the radio only</b></li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3100}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

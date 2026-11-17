@@ -1,0 +1,255 @@
+/* First-visit opening animation.
+   Timeline (see intro.js): stars + Earth in -> astronaut walks to centre ->
+   title drops in letter by letter -> tagline -> scene fades -> pixel-column wipe up.
+   All motion uses steps() so it stays pixel-art. */
+
+/* hide the page until the intro is done (class set by /intro-gate.js) */
+html.intro-pending {
+  overflow: hidden;
+}
+
+html.intro-pending body > *:not(#intro) {
+  visibility: hidden;
+  /* failsafe: if the script never finishes, the page shows itself after 6s */
+  animation: intro-failsafe 0s linear 6s forwards;
+}
+
+@keyframes intro-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
+.intro {
+  --s: 2;
+  --ground-h: 20vh;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: hidden;
+  font-family: var(--font-ui);
+}
+
+@media (max-height: 620px), (max-width: 720px) {
+  .intro {
+    --s: 1;
+  }
+}
+
+/* ---- wipe bands (the opaque background, 10 pixel columns) ---- */
+.intro__bands {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.intro__bands i {
+  flex: 1 1 0;
+  background: var(--ak-space);
+  transform: translateY(0);
+}
+
+.intro--leaving .intro__bands i {
+  transform: translateY(-101%);
+  transition: transform 0.55s steps(6) calc(var(--i) * 45ms + 0.35s);
+}
+
+/* ---- scene ---- */
+.intro__scene {
+  position: absolute;
+  inset: 0;
+}
+
+.intro--leaving .intro__scene {
+  animation: intro-scene-out 0.4s steps(4) forwards;
+}
+
+@keyframes intro-scene-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.intro__stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  animation: intro-twinkle 1.6s steps(2) infinite;
+}
+
+.intro__stars--b {
+  animation-delay: 0.8s;
+}
+
+@keyframes intro-twinkle {
+  0%,
+  49.99% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.35;
+  }
+}
+
+.intro__earth {
+  position: absolute;
+  right: 4vw;
+  top: 5vh;
+  width: clamp(72px, 11vw, 170px);
+  height: auto;
+  image-rendering: pixelated;
+  opacity: 0;
+  animation: intro-fade-in 0.5s steps(5) 0.15s forwards;
+}
+
+@keyframes intro-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.intro__ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--ground-h);
+  background: linear-gradient(
+    var(--ak-orbit-light) 0 6px,
+    #7e88b8 6px 28%,
+    #5d6694 28% 100%
+  );
+}
+
+/* ---- astronaut ---- */
+.intro__astro {
+  position: absolute;
+  left: 0;
+  bottom: var(--ground-h);
+  width: calc(125px * var(--s));
+  height: calc(169px * var(--s));
+  margin-bottom: calc(-6px * var(--s));
+  background: url('/assets/sprites/astro_walk.png') 0 0 / calc(500px * var(--s)) calc(169px * var(--s)) no-repeat;
+  image-rendering: pixelated;
+  transform: translateX(calc(-125px * var(--s)));
+  animation:
+    intro-walk 1.2s steps(14) forwards,
+    intro-frames 0.32s steps(4) infinite;
+}
+
+@keyframes intro-walk {
+  to {
+    transform: translateX(calc(50vw - 62px * var(--s)));
+  }
+}
+
+@keyframes intro-frames {
+  to {
+    background-position-x: calc(-500px * var(--s));
+  }
+}
+
+.intro__astro.is-idle {
+  animation: none;
+  transform: translateX(calc(50vw - 62px * var(--s)));
+  background-image: url('/assets/sprites/astro_idle.png');
+  background-size: calc(250px * var(--s)) calc(169px * var(--s));
+  background-position: 0 0;
+}
+
+/* ---- title ---- */
+.intro__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 22vh;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-px);
+  font-weight: 400;
+  font-size: clamp(24px, 7.4vw, 84px);
+  line-height: 1.2;
+  color: var(--ak-white);
+  text-shadow: 4px 4px 0 var(--ak-blue), 8px 8px 0 var(--ak-border-dark);
+  white-space: nowrap;
+}
+
+.intro__title .accent {
+  color: var(--ak-yellow);
+  text-shadow: 4px 4px 0 var(--ak-yellow-shadow), 8px 8px 0 var(--ak-yellow-shadow-deep);
+}
+
+.intro__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-0.5em);
+  animation: intro-letter 0.36s steps(3) forwards;
+  animation-delay: calc(var(--i) * 85ms + 1.25s);
+}
+
+.intro__letter.sp {
+  width: 0.7em;
+}
+
+@keyframes intro-letter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro__tagline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(22vh + clamp(24px, 7.4vw, 84px) * 1.2 + 22px);
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(11px, 1.6vw, 16px);
+  letter-spacing: 3px;
+  color: var(--ak-muted);
+  opacity: 0;
+  animation: intro-fade-in 0.4s steps(4) 2.15s forwards;
+}
+
+/* ---- skip ---- */
+.intro__skip {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--ak-text);
+  background: var(--ak-blue);
+  box-shadow: inset -4px -4px 0 var(--ak-border-dark), inset 4px 4px 0 var(--ak-border);
+  clip-path: var(--notch-clip);
+}
+
+.intro__skip:hover {
+  filter: brightness(1.15);
+}
+
+.intro--leaving .intro__skip {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* the gate never enables the intro for reduced motion; belt and braces */
+  .intro {
+    display: none;
+  }
+}

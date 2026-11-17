@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Replace example.com with your real domain once purchased:
+Sitemap: https://example.com/sitemap.xml
