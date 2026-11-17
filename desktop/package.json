@@ -30,6 +30,7 @@
   "build": {
     "appId": "com.abdallahhany.astrokid",
     "productName": "Astro Kid",
+    "npmRebuild": false,
     "asar": true,
     "compression": "maximum",
     "electronLanguages": [

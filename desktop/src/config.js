@@ -10,7 +10,7 @@ const APP_SCHEME = 'app';
 const APP_HOST = 'astrokid';
 const APP_ORIGIN = `${APP_SCHEME}://${APP_HOST}`;
 
-const WEBSITE_URL = process.env.ASTROKID_WEBSITE_URL || '[Website URL]';
+const WEBSITE_URL = process.env.ASTROKID_WEBSITE_URL || 'https://astrokid.site';
 const SUPPORT_EMAIL = 'abdallahhfares@gmail.com';
 
 const ALLOWED_EXTERNAL_KEYS = Object.freeze(['website', 'privacy', 'terms', 'support']);
