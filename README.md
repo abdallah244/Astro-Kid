@@ -14,6 +14,12 @@
 **You are the Commander of a two-person mission to an unfinished outpost on the Moon.**
 Every choice costs something: oxygen, power, time. Explore, collect, research, build and keep the crew alive.
 
+<a href="https://astrokid.site/play.html"><img src="https://img.shields.io/badge/%E2%96%B6%20PLAY%20THE%20FREE%20DEMO-3fbf5f?style=for-the-badge&labelColor=0d2a14" alt="Play the free demo in your browser"></a>
+<a href="https://astrokid.site/download.html"><img src="https://img.shields.io/badge/DOWNLOAD%20FOR%20WINDOWS-ffd23f?style=for-the-badge&labelColor=1a1a2e" alt="Download Astro Kid for Windows"></a>
+<a href="https://astrokid.site"><img src="https://img.shields.io/badge/WEBSITE-astrokid.site-5ad1ff?style=for-the-badge&labelColor=141c4d" alt="Website: astrokid.site"></a>
+
+**Live at [astrokid.site](https://astrokid.site)**: the browser demo needs no account.
+
 [About](#about) · [Screenshots](#screenshots) · [Missions](#missions) · [Systems](#systems) · [Controls](#controls) · [Play it](#play) · [Status](#status) · [Tech stack](#stack) · [Getting started](#start) · [License](#license)
 
 </div>
@@ -281,8 +287,8 @@ The game is made for a computer with a keyboard and a mouse. Touch screens are n
 
 | Way to play | How |
 |---|---|
-| **In the browser (free demo)** | Open `/play.html` on the website. No account is needed. Run it yourself with the steps in [Getting started](#start). |
-| **On Windows (full game)** | Download `AstroKid-Setup.exe` from the website's download page. It needs a Google sign-in. The installer is built from this repository. |
+| **In the browser (free demo)** | **[astrokid.site/play.html](https://astrokid.site/play.html)**. No account is needed. Or run it yourself with the steps in [Getting started](#start). |
+| **On Windows (full game)** | **[astrokid.site/download.html](https://astrokid.site/download.html)**: sign in with Google, then download `AstroKid-Setup.exe` (Windows 10 / 11, 64-bit). The installer is built from this repository. |
 
 > **The demo is an early version.** It is the current, unfinished build. Only the first mission is playable, many parts are still
 > missing or rough, and things may break. In the browser the progress is saved only in that browser and may be reset when the
