@@ -58,6 +58,16 @@ then `sudo certbot --nginx -d your-domain.com` and add `add_header Strict-Transp
 
 With **Caddy**: `your-domain.com { reverse_proxy 127.0.0.1:8090 }` (HTTPS is automatic).
 
+With **Traefik** (Docker provider and a Let's Encrypt resolver already running): no port is needed. Add to `.env`:
+
+```bash
+COMPOSE_FILE=docker-compose.yml:deploy/docker/compose.traefik.yml
+DOMAIN=your-domain.com
+TRAEFIK_CERT_RESOLVER=letsencrypt   # the resolver name your Traefik uses
+```
+
+then `docker compose up -d`. Traefik picks up the labels and fetches the certificate as soon as the DNS points to the VPS.
+
 ## 4. Who signed up?
 
 ```bash

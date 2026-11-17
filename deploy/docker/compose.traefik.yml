@@ -1,0 +1,19 @@
+# Use this override when the VPS already runs Traefik (Docker provider + a Let's Encrypt resolver).
+# The web container is then reached through Traefik only: no port is published on the host.
+#
+# Enable it by adding this line to .env:
+#   COMPOSE_FILE=docker-compose.yml:deploy/docker/compose.traefik.yml
+# and set DOMAIN (bare host name, e.g. astrokid.site) plus TRAEFIK_CERT_RESOLVER (default: letsencrypt).
+services:
+  web:
+    ports: !reset []
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: astro-kid_internal
+      traefik.http.routers.astrokid.rule: Host(`${DOMAIN:?set DOMAIN in .env}`)
+      traefik.http.routers.astrokid.entrypoints: websecure
+      traefik.http.routers.astrokid.tls.certresolver: ${TRAEFIK_CERT_RESOLVER:-letsencrypt}
+      traefik.http.routers.astrokid.middlewares: astrokid-hsts
+      traefik.http.middlewares.astrokid-hsts.headers.stsSeconds: "31536000"
+      traefik.http.middlewares.astrokid-hsts.headers.stsIncludeSubdomains: "true"
+      traefik.http.services.astrokid.loadbalancer.server.port: "8080"
